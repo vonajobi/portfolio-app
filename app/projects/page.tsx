@@ -2,9 +2,8 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
 import Interactions from './interactions'
-import { useEffect } from 'react'
 
-// import projectData from '../projects/projects';
+import projects from '../../public/data/projects.json';
 interface ProjectsProps {
     _id: number;
     title: string;
@@ -19,18 +18,7 @@ interface Props{
 }
 
 const Projects = () => {
-    const [products, setProducts] = useState<ProjectsProps[]>([])
-
-    useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('../projects/projects');
-      const data = await res.json();
-      setProducts(data);
-    };
-  
-    fetchData();
-  }, []);
-  
+    const [products, setProducts] = useState<ProjectsProps[]>(projects)
 
   return (
 <div className=' w-screen flex h-screen items-center px-10'>
@@ -40,7 +28,7 @@ const Projects = () => {
     <h1 className='text-2xl w-96'>PROJECTS</h1> 
   
     {
-        products.map((item) =>(
+        projects.map((item) =>(
             <Interactions>
                 <div className=' h-full shadow-2xl transition-shadow ease-out delay-100 /*border-r-4*/ hover:shadow-3xl hover:shadow-zinc-500 hover:ease-in'>
                     
