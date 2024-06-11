@@ -1,0 +1,38 @@
+[
+    {
+        "_id": 1,
+        "title": "Crushies",
+        "description": "Crushies - a limited edition Blind Box Series of 3D printed collectible toys.",
+        "image_1": "/assets/projects/blind_box/downBad.png",
+        "image_2": "/assets/projects/blind_box/gaslight.png",
+        "image_3": "/assets/projects/blind_box/headInClouds2.png"
+    },
+    {
+        "_id": 2,
+        "title": "Plant Grow Lamp",
+        "description": "A grow lamp for plants that uses an Arduino to control the light temperature.",
+        "image_3": "/assets/projects/lamp/lamp3.png",
+        "image_2": "/assets/projects/lamp/lamp4.png",
+        "image_1": "/assets/projects/lamp/final_photo_1.jpg",
+        "image_4": "/assets/projects/lamp/final_photo_2.jpg",
+        "image_5": "/assets/projects/lamp/lamp_desk_high.png",
+        "image_6": "/assets/projects/lamp/lamp_desk_low.png"
+    }, {
+        "_id": 3,
+        "title": "Child's Play",
+        "description": "Within the inner mind of a chld, there is a world of imagination and wonder. ",
+        "image_1": "/assets/projects/scene/scene1.png",
+        "image_2": "/assets/projects/scene/scene2.png",
+        "image_3": "/assets/projects/scene/scene3.jpg"
+    },
+    {
+        "_id": 4,
+        "title": "Weighted Spoon",
+        "description": "A grow lamp for plants that uses Arduino to control the light temperature.",
+        "image_1": "/assets/projects/spoon/spoon_front.png",
+        "image_2": "/assets/projects/spoon/spoon_top.png",
+        "image_3": "/assets/projects/spoon/spoon_coffee.png"
+    }
+    
+]
+

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Marcellus+SC&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,14 +16,64 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  @apply bg-hero-pattern bg-cover bg-center;
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
+
+base* {
+    box-sizing: border-box;
+  }
+
+  html, body,  #__next {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10;
+    overflow: auto;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Marcellus SC', serif;
+  }
+
+.hover-effect {
+  cursor: pointer;
+  position: relative;
+}
+
+.hover-effect:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  display: block;
+  right: 0;
+  background: white;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.hover-effect:hover:after {
+  width: 100%;
+  left: 0;
+}
+::-webkit-scrollbar{
+  width: 4px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+background-color: oldlace;
+border-radius: 10px;
+}
+
