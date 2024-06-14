@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {getProject} from '../components/helpers/async';
 
 type Props = {
@@ -6,31 +6,21 @@ type Props = {
 }
 
 
-// const Portfolio = async ({searchParams}: Props) => {
-//   // converting _id to number
-//   // originally it was a string
-//   const _id = Number(searchParams?._id);
-//   console.log(_id);
-//   const project = await getProject(_id);
-//   console.log(project);
-  
-//   return (
-//     <div>Portfolio</div>
-//   )
-// }
+
+
 const Portfolio = async ({searchParams}: Props) => {
   // converting _id to number
   // originally it was a string
-  const _id = Number(searchParams?._id);
-  console.log(_id);
-  const project = await getProject(_id);
+  const _id = Number(searchParams._id);
+  const project = await getProject(_id); 
   console.log(project);
   
+  // const height = window.innerHeight - 25;
   return (
     <div>
-        <img src={project.image_3} alt={project.title} />
-        Hello!
+      put work here.
     </div>
+    
   )
 }
 

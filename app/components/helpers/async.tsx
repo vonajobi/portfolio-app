@@ -10,8 +10,9 @@ const getData = async () => {
 }
 
 export const getProject = async (_id: number) => {
-    const item = await getData();
-    const singleItem = await item.find((project: any) => project._id === _id);
+    console.log(_id);
+    const project = await getData();
+    const singleItem = await project.find((project: any) => project._id === _id);
     
     return singleItem;
 }
