@@ -1,26 +1,26 @@
 import dynamic from 'next/dynamic'
-import { IndexOverlay } from './home'
+import { HomepageOverlay } from './home'
 const SceneIndex = dynamic(() => import('../canvas/scene'), {
   ssr: false,
 })
 
 import React from 'react';
 
-const Page = (props: any) => {
+const Index = (props: any) => {
   return (
     <>
-      <IndexOverlay />
+      <HomepageOverlay />
     </>
   )
 }
 
-Page.r3f = (props: any) => (
+Index.r3f = (props: any) => (
   <>
     <SceneIndex/>
   </>
 )
 
-export default Page
+export default Index
 
 
 export async function getStaticProps() {

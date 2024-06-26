@@ -10,7 +10,6 @@ const getData = async () => {
 }
 
 export const getProject = async (_id: number) => {
-    console.log(_id);
     const project = await getData();
     const singleItem = await project.find((project: any) => project._id === _id);
     

@@ -5,7 +5,7 @@ import Dom from './components/layout/dom'
 import useStore  from './components/helpers/helper'
 import { usePathname } from 'next/navigation'
 // import Header from './components/dom/header'
-import Page from "./components/dom"
+import Index from "./components/dom"
 const LCanvas = dynamic(() => import('./components/canvas/canvas'), {
   ssr: false,
 })
@@ -29,9 +29,9 @@ function App({ pageProps = { title: 'app' } }: { Component: React.ComponentType<
       <Dom>
         {/* <Page/> */}
         {/* {router === '/' ? <Page{...pageProps}/>: null} */}
-        {<Page{...pageProps}/>}
+        {<Index{...pageProps}/>}
       </Dom>
-      {(Page as any).r3f && <LCanvas>{(Page as any).r3f(pageProps)}</LCanvas>}
+      {(Index as any).r3f && <LCanvas>{(Index as any).r3f(pageProps)}</LCanvas>}
       </>
   )
 }
