@@ -34,8 +34,8 @@ const Projects = () => {
         projects.map((item) =>(
         <Interactions  key = {item._id}>
                 <div className=' h-full shadow-2xl transition-shadow ease-out delay-100 /*border-r-4*/ hover:shadow-3xl hover:shadow-zinc-500 hover:ease-in'>
-              
-                    <Link href = {{pathname: "/portfolio", query: {_id: item?._id} }}> 
+                    <Link href = {{pathname: "/portfolio", query: {_id: item?._id} }}>
+                    {/* <Link href = {item.link}>  */}
                         <div className='absolute w-full h-full '>
                             <img
                                 src = {item.image_1} 

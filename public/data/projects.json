@@ -45,7 +45,7 @@
             "_id": 5,
             "title": "Intuitive Paper",
             "description":"Succint AI Research Summaries" ,
-            "link": "/portfolio",
+            "link": "/portfolio/p5",
             "image_1": "/assets/projects/intuitive_paper/main.png",
             "image_2": "/assets/projects/intuitive_paper/database_flow.png"
             

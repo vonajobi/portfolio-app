@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const _4 = () => {
+export const _3 = () => {
   return (
-    <div>_4</div>
+    <div>image_3</div>
   )
 }
