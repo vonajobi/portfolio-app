@@ -1,47 +1,38 @@
 "use client";
 import React, { Suspense, useState, useEffect } from 'react';
 import { getProject } from '@/app/components/helpers/async';
-
-type ProjectData = {
-//   _id: number;
-//   title: string;
-//   description: string;
-//   image_1: string;
-//   image_2?: string;
-//   image_3?: string;
-//   image_4?: string;
-//   image_5?: string;
-//   image_6?: string;
-//   image_7?: string;
-// };
+import { ProjectsProps } from '@/app/types';
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
 const Project = ({ searchParams }: Props) => {
-  const [project, setProject] = useState<ProjectData | null>(null);
-  const [Component, setComponent] = useState<React.LazyExoticComponent<React.ComponentType<{ project: ProjectData }>> | null>(null);
+  const [project, setProject] = useState<ProjectsProps | null>(null);
+  const [Component, setComponent] = useState<React.LazyExoticComponent<React.ComponentType<{ project: ProjectsProps }>> | null>(null);
 
   useEffect(() => {
     const fetchProject = async () => {
-      const _idstring = searchParams?._id as string;
-      const _id = Number(_idstring);
-      const projectData = await getProject(_id);
-      setProject(projectData);
+      try {
+        const _idstring = searchParams?._id as string;
+        console.log(`Received _id from searchParams: ${_idstring}`);
+        const _id = Number(_idstring);
+        const projectData = await getProject(_id);
+        console.log(`Fetched project data: `, projectData);
+        setProject(projectData);
 
-      switch (projectData._id) {
-        case 1:
-          setComponent(React.lazy(() => import('./p2/page')));
-          break;
-        case 2:
-          setComponent(React.lazy(() => import('./p5/page')));
-          break;
-        // case 3:
-          // setComponent(React.lazy(() => import('./_3')));
-          // break;
-        default:
-          setComponent(null);
+        switch (projectData._id) {
+          case 1:
+            setComponent(React.lazy(() => import('./p2/page')));
+            break;
+          case 2:
+            setComponent(React.lazy(() => import('./p5/page')));
+            break;
+          default:
+            setComponent(null);
+        }
+      } catch (error) {
+        console.error('Error fetching project or loading component: ', error);
       }
     };
 

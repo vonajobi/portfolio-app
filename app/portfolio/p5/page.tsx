@@ -2,30 +2,30 @@ import React, { useEffect, useState } from 'react';
 // import { GetServerSideProps } from 'next';
 import { getProject } from '@/app/components/helpers/async';
 
-type Props = {
-  searchParams: { [key: string]: string | string[] | undefined };
-}
+// type Props = {
+//   searchParams: { [key: string]: string | string[] | undefined };
+// }
 
-const Project5 = async ({searchParams}: Props) => {
-  const _idstring = searchParams?._id;
+// const Project5 = async ({searchParams}: Props) => {
+//   const _idstring = searchParams?._id;
 
-  console.log(_idstring);
-  const _id = Number(_idstring);
-  const project = await getProject(_id);
-  console.log(project); 
-// type ProjectData = {
-//   _id: number;
-//   title: string;
-//   description: string;
-//   image_1: string;
-//   image_2?: string;
-//   image_3?: string;
-//   image_4?: string;
-//   image_5?: string;
-//   image_6?: string;
-//   image_7?: string;
-// };
-// const Project5 = ({ project }: { project: ProjectData }) => {
+//   console.log(_idstring);
+//   const _id = Number(_idstring);
+//   const project = await getProject(_id);
+//   console.log(project); 
+type ProjectData = {
+  _id: number;
+  title: string;
+  description: string;
+  image_1: string;
+  image_2?: string;
+  image_3?: string;
+  image_4?: string;
+  image_5?: string;
+  image_6?: string;
+  image_7?: string;
+};
+const Project5 = ({ project }: { project: ProjectData }) => {
   return (
     
     <div className='flex justify-center '>
