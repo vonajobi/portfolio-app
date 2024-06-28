@@ -1,7 +1,7 @@
 "use client";
 import React, { Suspense, useState, useEffect } from 'react';
 import { getProject } from '@/app/components/helpers/async';
-import { ProjectsProps } from '@/app/types';
+import  {ProjectsProps}  from '@/app/projects/projectProps';
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
