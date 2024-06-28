@@ -31,9 +31,9 @@ const Dom = ({ children } :{ children: React.ReactNode} ) => {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
       <div
-        className={`${zIndex} absolute top-0 left-0 pointer-events-none w-screen h-screen mx-auto overflow-hidden sm:px-1 lg:px-2 dom`}
+        className={`${zIndex}  absolute top-0 left-0 pointer-events-none w-screen h-screen mx-auto overflow-hidden sm:px-1 lg:px-2 dom`}
         ref={ref}
       >
         

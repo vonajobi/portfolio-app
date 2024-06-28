@@ -20,8 +20,8 @@ export const Navbar: React.FC = ({}) => {
   ]
 
   return (
-    <nav className='absolute top-0 left-0 right-0 z-20 flex items-center justify-between w-full px-5 pt-5 pb-1 border-b sm:px-10 lg:px-20 text-white/75 border-b-white/20'>
-      <span className='mix-blend-difference font-bold' >
+    <nav className='absolute top-0 left-0 right-0 z-20 flex items-center justify-between w-full px-5 pt-5 pb-5 border-b sm:px-10 lg:px-20 text-white/75 border-b-white/20 backdrop-blur-sm'>
+      <span className='mix-blend-difference font-bold [&>*:hover]:text-white' >
         <Link href='/'>
           HOME
         </Link>

@@ -3,18 +3,19 @@ import React, {useState} from 'react'
 import Link from 'next/link'
 import Interactions from './interactions'
 
-import projects from '../../public/data/projects.json';
+import projects from "../../public/data/projects.json";
 interface ProjectsProps {
     _id: number;
     title: string;
     description: string;
     image_1: string;
-    image_2: string;
-    image_3: string;
+    image_2?: string;
+    image_3?: string;
+    image_4?: string;
+    image_5?: string;
+    image_6?: string;
+    image_7?: string;
 
-}
-interface Props{
-    products: ProjectsProps[]
 }
 
 const Projects = () => {
@@ -29,7 +30,7 @@ const Projects = () => {
   
     {
         projects.map((item) =>(
-            <Interactions>
+        <Interactions  key = {item._id}>
                 <div className=' h-full shadow-2xl transition-shadow ease-out delay-100 /*border-r-4*/ hover:shadow-3xl hover:shadow-zinc-500 hover:ease-in'>
                     
                     <Link href = {{pathname: "/portfolio", query: {_id: item?._id} }}

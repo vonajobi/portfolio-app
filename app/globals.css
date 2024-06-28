@@ -22,12 +22,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   @apply bg-hero-pattern bg-cover bg-center;
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+  
 }
 
 base* {
@@ -45,6 +40,12 @@ base* {
 
   h1 {
     font-family: 'Marcellus SC', serif;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  h2{
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 
 .hover-effect {

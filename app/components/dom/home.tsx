@@ -2,7 +2,7 @@ import { FiArrowUpRight } from 'react-icons/fi'
 // import useStore from '../helpers/helper'
 import Link from 'next/link'
 
-export const IndexOverlay = () => {
+export const HomepageOverlay = () => {
   // const router = useStore((s) => s.router)
   // console.log(useStore.getState())
   
