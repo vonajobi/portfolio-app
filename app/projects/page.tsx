@@ -33,8 +33,8 @@ const Projects = () => {
                 <div className=' h-full shadow-2xl transition-shadow ease-out delay-100 /*border-r-4*/ hover:shadow-3xl hover:shadow-zinc-500 hover:ease-in'>
                     
                     <Link href = {{pathname: "/portfolio", query: {_id: item?._id} }}
-                    key = {item._id}
-                        > 
+                    key = {item._id}> 
+                    
                         <div className='absolute w-full h-full '>
                         <img
                         src = {item?.image_1} 
