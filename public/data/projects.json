@@ -4,19 +4,20 @@
         "_id": 1,
         "title": "Crushies",
         "description": "Crushies - a limited edition Blind Box Series of 3D printed collectible toys.",
-        "link": "/portfolio/p1",
-        "image_1": "/assets/projects/blind_box/downBad.png",
+        "link": "/projects/p1",
+        "image_1": "/assets/projects/blind_box/6.png",
         "image_2": "/assets/projects/blind_box/gaslight.png",
-        "image_3": "/assets/projects/blind_box/headInClouds2.png"
+        "image_3": "/assets/projects/blind_box/headInClouds2.png",
+        "image_4": "/assets/projects/blind_box/downBad.png"
     },
     {
         "_id": 2,
         "title": "Plant Grow Lamp",
         "description": "A grow lamp for plants that uses an Arduino to control the light temperature.",
-        "link": "/portfolio/p2",
-        "image_1": "/assets/projects/lamp/final_photo_1.jpg",
+        "link": "/projects/p2",
+        "image_3": "/assets/projects/lamp/final_photo_1.jpg",
         "image_2": "/assets/projects/lamp/cad.svg",
-        "image_3": "/assets/projects/lamp/lamp3.png",
+        "image_1": "/assets/projects/lamp/lamp3.png",
         "image_4": "/assets/projects/lamp/final_photo_2.jpg",
         "image_5": "/assets/projects/lamp/lamp_desk_high.png",
         "image_6": "/assets/projects/lamp/lamp_desk_low.png",
@@ -26,26 +27,18 @@
             "_id": 3,
             "title": "Child's Play",
             "description": "Within the inner mind of a child, there is a world of imagination and wonder. ",
-            "link": "/portfolio/p3",
+            "link": "/projects/p3",
             "image_1": "/assets/projects/scene/scene1.png",
             "image_2": "/assets/projects/scene/scene2.png",
             "image_3": "/assets/projects/scene/scene3.jpg"
         },
-        {
-            "_id": 4,
-            "title": "Weighted Spoon",
-            "description": "Spoon Tings",
-            "link": "/portfolio/p4",
-            "image_1": "/assets/projects/spoon/spoon_front.png",
-            "image_2": "/assets/projects/spoon/spoon_top.png",
-            "image_3": "/assets/projects/spoon/spoon_coffee.png"
-        },
+       
         {
             
             "_id": 5,
             "title": "Intuitive Paper",
             "description":"Succint AI Research Summaries" ,
-            "link": "/portfolio/p5",
+            "link": "/projects/p5",
             "image_1": "/assets/projects/intuitive_paper/main.png",
             "image_2": "/assets/projects/intuitive_paper/database_flow.png"
             

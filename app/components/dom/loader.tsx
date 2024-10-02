@@ -10,31 +10,30 @@ interface LoaderProps {
   text?: string
 }
 // react spinner
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
+// const override: CSSProperties = {
+//   display: "block",
+//   margin: "0 auto",
+//   borderColor: "red",
+// };
 
 export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
-  const [color] = useState('#ffffff')
-  
+  const [color] = useState('#CD5C5C')
+
   const bgSpringRef = useSpringRef()
   const bgSpring = useSpring({
     ref: bgSpringRef,
     from: { opacity: 1 },
     to: { opacity: 0 },
     config: { duration: 800 },
-    delay: 300,
+    delay: 500,
     onRest: () => setUnmount(true),
   })
-
   const textSpringRef = useSpringRef()
   const textSpring1 = useSpring({
     ref: textSpringRef,
     from: { opacity: 1 },
     to: { opacity: 0 },
-    delay: 1500,
+    delay: 600,
   })
 
 
@@ -44,15 +43,14 @@ export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
   return (
     <animated.div
       style={bgSpring}
-      className='absolute top-0 left-0 z-30 flex items-center justify-center w-screen h-screen bg-black'
-    >          
-            <ClimbingBoxLoader color={color} size={15} />
-          <animated.span
-            style={textSpring1}
-            className='relative text-sm text-white bottom-8'
-          >
-            Victoria Onajobi | Designer
-          </animated.span>
+      className='absolute top-0 left-0 z-30 flex flex-col gap-8 items-center justify-center w-screen h-screen bg-black'>
+          
+              <ClimbingBoxLoader color={color} size={18}/>
+            <animated.span
+              style={textSpring1}
+              className='relative text-sm font-bold text-[#FFFFF] bottom-8'>
+              Victoria Onajobi | Designer
+            </animated.span>         
     
     </animated.div>
   );

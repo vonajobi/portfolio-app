@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className={`${inter.className}`}> {/* Apply flex styling here */}
-          <main className=" pt-20 ">
+        <div className={`${inter.className} flex flex-col min-h-screen`}> {/* Apply flex styling here */}
+          <main className="flex-grow flex pt-20">
             <Navbar />
             {children} 
           </main>

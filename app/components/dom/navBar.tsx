@@ -3,20 +3,21 @@ import React, { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import useStore from '../helpers/helper'
+import path from 'path'
 
 export const Navbar: React.FC = ({}) => {
   const router = usePathname()
   const [active] = useState(router)
 
   const navItems = [
-    // {
-    //   text: 'HOME',
-    //   path: '/',
-    // },
     {
       text: 'PROJECTS',
       path: '../projects',
     },
+    {
+      text: 'SKETCHBOOK',
+      path: '../sketchbook',
+    }
   ]
 
   return (
