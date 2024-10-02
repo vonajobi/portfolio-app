@@ -12,23 +12,34 @@ type SketchbookProps = {
 
 const Sketchbook = () => {
     const [products, setProducts] = useState<SketchbookProps[]>(sketchbook);
-    const getGridSpan = (image: string) => {
-        return {
-            gridColumnEnd: 'span 1',
-            gridRowEnd: 'span 1',
-        };
-    };
+    const isImage = (file: string) => {
+        const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+        const extension = file.split('.').pop()?.toLowerCase();
+        return imageExtensions.includes(extension || '');
+    }
+    const isVideo = (file: string) => {
+        const vidExtensions = ['mp4', 'mov']
+        const extension = file.split('.').pop()?.toLowerCase();
+        return vidExtensions.includes(extension || '');
+    }
     
     return (
-        <div className='h-screen w-screen flex justify-center items-center'>
-            <div className='grid grid-cols-3 gap-4 auto-rows-[minmax(10px, auto)] grid-auto-flow-dense overflow-y-scroll'>
+        // <div className='px-6 h-screen w-screen overflow-y-scroll '>
+            <div className=' columns-lg gap-4 px-5'>
                 {products.map((item) => (
-                    <div key={item.title} className='relative' style={getGridSpan(item.image)}>
-                        <img className='max-w-lg h-auto' src={item.image} alt={item.title} />
+                    <div key={item.title} className='py-2 '>
+                        {isImage(item.image) && (
+                            <img className='w-full rounded-xl' src={item.image} alt={item.title} />
+                        )}
+                        {isVideo(item.image) && (
+                            <video className='w-full rounded-xl' controls>
+                                <source src={item.image} type={`video/${item.image.split('.').pop()?.toLowerCase()}`} />
+                            </video>
+                        )}
                     </div>
                 ))}
             </div>
-        </div>
+        // </div>
     );
 };
 
