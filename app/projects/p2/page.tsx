@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import {getProject} from '../../components/helpers/async';
 import { ProjectsProps } from '@/app/projects/projectProps';
+import ImageGrid from '../../components/layout/imageGrid';
 
-// type Props = {
-//     searchParams: { [key: string]: string | string[] | undefined };
-// }
 
-// const Project2 = async ({searchParams}: Props) => {
-// const _id = Number(searchParams._id);
-// console.log(_id);
-// const project = await getProject(_id); 
-// console.log(project);
 
 const Project2 = ({ project }: { project: ProjectsProps }) => {
   const file_path = "/assets/projects/lamp/";

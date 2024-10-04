@@ -32,7 +32,7 @@ const Projects = () => {
                             />
                         </div>
                     
-                    <div className=' rounded-b-3xl  absolute flex  bottom-0 h-24 bg-black/75 '>
+                    <div className=' rounded-b-3xl  absolute flex  bottom-0 h-24 bg-black/75 w-full '>
                         <div className= 'self-end py-4 px-8'>
                             <h1 className='text-white/75 text-md uppercase'>{item.title}</h1>
                             <p className='text-white/75 text-xs '>{item.description}</p>

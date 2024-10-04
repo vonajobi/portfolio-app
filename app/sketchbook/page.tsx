@@ -25,7 +25,7 @@ const Sketchbook = () => {
     
     return (
         // <div className='px-6 h-screen w-screen overflow-y-scroll '>
-            <div className=' columns-lg gap-4 px-5'>
+            <div className=' columns-md gap-4 px-5'>
                 {products.map((item) => (
                     <div key={item.title} className='py-2 '>
                         {isImage(item.image) && (
