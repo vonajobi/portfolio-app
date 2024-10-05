@@ -28,87 +28,85 @@ const Paladone = ({project}: {project: ProjectsProps}) => {
     `${file_path}toy_bloom.png`
   ];
   return (
-    <div className=' flex items-center justify-center w-screen h-screen bg-[#5280FF]'>
-      <div className='gap-3 flex flex-col w-2/3 h-full'>
-
-        <img src={`${file_path}intro.png`}/>
-        <div className='w-full min-h-full bg-[url(/assets/projects/paladone/brief.svg)] bg-contain bg-no-repeat relative'>
-          <div className= {` absolute top-1/2 left-1/4 max-w-5xl`}>
-            <span className= {`${oswald.className} text-6xl text-[#262654]`}>
+    <div className=' min-h-screen flex bg-[#5280FF]'>
+      <div className=' mx-auto md:w-2/3'>
+        <section className='py-12'>
+          <img src={`${file_path}intro.png`}/>
+        </section>
+        {/* intro */}
+          <section className= {`h-[32rem] relative bg-[url(/assets/projects/paladone/brief.svg)] bg-contain bg-no-repeat `}>
+            <div className='absolute  top-40 left-32 w-2/3 md:w-3/4 md:top-1/3   '>
+            <h1 className= {`${oswald.className} text-6xl text-[#262654] mb-5`}>
               Overview
-            </span>
-            <br/><br/>
-            <span className='text-lg font-bold'> Paladone's Lighting Project</span>
-            <br/>
-            <span>
-            Paladone is the UK's market-leading designer, innovator, and supplier of gifting products, renowned for its iconic licenses and trend-focused products.
-            Paladone has tasked me with advancing their most successful category—Lighting—by incorporating new sustainable practices and expanding into outdoor entertainment.
-            In response, I developed a construction set that enables users to create their own designs and compete with others both in person and virtually.
-            </span>
-          </div>
-        </div>
-
-        <div className='w-full min-h-full bg-[url(/assets/projects/paladone/final_concept.svg)] bg-contain bg-no-repeat relative'>
-          <div className= {` absolute top-14 left-1/4 max-w-5xl`}>
-            <span className= {`${oswald.className} text-6xl text-[#262654]`}>
+            </h1>
+            <p className=' text-sm md:text-lg font-bold'> Paladone's Lighting Project</p>
+            <p>
+              Paladone is the UK's market-leading designer, innovator, and supplier of gifting products, renowned for its iconic licenses and trend-focused products.
+              Paladone has tasked me with advancing their most successful category—Lighting—by incorporating new sustainable practices and expanding into outdoor entertainment.
+              In response, I developed a construction set that enables users to create their own designs and compete with others both in person and virtually.
+            </p>
+            </div>
+          </section>
+        {/* h block overview */}
+        <section className=' bg-[url(/assets/projects/paladone/final_concept.svg)] bg-contain bg-no-repeat h-[32rem] mb-40 md:w-full md:mb-10'>
+            <div className=' w-2/3 md:w-3/4 ml-40'>
+            <h1 className= {`${oswald.className} text-6xl my-6 text-[#262654]`}>
               H-Blocks
-            </span>
-            <br/><br/>
-            <span > 
+            </h1>
+            <p className='my-6 text-sm'> 
               The H-Block Party is a construction style game that combines physical blocks and virtual entertainment. It is primarily for adults seeking therapeutic and creative outlet. 
               It features 7 receiving blocks and one power module. Sample design has one USB-C plug and receptacle on the top and bottom of each block, placement can vary and marketed as different editions. 
-            </span>
-            <br/><br/>
-            <span className='text-lg font-bold'>Basic Operation</span>
-            <br/>
-            <span>
+            </p>
+            <p className='md:text-lg font-bold my-2 text-sm'>Basic Operation</p>
+            <p>
               The H-Block Party consists of one single Bluetooth module (Head), at least three different type of adjoining blocks, and a connected app. The Bluetooth module will still serve as the communication interface between the physical blocks and the mobile app. It should support Bluetooth Low Energy (BLE) for efficient wireless communication. The power module is responsible for communication with the users mobile device.  Other blocks connect to each other via USB-C and receive power through the power module. When a block receives power it lights up blue. The power module is distinguished by a power button and three battery light indicators. Users can construct any form they like. 
-            </span>
-            <br/><br/>
-            <span>
-                Games can be played in person and tracked online. Having a connected app makes scaling easier and reduces waste created with physical products. It alo provides Paladone an opportunity to strengthen customer engagement and promote products.
-            </span>
+            </p>
+            <p>
+              Games can be played in person and tracked online. Having a connected app makes scaling easier and reduces waste created with physical products. It alo provides Paladone an opportunity to strengthen customer engagement and promote products.
+            </p>
           </div>
-        </div>
-        <img src={`${file_path}mk_rs_1.svg`}/>
-        <div className=' w-full relative' style={{background: `url(${file_path}initial_mk_rs.svg)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'right'}}  >
+        </section>
+        {/* Sustainability  */}
+        <section className='mb-10'>
+          <img src={`${file_path}mk_rs_1.svg`}/>
+        </section>
+        <section className='w-full relative mb-10' style={{background: `url(${file_path}initial_mk_rs.svg)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'right'}}  >
           <div className= {` top-1/4 left-12 max-w-xl`}>
-            <span className= {`${oswald.className} text-6xl text-[#262654]`}>
+            <h1 className= {`${oswald.className} ml-10 md:ml-0 text-6xl text-[#262654]`}>
             The role of modularity in sustainable design  
-            </span>
-            <span>           
+            </h1>
+            <p className='ml-10 md:ml-0'>           
             <br/><br/>
             Sustainable development includes economic development, social inclusion, and environmental awareness. It balances company interest, environmental concerns, and social concerns.
             Paladone has the potential for social inclusion. Through lighting, they could expand their customer market through sensory integration.           
             <br/><br/>
             Sensory toys help stimulate one or more of the senses and aid in regulating the emotion. Visual stimulation combined with tactile stimulation provides a great opportunity for Paladone to be sustainable.            
-            </span>
+            </p>
           </div>
-        </div>
+        </section>
 
-        <img src={`${file_path}mk_rs_3.svg`}/>
-        <img src={`${file_path}Ideation.svg`}/>
-        <img src={`${file_path}ideation_2.jpg`}/>
-        <img src={`${file_path}ideation_3.jpg`}/>
+        <img className='mb-10' src={`${file_path}mk_rs_3.svg`}/>
+        <img src={`${file_path}Ideation.svg`} className='mb-10'/>
+        <img src={`${file_path}ideation_2.jpg`} className='mb-10'/>
+        <img src={`${file_path}ideation_3.jpg`} className='mb-10'/>
 
-        <div className=' w-full min-h-full relative' style={{background: `url(${file_path}ideation_4.svg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}  >
-          <div className= {` absolute top-1/2 left-40 max-w-3xl`}>
-            <span className= {`${oswald.className} text-6xl text-[#262654]`}>
+        <section className='max-w-screen h-[32rem] relative mb-10' style={{background: `url(${file_path}ideation_4.svg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}  >
+          <div className= {`w-2/3 absolute top-1/4 left-40`}>
+            <p className= {`${oswald.className} text-6xl text-[#262654] mb-6`}>
               Redifining the Market
-            </span>
-            <br/><br/>
-            <span className='text-black'>
+            </p>
+            <p className='text-black'>
             Play is not limited to children. In 2022, the LEGO Play Well report found that 30,000 adults from around the globe highlighted the importance of play and its role in modern ‘adult’ life.
             This product is now more suitable for a demographic that values advanced, creative play as a form of relaxation, mental stimulation, and therapeutic activity.
-            </span>
+            </p>
           </div>
-        </div>
-          <img src={`${file_path}final_design.svg`}/>
+        </section>
+          <img src={`${file_path}final_design.svg`} className='mb-10'/>
         <ImageGrid images={finalImages} />
-        <img src={`${file_path}marketing.svg`}/>
-        <div className='text-4xl'>
-          Web Pallette and Pantone Graphics
-          <div className='grid grid-cols-4 gap-4 py-5'>
+        <img src={`${file_path}marketing.svg`} className='mt-10'/>
+        <section className='text-4xl m-10 '>
+          <h1> Web Pallette and Pantone Graphics </h1>
+          <div className='grid grid-cols-2 md:grid-cols-4 md:gap-4 md:py-5 '>
             <img src={`${file_path}Frame_48.png`}/>
             <img src={`${file_path}frame_50.png`}/>
             <img src={`${file_path}frame_51.png`}/>
@@ -116,7 +114,7 @@ const Paladone = ({project}: {project: ProjectsProps}) => {
             <img src={`${file_path}frame_53.png`}/>
             <img src={`${file_path}frame_54.png`}/>
           </div>
-        </div>
+        </section>
         <ImageGrid images={marketingImages} />
 
       </div>

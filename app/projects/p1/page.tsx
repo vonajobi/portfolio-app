@@ -58,29 +58,31 @@ import ImageGrid from '../../components/layout/imageGrid';
     <div className='flex justify-center w-screen border-box'>
 
       <div className=' flex flex-col space-y-4 w-2/3'>
+      {/* Intro */}
         <img src={`${file_path}1.jpg`} alt={'Crushies a Blind Box Series'} className='w-full h-auto'/>
         <img src={`${file_path}IMG_7344.png`}  />
+      {/* Crushie */}
         <img src={`${file_path}3.jpg`} alt={'Design Process'} className='w-full h-auto'/>          <img className='' src={`${file_path}4.jpg`}/>
         <img className='' src={`${file_path}5.jpg`}/>
         <img className='' src={`${file_path}8.jpg`}/>
         <img className='' src={`${file_path}crushie_2.png`}/>
         <ImageGrid images={crushieImages} />
-        
+      {/*DownBad  */}
         <img className='' src={`${file_path}devil_3.png`}/>
         <ImageGrid images={devilImages} />
-
+      {/* GasLight */}
         <img className='' src={`${file_path}gas_light_3.png`}/>
         <ImageGrid images={gasLightImages} />
-
+      {/* Head in the Clouds */}
         <img className='' src={`${file_path}clouds_4.png`}/>
         <ImageGrid images={cloudsImages} />
-
+      {/* Love Sick */}
         <img className='' src={`${file_path}love_sick_5.png`}/>
         <ImageGrid images={loveSickImages} />
-
+      {/* Ghosted */}
         <img className='' src={`${file_path}ghosted_1.png`}/>
         <ImageGrid images={ghostedImages} />
-
+      {/* Final Images */}
         <img className='' src={`${file_path}final_design.svg`}/>
         <ImageGrid images={finalImages} />
         <img src={`${file_path}IMG_7409.jpg`}/>

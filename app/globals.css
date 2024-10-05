@@ -59,6 +59,7 @@ base* {
   display: block;
   right: 0;
   background: white;
+  mix-blend-mode: difference;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
 }

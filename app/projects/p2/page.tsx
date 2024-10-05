@@ -7,66 +7,71 @@ import ImageGrid from '../../components/layout/imageGrid';
 
 const Project2 = ({ project }: { project: ProjectsProps }) => {
   const file_path = "/assets/projects/lamp/";
+  const finalImages = [
+    `${file_path}lamp_desk_low.png`,
+    `${file_path}lamp_desk_high.png`,
+    `${file_path}final_photo_2.jpg`,  
+    `${file_path}final_photo_1.jpg`
+  ];
+  const processImages = [
+    `${file_path}process_2.jpg`,
+    `${file_path}IMG_5511.jpg`,
+    `${file_path}IMG_5525.jpg`,
+    `${file_path}IMG_5521.jpg`,
+    `${file_path}process_3.jpg`,
+  ];
 
   return (
-    <div className=' overflow-y-scroll gap-5 flex flex-col  content-start items-center w-screen h-screen box-border bg-[url(/assets/background_pink.png)] bg-cover'>
-      <div className='relative w-2/3 min-h-[65%] content-start bg-gray-50'>
-        <img src={`${file_path}lamp3.png`} alt={'rendering'} className='h-full w-full object-cover'/>
-        {/* fix later */}
-        <h1 className=' text-6xl font-bold absolute left-0 bottom-10 px-10 text-white'>{"Plant Grow Lamp"}</h1>
-      </div >
-    <div className='w-2/3 relative space-y-10'>
-
-      <div className='  min-h-[20%] content-center text-[#36454F] px-4 py-5'>
-        <h1>Concept</h1>
-        <p className='text-md pt-3'>The plant grow lamp adjusts light temperature and brightness based on the amount of ambient sunlight. 
-          Designed for maintaining ample light in a sunlight deficient room, the Plant Grow lamp combines smart technology with simple design in hopes of stimulating plant growth.
-        </p>
-         <br/>
-          <ul>
-            <li>
-              <span className='font-bold'>Tools:</span> Fusion 360, Blender
-            </li>
-            <li>
-              <span className='font-bold'>Materials:</span> White Oak, Addressable LED, Light Diffusers, 
-            </li>
-            <li>
-             <span className='font-bold'>Components:</span> 1918 UV Sensor GUVA-S12SD, WS21818B LED, Potentiometer 
-            </li>
-          </ul>
-          <br/><br/>
-          <span className='flex flex-row gap-5 justify-center items-center box-border'>
-            <img src='/assets/projects/lamp/plant.svg' alt='plant vector' className=' w-20'/>
-            <img src='/assets/projects/lamp/lightbulb.svg' alt='lightbulb vector' className=' w-20'/>
-          </span>
-        
-      </div>
-
-      <div className='relative h-fit content-center bg-yellow-100 text-[#36454F]'>
-        <img src={`${file_path}lamp4_frame.png`} alt='Plant Grow Lamp with concept sketches'/>
-        <div className='absolute bottom-10 px-10 text-right  text-[#36454F]' >
-          <h2 className='text-2xl font-semibold'>Design Process</h2>
-          <p className='text-sm'>
-            Initial iterations used a steel ball and socket joint to give the user full control and a sophisticated wood joinery technique to transition from wood to metal. 
-            The final design uses a modern design features an oak wood finish, addressable LEDs, two separate light diffusers, and an adjustable potentiometer. 
-            the top haf of the 
+    <div className='min-h-screen flex bg-[url(/assets/background_pink.png)] bg-cover'>
+      <div className='  w-screen md:w-3/4 mx-auto '>
+        {/* Intro */}
+        <section className=" h-auto mb-24 relative md:mb-auto">
+          <img src={`${file_path}lamp3.png`}/>
+          <h1 className='absolute text-7xl font-bold text-white bottom md:bottom-10 left-4 md:left-28'>Plant Grow Lamp</h1>
+        </section>
+        {/* Concept */}
+        <section className=" py-12 px-8 text-[#36454F] md:px-24">
+          <h1 className="text-2xl md:text-3xl">Concept</h1>
+          <p className='text-md md:text-lg pt-3'>The plant grow lamp adjusts light temperature and brightness based on the amount of ambient sunlight. 
+            Designed for maintaining ample light in a sunlight deficient room, the Plant Grow lamp combines smart technology with simple design in hopes of stimulating plant growth.
           </p>
+          <ul className="text-md md:text-lg">
+              <li>
+                <span className='font-bold'>Tools:</span> Fusion 360, Blender
+              </li>
+              <li>
+                <span className='font-bold'>Materials:</span> White Oak, Addressable LED, Light Diffusers, 
+              </li>
+              <li>
+              <span className='font-bold'>Components:</span> 1918 UV Sensor GUVA-S12SD, WS21818B LED, Potentiometer 
+              </li>
+          </ul>
+          <span className='mt-10 flex md:flex-row gap-5 justify-center'>
+              <img src={`${file_path}plant.svg`} alt='plant vector' />
+              <img src={`${file_path}lightbulb.svg`} alt='lightbulb vector'/>
+          </span>
+        </section>
+        {/* Process */}
+        <section className=" py-12 px-8 text-[#36454F] md:px-20 " >
+          <div className='relative'>
+            <img src={`${file_path}lamp4_frame.png`} alt='Plant Grow Lamp with concept sketches'/>
+            <div className='md:absolute md:bottom-10  lg:right-20 md:text-right md:w-3/4 my-10 '>
+              <h2 className='text-xl md:text-2xl font-semibold'>Design Process</h2>
+              <p className=' text-lg md:text-md'>
+                Initial iterations used a steel ball and socket joint to give the user full control and a sophisticated wood joinery technique to transition from wood to metal. 
+                The final design uses a modern design features an oak wood finish, addressable LEDs, two separate light diffusers, and an adjustable potentiometer. 
+                the top haf of the 
+              </p>
+            </div>
+          </div>
+        <ImageGrid images={processImages} /> 
+        </section>
+        <section className=" py-12 px-8 md:px-24">
+            <img src={`${file_path}cad.svg`} alt='cad drawings of lamp' width={1000} />
+            <ImageGrid images={finalImages} />
+        </section>
         </div>
-      </div>
-        <div className='flex justify-center'>
-          <img src={`${file_path}cad.svg`} alt='cad drawings of lamp' width={1000} />
-        </div>
-      <div className='grid grid-cols-2 gap-2'>
-        <img className='h-80' src={`${file_path}lamp_desk_low.png`} alt='rendering of room with desk, lamp, chairs'/>
-        <img className="h-80"src={`${file_path}lamp_desk_high.png`} alt='rendering of room with desk,lamp,chairs'/>
-        <img src={`${file_path}final_photo_2.jpg`} alt='rendering of room with desk,lamp,chairs'/>
-        <img src={`${file_path}final_photo_1.jpg`} alt='rendering of room with desk,lamp,chairs'/>
-
-      </div>
-    </div>
- 
-  </div>
-    
+    </div>    
   )
 }
 

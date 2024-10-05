@@ -6,9 +6,9 @@ type ImageGridProps = {
 
 const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
   return (
-    <div className=' columns-sm gap-4'>
+    <div className=' columns-sm gap-2'>
       {images.map((src, index) => (
-        <img key={index} className=' rounded-md py-2' src={src} alt={`Image ${index + 1}`} />
+        <img key={index} className=' rounded-2xl py-1' src={src} alt={`Image ${index + 1}`} />
       ))}
     </div>
   );
