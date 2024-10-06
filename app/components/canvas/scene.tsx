@@ -7,7 +7,6 @@ import {Html, Loader, PerspectiveCamera, Sparkles, Text,} from '@react-three/dre
 import { EffectComposer, Bloom, Noise, Vignette } from '@react-three/postprocessing';
 
 import ModelLoader from './model';
-import { texture } from 'three/examples/jsm/nodes/Nodes.js';
 
 
 
