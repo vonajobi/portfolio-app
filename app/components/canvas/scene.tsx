@@ -1,19 +1,17 @@
 import { Suspense, useEffect } from 'react';
+import React from 'react';
 import * as THREE from 'three';
 import { Vector3, TextureLoader } from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
 import {Html, Loader, PerspectiveCamera, Sparkles, Text,} from '@react-three/drei';
-import { EffectComposer} from '@react-three/postprocessing';
-import {Bloom} from '@react-three/postprocessing';
-import {Noise} from '@react-three/postprocessing';
-import { Vignette} from '@react-three/postprocessing';
+import { EffectComposer, Bloom, Noise, Vignette } from '@react-three/postprocessing';
 
-import {ModelLoader} from './model';
+import ModelLoader from './model';
 import { texture } from 'three/examples/jsm/nodes/Nodes.js';
 
 
 
-const SceneIndex = ({}) => {
+const SceneIndex = (props: any) => {
  // background image as a texture fot the scene
 //  const {scene} = useThree();
 //   const textureLoader = new TextureLoader();
@@ -24,14 +22,16 @@ const SceneIndex = ({}) => {
 //     });
 //   }, []);
 
-  useFrame((state) => {
+
+   useFrame((state) => {
     state.camera.position.lerp({ x: 0, y: 0, z: 12 } as Vector3, 0.005);
     state.camera.lookAt(0, 0, 0);
 
   })
-
+ 
   return (
     <>
+   
       <PerspectiveCamera
         makeDefault
         position={[0, 0, 14]}
@@ -40,11 +40,9 @@ const SceneIndex = ({}) => {
         far={100}
       />
       {/* this set the color of the scene */}
-      {/* <color attach='background' args={['#050505']} />; */}
       {/* Fog( color : Integer, near : Float, far : Float ) */}
-      <fog attach='fog' args={["#000000", 15, 28]} />;
-      <pointLight position={[0, 10, -5]} intensity={20} />;
-      {/* <ambientLight intensity={0.25} />; */}
+      <fog attach='fog' args={["#860111", 15, 28]} />;
+      <pointLight position={[0, 10, -7]} intensity={1} />;
 
       <Suspense 
         fallback={
@@ -54,13 +52,12 @@ const SceneIndex = ({}) => {
         }
       >
       {/* model is being called here */}
-        <ModelLoader position={[-10, -5, 0]} rotation={[0, -0.2, 0]} />;
+        <ModelLoader position={[-10, -5, -1]} rotation={[0, -0.2, 0]} />;
         <Title>{`DESIGNER`}</Title>;
         <TitleL>{`DESIGNER`}</TitleL>;
-        <Sparkles count={60} scale={[20, 20, 20]} size={1} speed={1} />;
+        <Sparkles count={60} scale={[20, 20, 20]} size={1} speed={2} />;
       </Suspense>
-
-      <EffectComposer multisampling={0} disableNormalPass={true}>
+      <EffectComposer multisampling={0} enableNormalPass={false}>
         <Bloom
           luminanceThreshold={0}
           luminanceSmoothing={0.9}
@@ -70,7 +67,8 @@ const SceneIndex = ({}) => {
         <Noise opacity={0.025} />
         <Vignette eskil={false} offset={0.1} darkness={1.1} />
       </EffectComposer>
-      <Rig />
+      
+      <Rig /> 
     </>
   )
 }
@@ -85,7 +83,7 @@ const Title = ({ children }: { children: any }) => {
         position={[0, 0, -8]}
         lineHeight={1.3}
         font={('/assets/fonts/duft-lacks-font/DuftLacks-YzxOa.otf')}
-        fontSize={width / 5}
+        fontSize={width / 4}
         material-toneMapped={false}
         anchorX='center'
         anchorY='middle'
@@ -104,7 +102,7 @@ const TitleL = ({ children }: { children: any }) => {
       lineHeight={1.3}
       font={('/assets/fonts/duft-lacks-font/DuftLacks-YzxOa.otf')}
       //font={('/assets/fonts/Keania_One/KeaniaOne-Regular.ttf')}
-      fontSize={width / 5}
+      fontSize={width / 4}
       material-toneMapped={false}
       anchorX='center'
       anchorY='middle'
@@ -126,3 +124,4 @@ const Rig = ({ v = new THREE.Vector3() }) => {
 }
 
 export default SceneIndex;
+

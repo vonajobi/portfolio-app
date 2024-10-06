@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import {getProject} from '../../components/helpers/async';
-import { ProjectsProps } from '@/app/projects/projectProps';
 import ImageGrid from '../../components/layout/imageGrid';
+import Image from 'next/image';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Victoria's Portfolio",
+  description: 'Grow Lamp',
+}
 
-
-const Project2 = ({ project }: { project: ProjectsProps }) => {
+const Project2 = () => {
   const file_path = "/assets/projects/lamp/";
   const finalImages = [
     `${file_path}lamp_desk_low.png`,
@@ -23,9 +26,9 @@ const Project2 = ({ project }: { project: ProjectsProps }) => {
 
   return (
     <div className='min-h-screen flex bg-[url(/assets/background_pink.png)] bg-cover'>
-      <div className='  w-screen md:w-3/4 mx-auto '>
+      <div className='  w-screen xl:w-2/3 mx-auto '>
         {/* Intro */}
-        <section className=" h-auto mb-24 relative md:mb-auto">
+        <section className=" h-auto mb-24 relative md:mb-38">
           <img src={`${file_path}lamp3.png`}/>
           <h1 className='absolute text-7xl font-bold text-white bottom md:bottom-10 left-4 md:left-28'>Plant Grow Lamp</h1>
         </section>
@@ -47,15 +50,15 @@ const Project2 = ({ project }: { project: ProjectsProps }) => {
               </li>
           </ul>
           <span className='mt-10 flex md:flex-row gap-5 justify-center'>
-              <img src={`${file_path}plant.svg`} alt='plant vector' />
-              <img src={`${file_path}lightbulb.svg`} alt='lightbulb vector'/>
+              <Image src={`${file_path}plant.svg`} alt='plant vector' width={100} height={100}/>
+              <Image src={`${file_path}lightbulb.svg`} alt='lightbulb vector ' width={100} height={100}/>
           </span>
         </section>
         {/* Process */}
         <section className=" py-12 px-8 text-[#36454F] md:px-20 " >
           <div className='relative'>
             <img src={`${file_path}lamp4_frame.png`} alt='Plant Grow Lamp with concept sketches'/>
-            <div className='md:absolute md:bottom-10  lg:right-20 md:text-right md:w-3/4 my-10 '>
+            <div className=' w-full lg:absolute lg:bottom-0  lg:right-20  md:text-right md:w-3/4 my-10 '>
               <h2 className='text-xl md:text-2xl font-semibold'>Design Process</h2>
               <p className=' text-lg md:text-md'>
                 Initial iterations used a steel ball and socket joint to give the user full control and a sophisticated wood joinery technique to transition from wood to metal. 
@@ -67,7 +70,7 @@ const Project2 = ({ project }: { project: ProjectsProps }) => {
         <ImageGrid images={processImages} /> 
         </section>
         <section className=" py-12 px-8 md:px-24">
-            <img src={`${file_path}cad.svg`} alt='cad drawings of lamp' width={1000} />
+            <Image src={`${file_path}cad.svg`} alt='cad drawings of lamp' width={1000} height={1000} />
             <ImageGrid images={finalImages} />
         </section>
         </div>

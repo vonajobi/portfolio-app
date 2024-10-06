@@ -5,7 +5,7 @@ export const Footer = () => {
           <span>2023 Portfolio</span>
       </li>
         <li>
-          <span className=' font-bold'>Copyright 2023 Victoria Onajobi</span>
+          <span className=' font-bold'>Copyright 2024 Victoria Onajobi</span>
         </li>
       </ul>
     )

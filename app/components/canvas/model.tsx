@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib'
 import * as THREE from 'three'
-import { Lights } from './lights';
+import Lights  from './lights';
 
 type GLTFResult = GLTF & {
   // these are the nodes that create the object in the modeling software
@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
     };
   };
   
-  export const ModelLoader: React.FC<any> = (props) => {
+   const ModelLoader: React.FC<any> = (props) => {
     const group = useRef<THREE.Group>(null);
       
      const { nodes } = useGLTF('./assets/downBad.glb') as GLTFResult;
@@ -66,5 +66,5 @@ type GLTFResult = GLTF & {
   };
   
   // useGLTF.preload('../assets/downBad.glb')
-
+export default ModelLoader;
   

@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 type SketchbookProps = {
     image: string;
-    title: string; // Assuming title is part of the sketchbook data
+    title: string; 
 };
 
 

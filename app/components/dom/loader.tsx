@@ -26,7 +26,7 @@ export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
     to: { opacity: 0 },
     config: { duration: 800 },
     delay: 500,
-    onRest: () => setUnmount(true),
+    onResolve: () => setUnmount(true),
   })
   const textSpringRef = useSpringRef()
   const textSpring1 = useSpring({
@@ -92,31 +92,3 @@ export const CustomLoader: React.FC<LoaderProps> = ({ setUnmount, text }) => {
   )
   
 }
-// import React, { useState, useEffect } from 'react';
-// import { ClimbingBoxLoader } from 'react-spinners';
-
-// export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
-//   const [showSpinner, setShowSpinner] = useState(true);
-//   const [showText, setShowText] = useState(false);
-
-//   useEffect(() => {
-//     const timer1 = setTimeout(() => setShowSpinner(false), 800);
-//     const timer2 = setTimeout(() => setShowText(true), 1600);
-
-//     return () => {
-//       clearTimeout(timer1);
-//       clearTimeout(timer2);
-//     };
-//   }, []);
-
-//   return (
-//     <div className='absolute top-0 left-0 z-30 flex items-center justify-center w-screen h-screen bg-black'>
-//       {showSpinner && <ClimbingBoxLoader color={'white'} size={15} />}
-//       {showText && (
-//         <span className='relative text-sm text-white bottom-8'>
-//           Victoria Onajobi | Designer
-//         </span>
-//       )}
-//     </div>
-//   );
-// };

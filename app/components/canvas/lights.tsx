@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import { useEffect } from 'react';
 
 
-export const Lights = ({}) => {
+ const Lights = ({}) => {
   const groupL = useRef<THREE.Group>(null);
   const groupR = useRef<THREE.Group>(null);
   const front = useRef<THREE.SpotLight>(null);
@@ -42,10 +42,7 @@ export const Lights = ({}) => {
       }
     })
     
-    // useEffect(() => {
-    //    console.log(front.current);
-    // }, []);
-
+   
   return (
     <>
       <group ref={groupL}>
@@ -59,7 +56,7 @@ export const Lights = ({}) => {
         color={'#00000'}
         penumbra={0.75}
         angle={Math.PI / 6}
-        position={[0, 0, 3]}
+        position={[0, 0, 2]}
         distance={14}
         intensity={20}
         shadow-mapSize={[2048, 2048]}   // sets the resolution of the depth map which stores info about shadows
@@ -68,3 +65,4 @@ export const Lights = ({}) => {
   );
   };
 
+  export default Lights;

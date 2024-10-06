@@ -1,11 +1,16 @@
 import React from 'react'
-import { ProjectsProps } from '@/app/projects/projectProps'
 import { Oswald } from 'next/font/google';
 import ImageGrid from '@/app/components/layout/imageGrid';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Victoria's Portfolio",
+  description: 'H-Block Party',
+}
 
 const oswald = Oswald({ subsets: ['latin'], weight: '700' });
 
-const Paladone = ({project}: {project: ProjectsProps}) => {
+const Paladone = () => {
   const file_path = "/assets/projects/paladone/";
   const marketingImages = [
     `${file_path}Silver.png`,
@@ -39,9 +44,9 @@ const Paladone = ({project}: {project: ProjectsProps}) => {
             <h1 className= {`${oswald.className} text-6xl text-[#262654] mb-5`}>
               Overview
             </h1>
-            <p className=' text-sm md:text-lg font-bold'> Paladone's Lighting Project</p>
+            <p className=' text-sm md:text-lg font-bold'> {`Paladone's`} Lighting Project</p>
             <p>
-              Paladone is the UK's market-leading designer, innovator, and supplier of gifting products, renowned for its iconic licenses and trend-focused products.
+              Paladone is the {`UK's`} market-leading designer, innovator, and supplier of gifting products, renowned for its iconic licenses and trend-focused products.
               Paladone has tasked me with advancing their most successful category—Lighting—by incorporating new sustainable practices and expanding into outdoor entertainment.
               In response, I developed a construction set that enables users to create their own designs and compete with others both in person and virtually.
             </p>
@@ -68,7 +73,7 @@ const Paladone = ({project}: {project: ProjectsProps}) => {
         </section>
         {/* Sustainability  */}
         <section className='mb-10'>
-          <img src={`${file_path}mk_rs_1.svg`}/>
+          <img src={`${file_path}mk_rs_1.svg`} alt='Marketing Research'/>
         </section>
         <section className='w-full relative mb-10' style={{background: `url(${file_path}initial_mk_rs.svg)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'right'}}  >
           <div className= {` top-1/4 left-12 max-w-xl`}>
@@ -86,9 +91,9 @@ const Paladone = ({project}: {project: ProjectsProps}) => {
         </section>
 
         <img className='mb-10' src={`${file_path}mk_rs_3.svg`}/>
-        <img src={`${file_path}Ideation.svg`} className='mb-10'/>
-        <img src={`${file_path}ideation_2.jpg`} className='mb-10'/>
-        <img src={`${file_path}ideation_3.jpg`} className='mb-10'/>
+        <img src={`${file_path}Ideation.svg`} alt='Ideation' className='mb-10'/>
+        <img src={`${file_path}ideation_2.jpg`} alt='Ideation Sketches' className='mb-10'/>
+        <img src={`${file_path}ideation_3.jpg`} alt='Ideation Skethches, USB Type-C Research' className='mb-10'/>
 
         <section className='max-w-screen h-[32rem] relative mb-10' style={{background: `url(${file_path}ideation_4.svg)`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}  >
           <div className= {`w-2/3 absolute top-1/4 left-40`}>
@@ -101,18 +106,18 @@ const Paladone = ({project}: {project: ProjectsProps}) => {
             </p>
           </div>
         </section>
-          <img src={`${file_path}final_design.svg`} className='mb-10'/>
+          <img src={`${file_path}final_design.svg`} alt='H-Blocks Final Design' className='mb-10'/>
         <ImageGrid images={finalImages} />
-        <img src={`${file_path}marketing.svg`} className='mt-10'/>
+        <img src={`${file_path}marketing.svg`} alt='Marketing'className='mt-10'/>
         <section className='text-4xl m-10 '>
           <h1> Web Pallette and Pantone Graphics </h1>
           <div className='grid grid-cols-2 md:grid-cols-4 md:gap-4 md:py-5 '>
-            <img src={`${file_path}Frame_48.png`}/>
-            <img src={`${file_path}frame_50.png`}/>
-            <img src={`${file_path}frame_51.png`}/>
-            <img src={`${file_path}frame_52.png`}/>
-            <img src={`${file_path}frame_53.png`}/>
-            <img src={`${file_path}frame_54.png`}/>
+            <img src={`${file_path}Frame_48.png`} alt='color pallet Black'/>
+            <img src={`${file_path}frame_50.png`} alt='color pallet CornFlower Blue and Marian Blue'/>
+            <img src={`${file_path}frame_51.png`} alt='color pallet Dark Purple and Bright Crayola Pink'/>
+            <img src={`${file_path}frame_52.png`} alt='color pallet Pantone 649 C and Pantone Jet Set'/>
+            <img src={`${file_path}frame_53.png`} alt='color pallet Pantone 2718 C and Pantone 7685 C'/>
+            <img src={`${file_path}frame_54.png`} alt='color pallet Pantone 4975 C and Pantone 191 C'/>
           </div>
         </section>
         <ImageGrid images={marketingImages} />

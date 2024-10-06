@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { ProjectsProps } from '@/app/projects/projectProps';
 import ImageGrid from '@/app/components/layout/imageGrid';
+import { Metadata } from 'next';
 
-
-const IntuitivePaper = ({ project }: { project: ProjectsProps }) => {
+export const metadata: Metadata = {
+  title: "Victoria's Portfolio",
+  description: 'Intuitive Paper',
+}
+const IntuitivePaper = () => {
   const file_path = "/assets/projects/intuitive_paper/";
   const uiImages = [
     `${file_path}loginPage.jpg`,
@@ -42,7 +45,7 @@ const IntuitivePaper = ({ project }: { project: ProjectsProps }) => {
         {/* Introduction Section */}
         <section className=" py-12 px-8 md:px-24">
           <h1 className="text-4xl font-bold mb-6 text-center">
-            Intuitive Paper: An Efficient and Affordable System for Understanding Technology
+            <span className='font-extrabold text-blue-400'>Intuitive Paper:</span> An Efficient and Affordable System for Understanding Technology
           </h1>
           <p className="text-md leading-relaxed text-center"> 
             Revolutionizing Research Efficiency for Scientists & Entrepreneurs 
@@ -74,12 +77,12 @@ const IntuitivePaper = ({ project }: { project: ProjectsProps }) => {
             />
             <img
               src={`${file_path}site_map_2.png`}
-              alt="Site Map"
+              alt="Site Map 2"
               className="w-full h-auto border border-gray-300"
             />
             <img
             src={`${file_path}site_map_3.png`}
-            alt="Site Map"
+            alt="Site Map 3"
             className="w-full h-auto border border-gray-300"
           />
           </div>

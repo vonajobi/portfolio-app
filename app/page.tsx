@@ -1,16 +1,21 @@
 "use client"
 import { useEffect, useState } from 'react'
+import useStore  from './components/helpers/helper'
 import dynamic from 'next/dynamic'
 import Dom from './components/layout/dom'
-import useStore  from './components/helpers/helper'
 import { usePathname } from 'next/navigation'
-// import Header from './components/dom/header'
-import Index from "./components/dom"
+import Index from './components/dom'
+import React from 'react'
+import Header from './components/dom/header'
+import { Metadata } from 'next'
+
 const LCanvas = dynamic(() => import('./components/canvas/canvas'), {
   ssr: false,
 })
 
-function App({ pageProps = { title: 'app' } }: { Component: React.ComponentType<any>, pageProps?: any }) {
+
+
+function HomePage() {
   const router = usePathname()
   const [isLoading, setIsLoading] = useState(true)
 
@@ -22,18 +27,21 @@ function App({ pageProps = { title: 'app' } }: { Component: React.ComponentType<
   }, [router])
   // console.log(useStore.getState())
   // Render the Loader until loading is complete
+  console.log("Index:", Index.r3f);
+  
 
   return (
     <>
-    {/* <Header title={pageProps.title}/> */}
-      <Dom>
-        {/* <Page/> */}
-        {/* {router === '/' ? <Page{...pageProps}/>: null} */}
-        {<Index{...pageProps}/>}
+    <Header title={ 'Victoria&apos;s Portfolio - Home Page' }/>
+     <Dom>
+      <Index/>
       </Dom>
-      {(Index as any).r3f && <LCanvas>{(Index as any).r3f(pageProps)}</LCanvas>}
+      <LCanvas>
+        {Index?.r3f && <Index.r3f />}
+      </LCanvas>
+   
       </>
   )
 }
 
- export default App
+ export default HomePage

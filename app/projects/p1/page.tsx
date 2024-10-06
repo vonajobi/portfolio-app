@@ -1,9 +1,12 @@
 import React from 'react'
-import { ProjectsProps } from '../projectProps'
 import ImageGrid from '../../components/layout/imageGrid';
+import { Metadata } from 'next';
 
-
- const Project_1 = ({ project }: { project: ProjectsProps }) => {
+export const metadata: Metadata = {
+  title: "Victoria's Portfolio",
+  description: 'Crushies a Blind Box Series',
+}
+ const Project_1 = () => {
   const file_path = "/assets/projects/blind_box/";
   const file_path_2 = "/assets/projects/blind_box/drawings/";
   const crushie_red = '#a61e1e';
@@ -63,29 +66,29 @@ import ImageGrid from '../../components/layout/imageGrid';
         <img src={`${file_path}IMG_7344.png`}  />
       {/* Crushie */}
         <img src={`${file_path}3.jpg`} alt={'Design Process'} className='w-full h-auto'/>          <img className='' src={`${file_path}4.jpg`}/>
-        <img className='' src={`${file_path}5.jpg`}/>
-        <img className='' src={`${file_path}8.jpg`}/>
-        <img className='' src={`${file_path}crushie_2.png`}/>
+        <img className='' src={`${file_path}5.jpg`} alt='Design Explorations'/>
+        <img className='' src={`${file_path}8.jpg`}alt='Typography and Color Pallete' />
+        <img className='' src={`${file_path}crushie_2.png`}alt='Crushie'/>
         <ImageGrid images={crushieImages} />
       {/*DownBad  */}
-        <img className='' src={`${file_path}devil_3.png`}/>
+        <img className='' src={`${file_path}devil_3.png`} alt='Down Bad'/>
         <ImageGrid images={devilImages} />
       {/* GasLight */}
-        <img className='' src={`${file_path}gas_light_3.png`}/>
+        <img className='' src={`${file_path}gas_light_3.png`} alt='Gas Light'/>
         <ImageGrid images={gasLightImages} />
       {/* Head in the Clouds */}
-        <img className='' src={`${file_path}clouds_4.png`}/>
+        <img className='' src={`${file_path}clouds_4.png`} alt='Head in the Clouds'/>
         <ImageGrid images={cloudsImages} />
       {/* Love Sick */}
-        <img className='' src={`${file_path}love_sick_5.png`}/>
+        <img className='' src={`${file_path}love_sick_5.png`} alt='Love Sick'/>
         <ImageGrid images={loveSickImages} />
       {/* Ghosted */}
-        <img className='' src={`${file_path}ghosted_1.png`}/>
+        <img className='' src={`${file_path}ghosted_1.png`} alt='Ghosted'/>
         <ImageGrid images={ghostedImages} />
       {/* Final Images */}
-        <img className='' src={`${file_path}final_design.svg`}/>
+        <img className='' src={`${file_path}final_design.svg`} alt='Final Designs'/>
         <ImageGrid images={finalImages} />
-        <img src={`${file_path}IMG_7409.jpg`}/>
+        <img src={`${file_path}IMG_7409.jpg`} alt='Crushies a Blind Box Series'/>
         <img src={`${file_path}team.svg`}/>
 
 

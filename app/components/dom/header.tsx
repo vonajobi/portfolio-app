@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 const titleDefault = 'Victoria Onajobi'
-const url = ''
+const url = 'https://onajobi.co.vercel.app'
 const description =
-  'Victoria Onajobi is an Industrial Designer, Developer, and Programmer. They are technial oriented designer with exceptional skills for building accesible and interactive products.'
+  'Victoria Onajobi is an Industrial Designer, Engineer, and Programmer. They are technial oriented designer with exceptional skills for building accesible and interactive products.'
 const author = 'Victoria Onajobi'
 
 const Header = ({ title = titleDefault }) => {

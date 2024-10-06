@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import useStore from '../helpers/helper'
 import { Loader } from '../dom/loader'
 import {usePathname} from 'next/navigation'
+import React from 'react'
 import { Navbar } from '../dom/navBar'
 
 const Dom = ({ children } :{ children: React.ReactNode} ) => {

@@ -9,8 +9,10 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, Stats } from '@react-three/drei'
 import { useEffect, useRef } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
+import SceneIndex from './scene'
 import React, {ReactNode} from 'react'
 import useStore from '../helpers/helper'
+
 
 
 const LControl = () => {
@@ -57,6 +59,7 @@ const LCanvas = ({ children }: {children : ReactNode}) => {
         {/* <Stats /> */}
         <Preload all />
         {children}
+        
       </Canvas>
     );
   };

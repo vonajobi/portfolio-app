@@ -1,12 +1,14 @@
-import dynamic from 'next/dynamic'
 import { HomepageOverlay } from './home'
+import React from 'react';
+import dynamic from 'next/dynamic'
+
 const SceneIndex = dynamic(() => import('../canvas/scene'), {
   ssr: false,
 })
 
-import React from 'react';
 
 const Index = (props: any) => {
+
   return (
     <>
       <HomepageOverlay />
@@ -14,10 +16,8 @@ const Index = (props: any) => {
   )
 }
 
-Index.r3f = (props: any) => (
-  <>
-    <SceneIndex/>
-  </>
+ Index.r3f = (props: any) => (
+    <SceneIndex{...props}/>
 )
 
 export default Index
