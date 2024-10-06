@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react'
 import { ClimbingBoxLoader } from 'react-spinners'
 import { useTransition } from 'react'
 import { animated, useChain, useSpring, useSpringRef } from '@react-spring/web'
-import { it } from 'node:test'
 
 interface LoaderProps {
   setUnmount: React.Dispatch<React.SetStateAction<boolean>>
