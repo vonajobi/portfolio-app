@@ -7,7 +7,7 @@
         "image": "/assets/sketchbook/abstract_2.jpg",
         "title": "Abstract 2"
     },{
-        "image": "/assets/sketchbook/wendel.png",
+        "image": "/assets/sketchbook/wendell.png",
         "title": "abstract art with purple and green hues"
     },
     {
@@ -29,6 +29,21 @@
     {
         "image": "/assets/sketchbook/IMG_t.jpeg",
         "title": ""
+    },{
+        "image": "/assets/sketchbook/close_up_knukles.png",
+        "title": "Walnut Lamp Shaped Watch Box"
+    },
+    {
+        "image": "/assets/sketchbook/close_up_pin.png",
+        "title": "Watch Box Pin"
+    },
+    {
+        "image": "/assets/sketchbook/full_body_topless.png",
+        "title": "Watch Box Topless"
+    },
+    {
+        "image": "/assets/sketchbook/full_body.png",
+        "title": "Watch Box Full Body"
     },
     {
         "image": "/assets/sketchbook/IMG_8173.jpg",
@@ -38,6 +53,7 @@
         "image": "/assets/sketchbook/IMG_8174.jpg",
         "title": "land rover prototype front view"
     },
+    
     {
         "image": "/assets/sketchbook/IMG_1.jpeg",
         "title": " "
@@ -78,6 +94,19 @@
         "image": "/assets/sketchbook/IMG_8186.jpg",
         "title": ""
     },
+    
+    {
+        "image": "/assets/sketchbook/spoon_front.png",
+        "title": "Weighted Spoon Front"
+    },
+    {
+        "image": "/assets/sketchbook/spoon_top.png",
+        "title": "Weighted Spoon Top"
+    },
+    {
+        "image": "/assets/sketchbook/spoon_2.png",
+        "title": "Weighted Spoon and Coffee"
+    },
     {
         "image": "/assets/sketchbook/IMG_8187.jpg",
         "title": ""
@@ -107,11 +136,7 @@
         "title": ""
     },
     {
-        "image": "/assets/sketchbook/untensils_1.png",
-        "title": ""
-    },
-    {
-        "image": "/assets/sketchbook/utensils_2.png",
+        "image": "/assets/sketchbook/.png",
         "title": ""
     }
 ]

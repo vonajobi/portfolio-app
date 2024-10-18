@@ -19,6 +19,9 @@ function HomePage() {
   const router = usePathname()
   const [isLoading, setIsLoading] = useState(true)
 
+  // const windowWidth = useState(window.innerWidth)  
+  // const windowHeight = useState(window.innerHeight)  
+
   useEffect(() => {
     // resesting state based on router
     useStore.setState({ router: null })

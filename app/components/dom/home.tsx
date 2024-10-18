@@ -10,23 +10,20 @@ export const HomepageOverlay = () => {
   const link = '/projects/'
 
   return (
-    <div className='absolute bottom-0 flex flex-row w-full h-2/5  bg-white/5 items-center pointer-events-none'>
-      <div className='flex flex-row space-x-10 justify-center h-full w-full content-center
-       backdrop-blur-sm py-10 md:py-20 md:px-36  bg-black/25 '>
-        {/* <div className='bg-black/50 w-full h-5/6' />  */}
-        <div className='text-base md:self-center font-light pointer-events-none md:text-x text-white/70 whitespace-nowrap top-10'>
+    <div className='absolute bottom-0 flex flex-row w-full h-2/5 sm:h-1/2 py-10 bg-white/5 items-center pointer-events-none'>
+      <div className='flex flex-col gap-4 md:gap-46 sm:flex-row sm:justify-items-start justify-center h-full w-full content-center items-start px-10 backdrop-blur-sm'>
+         <div className='text-base self-center font-light pointer-events-none top-10 text-white/70 '>
           <h1 className='inline text-3xl uppercase md:text-5xl text-white/60'>
             Victoria Onajobi.
           </h1>
           <br/>
-            <p className='text-sm'> Hi, my name is Victoria <FaRegHandPeace className='inline' />. I&apos;m a tinkerer. I make cool things in 2D and 3D.</p>
-          <p className='text-sm'> Checkout my portfolio for more.</p>
+            <p className='text-sm'> Hi, my name is Victoria <FaRegHandPeace className='inline' />. I&apos;m a tinkerer. I make cool things in 2D and 3D. Checkout my portfolio for more.</p>
 
           
         </div>
 
-        <div className=' flex space-x-6 flex-row whitespace-nowrap  md:self-center md:items-startpointer-events-none'>
-            <ul>
+        <div className=' flex space-x-6 flex-row sm:mx-10 whitespace-nowrap sm:self-center pointer-events-none'>
+            <ul className=' sm:visible  '>
               <li>
                 <Link href = {`${link}p1`}
                 className='text-sm font-light uppercase text-white/70 self-end pointer-events-auto transition-all hover-effect'

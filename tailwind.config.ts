@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens:{
+        'xs-max': {'max': '416px'},
+      },
       backgroundImage: {
         'hero-pattern': 'url("/assets/background.svg")',
       },
