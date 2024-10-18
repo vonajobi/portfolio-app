@@ -1,8 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Project Descrption
-~ In Progress ~
-Developed a comprehensive and visually appealing portfolio website using Next.js, React, and Tailwind CSS. The website showcases my projects and skills with an engaging and interactive user experience, ensuring scalability and maintainability.
+## Project Descrption~
+Developed a comprehensive and visually appealing portfolio website using Next.js, React, and Tailwind CSS. The website showcases my projects and skills with an engaging and interactive user experience, ensuring scalability and maintainability. Forked from [hyamero/portfolio-3d](https://github.com/hyamero/portfolio-3d)
 
 ![Screenshot 2024-06-17 232821](https://github.com/vonajobi/portfolio-app/assets/130017130/61f35023-a022-465e-bb86-027f07c60575)
 
