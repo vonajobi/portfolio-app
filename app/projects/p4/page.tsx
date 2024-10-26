@@ -113,11 +113,11 @@ const Paladone = () => {
           <h1> Web Pallette and Pantone Graphics </h1>
           <div className='grid grid-cols-2 md:grid-cols-4 md:gap-4 md:py-5 '>
             <img src={`${file_path}Frame_48.png`} alt='color pallet Black'/>
-            <img src={`${file_path}frame_50.png`} alt='color pallet CornFlower Blue and Marian Blue'/>
-            <img src={`${file_path}frame_51.png`} alt='color pallet Dark Purple and Bright Crayola Pink'/>
-            <img src={`${file_path}frame_52.png`} alt='color pallet Pantone 649 C and Pantone Jet Set'/>
-            <img src={`${file_path}frame_53.png`} alt='color pallet Pantone 2718 C and Pantone 7685 C'/>
-            <img src={`${file_path}frame_54.png`} alt='color pallet Pantone 4975 C and Pantone 191 C'/>
+            <img src={`${file_path}Frame_50.png`} alt='color pallet CornFlower Blue and Marian Blue'/>
+            <img src={`${file_path}Frame_51.png`} alt='color pallet Dark Purple and Bright Crayola Pink'/>
+            <img src={`${file_path}Frame_52.png`} alt='color pallet Pantone 649 C and Pantone Jet Set'/>
+            <img src={`${file_path}Frame_53.png`} alt='color pallet Pantone 2718 C and Pantone 7685 C'/>
+            <img src={`${file_path}Frame_54.png`} alt='color pallet Pantone 4975 C and Pantone 191 C'/>
           </div>
         </section>
         <ImageGrid images={marketingImages} />

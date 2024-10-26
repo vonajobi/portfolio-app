@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation'
 import Index from './components/dom'
 import React from 'react'
 import Header from './components/dom/header'
-import { Metadata } from 'next'
 
 const LCanvas = dynamic(() => import('./components/canvas/canvas'), {
   ssr: false,
