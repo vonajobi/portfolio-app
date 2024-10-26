@@ -65,7 +65,8 @@ export const metadata: Metadata = {
         <img src={`${file_path}1.jpg`} alt={'Crushies a Blind Box Series'} className='w-full h-auto'/>
         <img src={`${file_path}IMG_7344.png`}  />
       {/* Crushie */}
-        <img src={`${file_path}3.jpg`} alt={'Design Process'} className='w-full h-auto'/>          <img className='' src={`${file_path}4.jpg`}/>
+        <img src={`${file_path}3.jpg`} alt={'Design Process'} className='w-full h-auto'/>          
+        <img className='' src={`${file_path}4.jpg`}/>
         <img className='' src={`${file_path}5.jpg`} alt='Design Explorations'/>
         <img className='' src={`${file_path}8.jpg`}alt='Typography and Color Pallete' />
         <img className='' src={`${file_path}crushie_2.png`}alt='Crushie'/>

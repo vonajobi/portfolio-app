@@ -56,7 +56,7 @@ type GLTFResult = GLTF & {
         scale={0.13}>
 
           <mesh castShadow receiveShadow geometry={nodes.crushies_portfolio.geometry}>
-            <meshStandardMaterial roughness={0.5} metalness={0.5} color='red' />
+            <meshStandardMaterial roughness={0.15} metalness={0.5} color='red' />
           </mesh>
           <mesh castShadow receiveShadow geometry={nodes.Scene.geometry} />
         </group>

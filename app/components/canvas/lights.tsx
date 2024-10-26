@@ -53,7 +53,6 @@ import { useFrame } from '@react-three/fiber';
       </group>
       <spotLight 
         ref={front}
-        color={'#00000'}
         castShadow
         penumbra={0.75}
         angle={Math.PI / 6}
