@@ -9,7 +9,6 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, Stats } from '@react-three/drei'
 import { useEffect, useRef } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import SceneIndex from './scene'
 import React, {ReactNode} from 'react'
 import useStore from '../helpers/helper'
 
@@ -45,7 +44,7 @@ const LCanvas = ({ children }: {children : ReactNode}) => {
         style={{
           position: 'absolute',
           top: 0,
-          zIndex: `${path !== './components/projects' ? 9 : 11}`,
+          zIndex: `${path !== '/projects' ? 9 : 11}`,
         }}
         onCreated={(state) => {
           if (dom && dom.current && state.events.connect) {

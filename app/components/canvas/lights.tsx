@@ -1,13 +1,13 @@
 import React, {useRef} from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { useEffect } from 'react';
 
 
- const Lights = ({}) => {
+ export const Lights = ({}) => {
   const groupL = useRef<THREE.Group>(null);
   const groupR = useRef<THREE.Group>(null);
   const front = useRef<THREE.SpotLight>(null);
+
 
 
   useFrame(({pointer}) => {
@@ -51,9 +51,10 @@ import { useEffect } from 'react';
       <group ref={groupR}>
         <pointLight position={[0, 7, -18]} distance={15} intensity={20} />
       </group>
-      <spotLight ref={front}
-        castShadow
+      <spotLight 
+        ref={front}
         color={'#00000'}
+        castShadow
         penumbra={0.75}
         angle={Math.PI / 6}
         position={[0, 0, 2]}
@@ -65,4 +66,3 @@ import { useEffect } from 'react';
   );
   };
 
-  export default Lights;

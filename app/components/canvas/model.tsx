@@ -1,9 +1,9 @@
-import React, { useRef, useState, useEffect, use } from 'react';
+import React, { useRef, useState, useEffect, } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib'
 import * as THREE from 'three'
-import Lights  from './lights';
+import {Lights}  from './lights';
 
 type GLTFResult = GLTF & {
   // these are the nodes that create the object in the modeling software
@@ -17,7 +17,7 @@ type GLTFResult = GLTF & {
     };
   };
   
-   const ModelLoader: React.FC<any> = (props) => {
+   export const ModelLoader: React.FC<any> = (props) => {
     const group = useRef<THREE.Group>(null);
       
      const { nodes } = useGLTF('./assets/downBad.glb') as GLTFResult;
@@ -49,14 +49,14 @@ type GLTFResult = GLTF & {
   
     return (
       <group ref={group} {...props} dispose={null}>
-      <group 
-      // position and rotation and size of the model
-      position={[5, 5.5, -8]}
-       rotation={[0, -.7, 0]} 
-       scale={.12}>
+        <group 
+        // position and rotation and size of the model
+        position={[-4, 5.5, -8]}
+        rotation={[0, -0.7, 0]} 
+        scale={0.13}>
 
           <mesh castShadow receiveShadow geometry={nodes.crushies_portfolio.geometry}>
-            <meshStandardMaterial roughness={0} metalness={0.5} color='red' />
+            <meshStandardMaterial roughness={0.5} metalness={0.5} color='red' />
           </mesh>
           <mesh castShadow receiveShadow geometry={nodes.Scene.geometry} />
         </group>
@@ -65,6 +65,5 @@ type GLTFResult = GLTF & {
     );
   };
   
-  // useGLTF.preload('../assets/downBad.glb')
-export default ModelLoader;
+  useGLTF.preload('../assets/downBad.glb')
   

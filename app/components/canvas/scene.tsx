@@ -1,17 +1,17 @@
-import { Suspense, useEffect } from 'react';
-import React from 'react';
+import { Suspense } from 'react';
+import React, {useEffect} from 'react';
 import * as THREE from 'three';
-import { Vector3, TextureLoader } from 'three';
+import { Vector3, TextureLoader} from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
 import {Html, Loader, PerspectiveCamera, Sparkles, Text,} from '@react-three/drei';
 import { EffectComposer, Bloom, Noise, Vignette } from '@react-three/postprocessing';
 
-import ModelLoader from './model';
+import {ModelLoader} from './model';
 
 
 
 const SceneIndex = (props: any) => {
- // background image as a texture fot the scene
+//  background image as a texture fot the scene
 //  const {scene} = useThree();
 //   const textureLoader = new TextureLoader();
 //   useEffect(() => {
@@ -27,6 +27,8 @@ const SceneIndex = (props: any) => {
     state.camera.lookAt(0, 0, 0);
 
   })
+
+  
  
   return (
     <>
@@ -38,9 +40,11 @@ const SceneIndex = (props: any) => {
         near={0.1}
         far={100}
       />
+      <color attach='background' args={['#050505']} />
+
       {/* this set the color of the scene */}
       {/* Fog( color : Integer, near : Float, far : Float ) */}
-      <fog attach='fog' args={["#860111", 15, 28]} />;
+      <fog attach='fog' args={["#860111", 13, 28]} />;
       <pointLight position={[0, 10, -7]} intensity={1} />;
 
       <Suspense 
@@ -51,10 +55,10 @@ const SceneIndex = (props: any) => {
         }
       >
       {/* model is being called here */}
-        <ModelLoader position={[-10, -5, -1]} rotation={[0, -0.2, 0]} />;
+        <ModelLoader position={[-2, -5, -1]} rotation={[0, -0.2, 0]} />;
         <Title>{`DESIGNER`}</Title>;
         <TitleL>{`DESIGNER`}</TitleL>;
-        <Sparkles count={60} scale={[20, 20, 20]} size={1} speed={2} />;
+        <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />;
       </Suspense>
       <EffectComposer multisampling={0} enableNormalPass={false}>
         <Bloom
