@@ -1,9 +1,11 @@
 import { FiArrowUpRight } from 'react-icons/fi'
 import {FaRegHandPeace} from 'react-icons/fa'
 import Link from 'next/link'
-import {Trade_Winds} from 'next/font/google'
+import {Rubik_Glitch} from 'next/font/google'
+import {Rubik_80s_Fade} from 'next/font/google'
 
-const neonderthaw = Trade_Winds({ weight: '400', subsets: ['latin'] })
+const rubik = Rubik_Glitch({ weight: '400', subsets: ['latin'] })
+const rubik80 = Rubik_80s_Fade({ weight: '400', subsets: ['latin'] })
 
 export const HomepageOverlay = () => {
   // const router = useStore((s) => s.router)
@@ -15,11 +17,11 @@ export const HomepageOverlay = () => {
     <div className='absolute bottom-0 flex flex-row w-full h-2/5 sm:h-1/3 py-10 bg-white/5 items-center pointer-events-none'>
       <div className='flex flex-col gap-4 md:gap-46 sm:flex-row sm:justify-items-start justify-center h-full w-full content-center items-start px-10 backdrop-blur-sm'>
          <div className='text-base self-center font-light pointer-events-none top-10 text-white/70 '>
-          <h1 className={`${neonderthaw.className} inline text-3xl md:text-6xl text-white/60`}>
+          <h1 className={` uppercase inline text-3xl md:text-5xl text-white/60`}>
             Victoria Onajobi.
           </h1>
           <br/>
-            <p className='text-sm'> Hi, my name is Victoria <FaRegHandPeace className='inline' />. I&apos;m a tinkerer. I make cool things in 2D and 3D. Checkout my portfolio for more.</p>
+            <p className='text-md'> Hi, my name is Victoria <FaRegHandPeace className='inline' />. I&apos;m a tinkerer. I make cool things in <span className={` inline`}>2D</span> and <span className={` inline`}>3D</span>. Checkout my portfolio for more.</p>
 
           
         </div>

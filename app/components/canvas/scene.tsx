@@ -55,8 +55,8 @@ const SceneIndex = (props: any) => {
         >
       {/* model is being called here */}
         <ModelLoader position={[-2, -5, -1]} rotation={[0, -0.2, 0]} />;
-        <Title>{`TINKERER`}</Title>;
-        <TitleL>{`TINKERER`}</TitleL>;
+        <Title>{`MAKER`}</Title>;
+        <TitleL>{`MAKER`}</TitleL>;
         <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />;
       </Suspense>
       <EffectComposer multisampling={0} enableNormalPass={false}>
@@ -84,7 +84,8 @@ const Title = ({ children }: { children: any }) => {
       <Text
         position={[0, 0, -8]}
         lineHeight={1.3}
-        font={('/assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf')}
+        // font={('/assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf')}
+        font={('/assets/fonts/Rubik_80s_Fade/Rubik80sFade-Regular.ttf')}
         fontSize={width / 4}
         material-toneMapped={false}
         anchorX='center'
@@ -102,7 +103,8 @@ const TitleL = ({ children }: { children: any }) => {
     <Text
       position={[0, 0, -8]}
       lineHeight={1.3}
-      font={('/assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf')}
+      // font={('/assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf')}
+      font={('/assets/fonts/Rubik_80s_Fade/Rubik80sFade-Regular.ttf')}
       fontSize={width / 4}
       material-toneMapped={false}
       anchorX='center'
