@@ -4,6 +4,7 @@ import sketchbook from '../../public/data/sketchbook.json'
 import { useState } from 'react'
 
 
+
 type SketchbookProps = {
     image: string;
     title: string; 
@@ -32,7 +33,7 @@ const Sketchbook = () => {
                             <img className='w-full rounded-xl' src={item.image} alt={item.title} />
                         )}
                         {isVideo(item.image) && (
-                            <video className='w-full rounded-xl' controls>
+                            <video className='w-full rounded-xl' controls loop autoPlay playsInline>
                                 <source src={item.image} type={`video/${item.image.split('.').pop()?.toLowerCase()}`} />
                             </video>
                         )}

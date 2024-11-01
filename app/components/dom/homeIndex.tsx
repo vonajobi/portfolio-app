@@ -27,29 +27,7 @@ export const HomepageOverlay = () => {
         </div>
 
         <div className=' flex space-x-6 flex-row sm:mx-10 whitespace-nowrap sm:self-center pointer-events-none'>
-            <ul className=' sm:visible  '>
-              <li>
-                <Link href = {`${link}p1`}
-                className='text-sm font-light  text-white/70 self-end pointer-events-auto transition-all hover-effect'
-                >
-                Crushies
-                </Link>
-              </li>
-              <li>
-                <Link href = {`${link}p4`}
-                className='text-sm font-light  text-white/70 self-end pointer-events-auto transition-all hover-effect'
-                >
-                H Blocks
-                </Link>
-              </li>
-              <li>
-                <Link href = {`${link}p5`}
-                className='text-sm font-light  text-white/70 self-end pointer-events-auto transition-all hover-effect'
-                >
-                Intuitive Paper
-                </Link>
-              </li>
-            </ul>
+            
            <Socials />
         </div> 
 
