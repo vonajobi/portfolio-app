@@ -10,9 +10,14 @@
     {
         "image": "/assets/sketchbook/abstract_2.jpg",
         "title": "Abstract 2"
-    },{
+    },
+    {
         "image": "/assets/sketchbook/wendell.png",
         "title": "abstract art with purple and green hues"
+    },
+    {
+        "image": "/assets/sketchbook/lil_dude_2.jpg",
+        "title": "blind box character with cardboard head"
     },
     {
         "image": "/assets/sketchbook/bent_down.png",
@@ -61,7 +66,14 @@
         "image": "/assets/sketchbook/IMG_8174.jpg",
         "title": "land rover prototype front view"
     },
-    
+    {
+        "image": "/assets/sketchbook/aftershock2.jpg",
+        "title": "Aftershock II launching"
+    },
+    {
+        "image": "/assets/sketchbook/DSC_0016.jpg",
+        "title": "USC RPL Fall 2024"
+    },
     {
         "image": "/assets/sketchbook/IMG_1.jpeg",
         "title": " "
