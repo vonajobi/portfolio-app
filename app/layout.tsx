@@ -5,7 +5,6 @@ import { Navbar } from './components/dom/navBar'
 import { Footer } from './components/dom/footer'
 import Header from './components/dom/header';
 import React from 'react';
-import { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
