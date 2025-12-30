@@ -36,7 +36,7 @@ export const HomepageOverlay = () => {
               <span className='text-[#6699cc]'>O</span> 
               <span className='text-[#f2777a]'>b</span> 
               <span className='text-[#99cc99]'>i</span> 
-              <span className='text-[#f2777a]'>.</span> 
+              {/* <span className='text-[#f2777a]'>.</span>  */}
               <span >{`#]`}</span> 
             
           </h1>

@@ -1,6 +1,6 @@
 // the app.ts has the import canvas file which is necessary for the 3d model to show up
 // it also has the dom file
-//the dom file sets the zindex for the nav bar i believe
+//the dom file sets the z index for the nav bar i believe
 // indext.tsx imports sceneInedx and  makes it a prop for the canvas
 //index.ts is used
 
