@@ -16,8 +16,7 @@ export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
     ref: bgSpringRef,
     from: { opacity: 1 },
     to: { opacity: 0 },
-    config: { duration: 600 },
-    delay: 200,
+    config: { duration: 400 },
     onResolve: () => setUnmount
   })
   const textSpringRef = useSpringRef()
@@ -25,7 +24,8 @@ export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
     ref: textSpringRef,
     from: { opacity: 1 },
     to: { opacity: 0 },
-    delay: 100,
+    config: { duration: 600 },
+    delay: 100
   })
 
 
@@ -37,7 +37,7 @@ export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
       className='absolute top-0 left-0 z-30 flex flex-col gap-6 items-center justify-center w-screen h-screen bg-black'>
           
               {/* <ClimbingBoxLoader color={color} size={18}/> */}
-              <PropagateLoader color={color} size={15}/>
+              <PropagateLoader color={color} size={15} speedMultiplier={0.75}/>
             <animated.span
               style={textSpring1}
               className='relative text-sm font-bold text-white'>
@@ -47,40 +47,3 @@ export const Loader: React.FC<LoaderProps> = ({ setUnmount }) => {
     </animated.div> 
   )
 };
-
-// export const CustomLoader: React.FC<LoaderProps> = ({ setUnmount, text }) => {
-//   const bgSpringRef = useSpringRef()
-//   const bgSpring = useSpring({
-//     ref: bgSpringRef,
-//     from: { opacity: 1 },
-//     to: { opacity: 0 },
-//     config: { duration: 400 },
-//     delay: 300,
-//     onResolve: () => setUnmount(true),
-//   })
-
-//   const textSpringRef = useSpringRef()
-//   const textSpring1 = useSpring({
-//     ref: textSpringRef,
-//     from: { opacity: 1 },
-//     to: { opacity: 0 },
-//     delay: 800,
-//   })
-
-//   useChain([textSpringRef, bgSpringRef])
-
-//   return (
-//     <animated.div
-//       style={bgSpring}
-//       className='absolute top-0 left-0 flex items-center justify-center w-screen h-screen bg-black z-[19]'
-//     >
-//       <animated.span
-//         style={textSpring1}
-//         className='relative text-3xl text-white  bottom-8'
-//       >
-//         {text}
-//       </animated.span>
-//     </animated.div>
-//   )
-  
-// }
