@@ -1,11 +1,7 @@
 import { FiArrowUpRight } from 'react-icons/fi'
 import {FaRegHandPeace} from 'react-icons/fa'
-import {Rubik_Glitch} from 'next/font/google'
-import {Rubik_80s_Fade} from 'next/font/google'
 import { useEffect, useState } from "react";
 
-const rubik = Rubik_Glitch({ weight: '400', subsets: ['latin'] })
-const rubik80 = Rubik_80s_Fade({ weight: '400', subsets: ['latin'] })
 
 export const HomepageOverlay = () => {
   // const router = useStore((s) => s.router)
@@ -37,12 +33,11 @@ export const HomepageOverlay = () => {
               <span className='text-[#6699cc]'>O</span> 
               <span className='text-[#f2777a]'>b</span> 
               <span className='text-[#99cc99]'>i</span> 
-              {/* <span className='text-[#f2777a]'>.</span>  */}
               <span >{`#]`}</span> 
             
           </h1>
 
-            <p className='text-md mt-1'> Hi, my name is Victoria <FaRegHandPeace className='inline' />. I&apos;m a tinkerer. I make cool things in <span className={` inline`}>2D</span> and <span className={` inline`}>3D</span>. Checkout my portfolio for more.</p>
+            <p className='text-md mt-1'> Hi, my name is Victoria <FaRegHandPeace className='inline' />. I&apos;m a designer & tinkerer. I design cool things in <span className={` inline`}>2D</span> and <span className={` inline`}>3D</span>. Checkout my portfolio for more.</p>
 
           
         </div>
