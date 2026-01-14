@@ -1,19 +1,20 @@
 import { FiArrowUpRight } from 'react-icons/fi'
 import {FaRegHandPeace} from 'react-icons/fa'
-import Link from 'next/link'
 import {Rubik_Glitch} from 'next/font/google'
 import {Rubik_80s_Fade} from 'next/font/google'
+import { useEffect, useState } from "react";
 
 const rubik = Rubik_Glitch({ weight: '400', subsets: ['latin'] })
 const rubik80 = Rubik_80s_Fade({ weight: '400', subsets: ['latin'] })
 
 export const HomepageOverlay = () => {
   // const router = useStore((s) => s.router)
-  // console.log(useStore.getState())
-  
-  const link = '/projects/'
+  // console.log(useState)
+
 
   return (
+    
+
     <div className='absolute bottom-0 flex flex-row w-full h-2/5 sm:h-1/3 py-10 bg-white/5 items-center pointer-events-none'>
       <div className='flex flex-col gap-4 md:gap-46 sm:flex-row sm:justify-items-start justify-center h-full w-full content-center items-start px-10 backdrop-blur-sm'>
          <div className='text-base self-center font-light pointer-events-none top-10 text-white/70'>
@@ -54,6 +55,7 @@ export const HomepageOverlay = () => {
       </div>
 
     </div>
+    
   )
 }
 

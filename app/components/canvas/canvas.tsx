@@ -34,6 +34,26 @@ const control = useRef(null);
   // @ts-ignore
   return <OrbitControls ref={control} domElement={dom.current} />
 }
+// updated code
+// const LControl = ({ domElement }: LControlProps) => {
+//   const controlRef = useRef<ThreeOrbitControlsType | null>(null)
+
+//   useEffect(() => {
+//     if (!controlRef.current || !domElement) return
+
+//     const style = domElement.style
+//     const originalTouchAction = style.touchAction
+//     style.touchAction = 'none'
+
+//     return () => {
+//       style.touchAction = originalTouchAction
+//     }
+//   }, [domElement])
+
+//   return <ThreeOrbitControls ref={controlRef} domElement={domElement} />
+// }
+
+
 const LCanvas = ({ children }: {children : ReactNode}) => {
   const dom = useStore((state) => state.dom) || React.createRef<HTMLDivElement>();  
   const path = usePathname()
@@ -54,8 +74,8 @@ const LCanvas = ({ children }: {children : ReactNode}) => {
         shadows
         camera={{ position: [0, 1.5, 14], fov: 50 }}
       >
-        {/* <LControl /> */}
-        {/* <Stats /> */}
+        <LControl />
+        {/* <Stats /> */} {/*shows fps */}
         <Preload all />
         {children}
         

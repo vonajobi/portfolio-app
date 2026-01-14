@@ -1,7 +1,5 @@
-import type { Config } from 'tailwindcss'
 
-const config: Config = {
-  mode: 'jit',
+module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,7 +11,7 @@ const config: Config = {
         'xs-max': {'max': '416px'},
       },
       backgroundImage: {
-        'hero-pattern': 'url("/assets/background.svg")',
+        'hero-pattern': "url('/assets/background.svg')",
       },
       boxShadow: {
         '3xl': '0 35px 100px -10px rgba(0, 0, 0, 0.4)',
@@ -24,9 +22,10 @@ const config: Config = {
     },
     
   },
+  safelist: ["bg-hero-pattern"],
   plugins: [
     require('tailwindcss'),
     require('@kamona/tailwindcss-perspective'),
   ],
 }
-export default config
+// export default config

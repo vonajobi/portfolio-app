@@ -1,9 +1,10 @@
 
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@theme {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -20,11 +21,11 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  @apply bg-hero-pattern bg-cover bg-center;
+  @apply  bg-[hero-pattern] bg-cover bg-center;
   
 }
 
-base* {
+base {
     box-sizing: border-box;
   }
 

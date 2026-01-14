@@ -71,7 +71,7 @@ const SceneIndex = (props: any) => {
       </EffectComposer>
       
       <Rig /> 
-    </>
+    </> 
   )
 }
 
