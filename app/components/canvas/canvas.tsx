@@ -62,9 +62,10 @@ const LCanvas = ({ children }: {children : ReactNode}) => {
     return (
       <Canvas
         style={{
-          position: 'absolute',
+          // position: 'absolute',
           top: 0,
-          zIndex: `${path !== '/projects' ? 9 : 11}`,
+          height: 'auto',
+          // zIndex: `${path !== '/projects' ? 9 : 11}`,
         }}
         onCreated={(state) => {
           if (dom && dom.current && state.events.connect) {

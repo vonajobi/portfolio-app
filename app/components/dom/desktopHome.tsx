@@ -1,9 +1,10 @@
 import { FiArrowUpRight } from 'react-icons/fi'
 import {FaRegHandPeace} from 'react-icons/fa'
+import { Socials } from './socials';
 import { useEffect, useState } from "react";
 
 
-export const HomepageOverlay = () => {
+export const DesktopHomepageOverlay = () => {
   // const router = useStore((s) => s.router)
   // console.log(useState)
 
@@ -11,10 +12,40 @@ export const HomepageOverlay = () => {
   return (
     
 
-    <div className='absolute bottom-0 flex flex-row w-full h-2/5 sm:h-1/3 py-10 bg-white/5 items-center pointer-events-none'>
-      <div className='flex flex-col gap-4 md:gap-46 sm:flex-row sm:justify-items-start justify-center h-full w-full content-center items-start px-10 backdrop-blur-sm'>
+    <div className='relative
+                    w-full
+
+                    flex
+                    flex-col
+                    items-center
+
+                    py-6
+                    bg-white/50
+                    pointer-events-none
+
+                    sm:absolute
+                    sm:bottom-0
+                    sm:flex-row
+                    sm:h-1/3
+                    sm:py-10'>
+      <div className='flex flex-col
+                      gap-6
+                      px-4
+                      items-center
+                      backdrop-blur-sm
+
+                      sm:flex-row
+                      sm:items-start
+                      sm:px-10
+                      md:gap-16'>
          <div className='text-base self-center font-light pointer-events-none top-10 text-white/70'>
-          <h1 className={` uppercase inline text-3xl md:text-5xl text-white/60 tracking-widest`}>
+          <h1 className='uppercase
+                        text-2xl
+                        tracking-widest
+                        text-white/60
+
+                        sm:text-3xl
+                        md:text-5xl'>
             
               <span >{`[#`}</span> 
               <span className='text-[#f2777a]'>V</span> 
@@ -54,21 +85,4 @@ export const HomepageOverlay = () => {
   )
 }
 
-const Socials: React.FC = () => {
-  return (
-    <ul className='text-sm font-light text-white/70 cursor-pointer transition-all md:justify-start pointer-events-auto'>
-      <li className=' flex hover:text-white'>
-        <a href='https://github.com/vonajobi'>GITHUB</a>
-        <FiArrowUpRight/>
-      </li>
-      <li className='flex hover:text-white'>
-        <a href='https://www.linkedin.com/in/victoria-onajobi'>LINKEDIN</a>
-        <FiArrowUpRight/>
-      </li>
-      <li className='flex hover:text-white'>
-        <a href='https://issuu.com/sceneusc/docs/hollywood_s_backyard_scene_magazine_issue_no._2_/6'>FEATURED</a>
-        <FiArrowUpRight/>
-      </li>
-    </ul>
-  )
-}
+   

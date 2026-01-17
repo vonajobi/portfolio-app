@@ -12,14 +12,20 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
   return (
     <html lang="en">
-      <Header/>
       <body>
-        <div className={`${inter.className} flex flex-col min-h-screen`}>
+        <Header/>
+        <div className= {inter.className} >
           <Navbar />
-          <main className="flex-grow flex pt-20">
-            {children}
-          </main>
-          <Footer />
+          <div className="bg-black flex flex-col min-h-screen">
+            <main className="flex grow
+                            pt-14
+                            px-4
+                            lg:pt-20
+                            lg:px-10">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </div>
       </body>
     </html>

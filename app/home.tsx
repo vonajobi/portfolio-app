@@ -3,15 +3,16 @@
 import { useEffect, useState } from 'react'
 import useStore  from './components/helpers/helper'
 import dynamic from 'next/dynamic'
-import Dom from './components/layout/dom'
 import { usePathname } from 'next/navigation'
-import { HomepageOverlay } from './components/dom/homeIndex'
+import { DesktopHomepageOverlay } from './components/dom/desktopHome'
+import { MobileHomepageOverlay } from './components/dom/mobileHome'
+import useIsDesktop from './components/helpers/mediaQuery'
 
 
-const LCanvas = dynamic(() => import('./components/canvas/canvas'), {
+const LCanvas = dynamic(() => import('./components/canvas/canvas.tsx'), {
   ssr: false,
 })
-const SceneIndex = dynamic(() => import('./components/canvas/scene'), {
+const SceneIndex = dynamic(() => import('./components/canvas/scene.tsx'), {
   ssr: false,
 });
 
@@ -21,6 +22,8 @@ const SceneIndex = dynamic(() => import('./components/canvas/scene'), {
 function Home() {
   const router = usePathname()
   const [isLoading, setIsLoading] = useState(true)
+
+  const isDesktop = useIsDesktop()
 
   useEffect(() => {
     // resesting state based on router
@@ -33,47 +36,17 @@ function Home() {
 
   return (
     <>
-     <Dom>
-     {/* <Loader/> */}
-      <HomepageOverlay/>
-      </Dom>
-        <LCanvas>
-          <SceneIndex/>
-        </LCanvas>
+      {isDesktop ? (
+        <>
+      {/* <DesktopHomepageOverlay/> */}
+          <LCanvas>
+            <SceneIndex/>
+          </LCanvas>
+        </>
+      ): 
+      (<MobileHomepageOverlay/>)}
       </>
   )
 }
 
  export default Home
-// "use client"
-// import { useState } from 'react'
-// import dynamic from 'next/dynamic'
-// import { Loader } from './components/dom/loader'
-// import { HomepageOverlay } from './components/dom/homeIndex'
-// import React from 'react'
-
-// const LCanvas = dynamic(() => import('./components/canvas/canvas'), { ssr: false })
-// const SceneIndex = dynamic(() => import('./components/canvas/scene'), { ssr: false })
-
-// const Home = () => {
-//   const [loading, setLoading] = useState(true)
-
-//   return (
-//     <>
-//     <div className="z-20 absolute top-0 left-0 pointer-events-none w-screen h-screen mx-auto overflow-hidden sm:px-1 lg:px-2 dom ">
-//       <HomepageOverlay />
-//       {loading && (
-//         <div className="">
-//           <Loader setUnmount={() => setLoading(false)} />
-//         </div>
-//       )}
-//     </div>
-//       <LCanvas>
-//         <SceneIndex onReady={() => setLoading(false)} />
-//       </LCanvas>
-//     </>
-//   )
-// }
-
-// export default Home
-

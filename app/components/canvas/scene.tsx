@@ -8,7 +8,6 @@ import { EffectComposer, Bloom, Noise, Vignette } from '@react-three/postprocess
 import {ModelLoader} from './model';
 
 
-
 const SceneIndex = (props: any) => {
   //  background image as a texture fot the scene
   //  const {scene} = useThree();
@@ -86,7 +85,7 @@ const Title = ({ children }: { children: any }) => {
         lineHeight={1.3}
         // font={('/assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf')}
         font={('/assets/fonts/Rubik_80s_Fade/Rubik80sFade-Regular.ttf')}
-        fontSize={width / 4}
+        fontSize={width / 3}
         material-toneMapped={false}
         anchorX='center'
         anchorY='middle'
@@ -105,7 +104,7 @@ const TitleL = ({ children }: { children: any }) => {
       lineHeight={1.3}
       // font={('/assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf')}
       font={('/assets/fonts/Rubik_80s_Fade/Rubik80sFade-Regular.ttf')}
-      fontSize={width / 4}
+      fontSize={width / 3}
       material-toneMapped={false}
       anchorX='center'
       anchorY='middle'

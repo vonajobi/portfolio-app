@@ -23,7 +23,7 @@ const Header = ({ title = titleDefault }) => {
         <meta name='description' content={description} />
         <meta
           name='keywords'
-          content='Software Engineer, Creative Developer, CAD Designer, 3D Designer, Programmer, Engineer, Designer, Artist'
+          content='Software Engineer, Creative Developer, CAD Designer, 3D Designer, Programmer, Engineer, Designer, Concept Artist'
         />
         <meta name='robots' content='index,follow' />
         <meta name='distribution' content='web' />
