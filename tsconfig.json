@@ -11,8 +11,8 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "node16",
-    "moduleResolution": "node16",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -26,7 +26,7 @@
       "@/*": [
         "./*"
       ]
-    }
+    },
   },
   "include": [
     "next-env.d.ts",
@@ -39,5 +39,5 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
 }

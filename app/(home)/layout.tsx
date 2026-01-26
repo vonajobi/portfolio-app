@@ -15,7 +15,7 @@ export default function HomeLayout({
     
     <>
       {!isDesktop && (
-        <div className="inset-0 -z-10 pointer-events-none ">
+        <div className="inset-0 pointer-events-none ">
           <PixelDitherCanvas  />
          </div>
       )}
