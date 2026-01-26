@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import ImageGrid from '../../components/layout/imageGrid';
 import Image from 'next/image';
 import { Metadata } from 'next';

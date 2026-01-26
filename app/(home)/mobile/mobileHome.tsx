@@ -1,17 +1,13 @@
-import { FiArrowUpRight } from 'react-icons/fi'
 import {FaRegHandPeace} from 'react-icons/fa'
-import { Socials } from './socials';
+import { Socials } from '../../components/dom/socials';
 
 
 
 export const MobileHomepageOverlay = () => {
 
-
-
-  return (
+  return ( 
     
-
-    <div className='relative
+    <div className="relative
                     w-full
                     min-h-screen
 
@@ -19,21 +15,43 @@ export const MobileHomepageOverlay = () => {
                     flex-col
 
                     py-10
-                    bg-black
-      '>
+                    
+                    ">
+        {/* <div className="absolute inset-0
+                      bg-[url('/assets/pixel.svg')]
+                      bg-size-[1100px_auto]
+                      bg-no-repeat
+                      bg-bottom
+                      -z-10
+                      -m-12
+                      -mb-12
+                      bg-blend-
+                      "> 
+                      
+        </div> */}
         {/* hero */}
-        <section className="flex flex-col items-center shrink-0 py-10">
+        <section className="flex 
+                            flex-col 
+
+                            items-center 
+                            shrink-0 
+                            py-10
+                            ">
+          {/* bg */}
+       
+        {/* bg-[size:20px_20px]
+        bg-[radial-gradient(circle,#73737350_1px,transparent_1px)]  */}
+
         {/* Role */}
         <div className='font-light
-                        italic 
-                        text-4xl
-                        text-white/70
                         
+                        text-4xl
+                        text-black/60
                         leading-tight
                         self-start
 
-                        mb-10
-                        pl-5'>
+                        mb-2
+                        pl-4'>
               developer,<br/>
               designer,<br/>
               genius,
@@ -43,11 +61,13 @@ export const MobileHomepageOverlay = () => {
                           font-bold
                           text-center
                           text-[3.8rem]
-                          text-white/60
-
+                          font-mono
                           tracking-widest
                           leading-none
-                          mb-6'>
+                          mb-6
+                          
+                          
+                          '>
             <div>
               <span className='text-[#f2777a]'>V</span> 
               <span className='text-[#ffcc66]'>I</span> 
@@ -74,7 +94,8 @@ export const MobileHomepageOverlay = () => {
           </div>
 
           {/* bio */} 
-          <p className='max-w-xs text-sm text-white/80 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I design cool things in 2D & 3D. Checkout my portfolio for more.
+          {/* needs some work */}
+          <p className='max-w-xs text-sm text-black/60 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I prototype future objects, systems, and interactions.. Checkout what I&apos;m building.
           </p> 
           </section>
 
@@ -83,22 +104,22 @@ export const MobileHomepageOverlay = () => {
     {/* needs work */}
           
       {/* CTA */}
-      <section className="py-4">
+      {/* <section className="py-4">
         <button className="bg-white text-black px-6 py-3 font-semibold rounded-full">
           View Featured Projects
         </button>
-      </section>
+      </section> */}
 
       {/* PROJECTS PREVIEW */}
-      <section className="py-6 space-y-6">
+      {/* <section className="py-6 space-y-6"> */}
 
         {/* Example project cards */}
-        <div className="flex flex-col gap-4">
+        {/* <div className="flex flex-col gap-4">
           cards go here
         </div>
 
         <button className="mt-4 text-sm underline">View All Projects</button>
-      </section>
+      </section> */}
 
       {/* SOCIAL / INFO */}
       <section className="mt-auto py-6 text-sm space-y-2">

@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useState} from 'react'
 import {useSpring, animated, to} from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'
 
@@ -32,14 +32,20 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
         scale:1, 
         config: { mass: 5, tension: 350, friction: 40 },
     }))
+    const [hovered, seHovered] = useState(false)
+    const {bgOpacity} = useSpring({
+        bgOpacity: hovered ? 0.7 : 0,
+        config: { mass: 1, tension: 300, friction: 10 },
+    })
 
     // binds the gesture to the target element and updates the spring values based on the mouse position
     useGesture({
         onMove: ({ xy: [px, py] }) => {
-            set({rotateX: calcX(py, y.get()), rotateY: calcY(px, y.get()), scale: 1.1})
+            set({rotateX: calcX(py, y.get()), rotateY: calcY(px, y.get()), scale: 1.05})
         },
         onHover: ({ hovering}) => {
-            !hovering && set({rotateX:0, rotateY:0, scale: 1})
+            set({rotateX:0, rotateY:0, scale: 1})
+            seHovered(hovering)
         }
     },
     { target: target, eventOptions: { passive: false } }
@@ -48,20 +54,26 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
     
     
   return (
-    <animated.div ref = {target}
-    
-    style={{
-        transform: 'perspective(800px)',
-        x,
-        y,
-        scale: to([scale, zoom], (s, z) => s + z),
-        rotateX,
-      //  backgroundColor: 'blue',
-        rotateY,
-        minWidth:'475px',
-        height: '100%',
-      }}>
-        {children}
+    <animated.div 
+      ref = {target}
+      className="flex 
+                w-[500] 
+                min-h-96
+                "
+      style={{
+          transform: 'perspective(800px)',
+          x,
+          y,
+          scale: to([scale, zoom], (s, z) => s + z),
+          rotateX,
+          rotateY,
+        }}>
+
+          {children}
+
+          <animated.div
+          className="absolute inset-0 bg-neutral-300 -z-10 rounded-lg"
+          style={{opacity: bgOpacity}}/>
     </animated.div>
   )
 }

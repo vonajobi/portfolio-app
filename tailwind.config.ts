@@ -11,7 +11,7 @@ module.exports = {
         'xs-max': {'max': '416px'},
       },
       backgroundImage: {
-        'hero-pattern': "url('/assets/background.svg')",
+        'hero-pattern': "url('/assets/background.svg')"
       },
       boxShadow: {
         '3xl': '0 35px 100px -10px rgba(0, 0, 0, 0.4)',

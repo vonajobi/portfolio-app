@@ -14,35 +14,46 @@ const Projects = () => {
 
  
   return (
-    <div className=' w-screen flex items-center px-10'>
-    <div className=' w-screen flex flex-nowrap flex-row h-[24rem] items-center gap-10 py-14 px-10 mx-auto overflow-x-scroll'>
+    <div className='mt-0 md:mt-12'>
+    <div className='flex 
+                    flex-wrap 
+                    mb-16
+                    mt-7
+                    md:mx-4
+                    justify-center
+                    items-center 
+                    text-left
+                    gap-2
+                    sm:gap-5
+                    text-neutral-600
+                    '>
 
-    <h1 className='text-2xl w-96'>PROJECTS</h1> 
+    {/* <h1 className='text-2xl w-96'>PROJECTS</h1>  */}
   
     {
         projects.map((item) =>(
         <Interactions  key = {item._id}>
-                <div className=' rounded-3xl h-full shadow-2xl transition-shadow ease-out delay-100 hover:shadow-2xl hover:shadow-zinc-500 hover:ease-in'>
-                <Link href = {item.link}>
+                <Link 
+                    href = {item.link}
+                    className=' hover:shadow-2xl 
+                                hover:shadow-zinc-500 
+                                transition-shadow
+                                px-2
+                                py-2
+                                rounded-lg
+                               '>
                                    
-                        <div className='rounded-3xl absolute w-full h-full'>
+                        <div className='flex flex-col gap-2 '>
                             <img
                                 src = {item.image_1} 
                                 alt = {item.title}
-                                className=' w-full h-full object-cover rounded-3xl '
+                                className='object-cover rounded-lg '
                             />
-                        </div>
-                    
-                    <div className=' rounded-b-3xl  absolute flex  bottom-0 h-24 bg-black/75 w-full '>
-                        <div className= 'self-end py-4 px-8'>
-                            <h1 className='text-white/75 text-md uppercase'>{item.title}</h1>
-                            <p className='text-white/75 text-xs '>{item.description}</p>
-                        </div>  
-                    </div>
-
+                            <h1 className='text-md uppercase'>{item.title}</h1>
+                            <p className='text-sm pb-2'>{item.description}</p>
+                        </div>               
                  </Link>
-                </div>
-                </Interactions>
+        </Interactions>
         ))
     }
     </div>

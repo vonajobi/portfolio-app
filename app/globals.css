@@ -1,8 +1,5 @@
 
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @theme {
   --foreground-rgb: 0, 0, 0;
@@ -74,7 +71,7 @@ base {
   height: 6px;
 }
 *::-webkit-scrollbar-thumb {
-background-color: oldlace;
+background-color: #fdf5e6;
 border-radius: 10px;
 }
 

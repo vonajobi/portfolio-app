@@ -1,18 +1,18 @@
 
 "use client"
 import { useEffect, useState } from 'react'
-import useStore  from './components/helpers/helper'
+import useStore  from '../components/helpers/helper'
 import dynamic from 'next/dynamic'
 import { usePathname } from 'next/navigation'
-import { DesktopHomepageOverlay } from './components/dom/desktopHome'
-import { MobileHomepageOverlay } from './components/dom/mobileHome'
-import useIsDesktop from './components/helpers/mediaQuery'
+// import { DesktopHomepageOverlay } from '../components/dom/desktopHome'
+import { MobileHomepageOverlay } from './mobile/mobileHome'
+import useIsDesktop from '../components/helpers/mediaQuery'
 
 
-const LCanvas = dynamic(() => import('./components/canvas/canvas.tsx'), {
+const LCanvas = dynamic(() => import('../components/canvas/canvas'), {
   ssr: false,
 })
-const SceneIndex = dynamic(() => import('./components/canvas/scene.tsx'), {
+const SceneIndex = dynamic(() => import('../components/canvas/scene'), {
   ssr: false,
 });
 
