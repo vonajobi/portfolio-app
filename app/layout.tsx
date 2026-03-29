@@ -17,7 +17,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         {/* <div className={`fixed inset-0
                       -z-20
                       pointer-events-none
-                      bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] 
+                      bg-[linear-gradient(to_right,#d0d0d020_1px,transparent_1px),linear-gradient(to_bottom,#d0d0d020_1px,transparent_1px)] 
                       bg-size-[10px_10px]
                       bg-[#dedede]
                       `}>  
@@ -30,7 +30,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                           
                           bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] 
                           bg-size-[10px_10px]
-                        bg-[#dedede]">
+                        bg-[#1e1e1e]">
             <main className="flex grow
                             pt-14
                             px-4

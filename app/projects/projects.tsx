@@ -20,12 +20,16 @@ const Projects = () => {
                     mb-16
                     mt-7
                     md:mx-4
+
                     justify-center
                     items-center 
                     text-left
+
                     gap-2
                     sm:gap-5
-                    text-neutral-600
+
+                    text-neutral-400
+                    bg-[url("/assets/background_black")]
                     '>
 
     {/* <h1 className='text-2xl w-96'>PROJECTS</h1>  */}

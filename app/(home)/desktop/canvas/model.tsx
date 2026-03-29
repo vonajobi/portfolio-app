@@ -50,13 +50,12 @@ type GLTFResult = GLTF & {
     return (
       <group ref={group} {...props} dispose={null}>
           <Float>
-            <Center> scale={modelScale} rotation={[Math.PI/3.5, -0.4]} position={[0, 0.8,0]}
+            <Center position={[0, 0, -5]}>
               <mesh 
                   castShadow 
                   geometry={nodes.crushies_portfolio.geometry}
                   material={materials['Steel_-_Satin']}
-                  position={[-4, 6, -8]}
-                  rotation={[0,Math.PI / 2, 0]}
+                  rotation={[0, Math.PI / 3.5, 0]}
                   scale={0.13} 
                   >
                     <meshStandardMaterial roughness={0.15} metalness={0.3} color='red'/>

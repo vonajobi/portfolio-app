@@ -1,6 +1,6 @@
 import {FaRegHandPeace} from 'react-icons/fa'
 import { Socials } from '../../components/dom/socials'
-import { HomePageOverlay } from '../homePageOverlay'
+import { HomePageOverlay } from '../portableHomePageOverlay'
 import PixelDitherCanvas from './pixelAnimation'
 
 
@@ -36,7 +36,7 @@ export const MobileHomepageOverlay = () => {
         <div className='font-light
                         
                         text-4xl
-                        text-black/60
+                        text-white/60
                         leading-tight
                         self-start
 
