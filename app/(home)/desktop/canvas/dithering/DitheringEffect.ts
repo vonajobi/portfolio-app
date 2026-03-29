@@ -1,4 +1,7 @@
 import { Effect } from "postprocessing";
+import {OrbitControls, OrthographicCamera} from '@react-three/drei'
+import {wrapEffect, EffectComposer} from '@react-three/postprocessing'
+import { Suspense, useRef, useState } from "react";
 import * as THREE from "three";
 import ditheringShader from './DitheringShader';
 
@@ -14,6 +17,9 @@ export interface DitheringEffectOptions {
   invertColor?: boolean;
   pixelSizeRatio?: number;
   grayscaleOnly?: boolean;
+  ditherStrength?: number;
+  colorLevels?: number;
+  halftone?: number;
 }
 
 /**
@@ -33,11 +39,13 @@ export class DitheringEffect extends Effect {
   constructor({
     time = 0,
     resolution = new THREE.Vector2(1, 1),
-    gridSize = 4.0,
+    gridSize = 0.6,
     luminanceMethod = 0,
-    invertColor = false,
-    pixelSizeRatio = 1,
-    grayscaleOnly = false
+    pixelSizeRatio = 4,
+    grayscaleOnly = false,
+    colorLevels = 16,
+    halftone = 0,
+
   }: DitheringEffectOptions = {}) {
     // Initialize uniforms with default values
     const uniforms = new Map<string, THREE.Uniform<number | THREE.Vector2>>([
@@ -45,10 +53,11 @@ export class DitheringEffect extends Effect {
       ["resolution", new THREE.Uniform(resolution)],
       ["gridSize", new THREE.Uniform(gridSize)],
       ["luminanceMethod", new THREE.Uniform(luminanceMethod)],
-      ["invertColor", new THREE.Uniform(invertColor ? 1 : 0)],
       ["ditheringEnabled", new THREE.Uniform(1)], // Enabled by default
       ["pixelSizeRatio", new THREE.Uniform(pixelSizeRatio)],
-      ["grayscaleOnly", new THREE.Uniform(grayscaleOnly ? 1 : 0)]
+      ["grayscaleOnly", new THREE.Uniform(grayscaleOnly ? 1 : 0)],
+      ["ditherStrength", new THREE.Uniform(colorLevels)],
+      ["halftoneMix", new THREE.Uniform(halftone)],
     ]);
 
     super("DitheringEffect", ditheringShader, {
@@ -132,4 +141,24 @@ export class DitheringEffect extends Effect {
       grayscaleOnlyUniform.value = grayscaleOnly ? 1 : 0;
     }
   }
+
+  setColorLevels(value: number):void{
+    const colorLevelsUniform = this.uniforms.get("colorLevels");
+    if(colorLevelsUniform !== undefined){
+      colorLevelsUniform.value=value
+    }
+  }
+  setDitherStrength(value: number):void{
+    const dithersUniform = this.uniforms.get("ditherStrength");
+    if(dithersUniform){
+      dithersUniform.value=value
+    }
+  }
+  setHalftoneMix(value: number):void{
+    const halftoneUniform = this.uniforms.get("halftoneMix");
+    if(halftoneUniform){
+      halftoneUniform.value=value
+    }
+  }
+  
 }

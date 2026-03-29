@@ -25,17 +25,20 @@ export function Room({ highlight }: RoomProps): JSX.Element {
   return (
     <group position={[0, -0.5, 0]}>
       {/* Spotlights at corners of the room */}
-      <spotLight castShadow position={[-15, 20, 15]} angle={0.2} penumbra={1} intensity={2} decay={0} />
+      {/* <spotLight castShadow position={[-15, 20, 15]} angle={0.2} penumbra={1} intensity={2} decay={0} />
       <spotLight castShadow position={[15, 20, 15]} angle={0.2} penumbra={1} intensity={2} decay={0} />
-      <spotLight castShadow position={[15, 20, -15]} angle={0.2} penumbra={1} intensity={2} decay={0} />
+      <spotLight castShadow position={[15, 20, -15]} angle={0.2} penumbra={1} intensity={2} decay={0} /> */}
       <spotLight castShadow position={[-15, 20, -15]} angle={0.2} penumbra={1} intensity={2} decay={0} />
       
       {/* Central point light */}
-      <pointLight castShadow color="white" intensity={100} distance={28} decay={2} position={[0.5, 14.0, 0.5]} />
+      {/* <pointLight castShadow color="white" intensity={100} distance={28} decay={2} position={[0.5, 14.0, 0.5]} /> */}
+      <pointLight castShadow color="white" intensity={18} distance={20} decay={2} />
+
       
       {/* Room enclosure - inverted box */}
       <mesh geometry={boxGeometry} castShadow receiveShadow position={[0.0, 13.2, 0.0]} scale={[31.5, 28.5, 31.5]}>
-        <meshStandardMaterial color="gray" side={THREE.BackSide} />
+          {/* <meshStandardMaterial color="gray" side={THREE.BackSide} /> */}
+          <meshStandardMaterial color="blue" side={THREE.BackSide} />
       </mesh>
       
       {/* Scene objects - boxes with various positions and scales */}
@@ -56,6 +59,9 @@ export function Room({ highlight }: RoomProps): JSX.Element {
       <Lightformer form="box" intensity={80} position={[-7.0, 16.0, -14.0]} scale={[2.5, 2.5, 0.1]} target={false} light={{ intensity: 100, distance: 28, decay: 2 }} />
       <Lightformer form="box" intensity={1} position={[0.0, 20.0, 0.0]} scale={[0.1, 0.1, 0.1]} target={false} light={{ intensity: 100, distance: 28, decay: 2 }} />
       <Lightformer form="box" intensity={20} position={[0.0, 15, 0.0]} scale={[10, 1, 10]} target={false} light={{ intensity: 100, distance: 28, decay: 2 }} />
+      {/* <Lightformer form="ring" position={[2, 3, -2]} scale={8} color={highlight} intensity={6} />
+      <Lightformer form="box" intensity={30} position={[-14.0, 10.0, 8.0]} scale={[0.2, 4, 4]} />
+      <Lightformer form="box" intensity={12} position={[0, 15, 0]} scale={[8, 1, 8]} /> */}
     </group>
   )
 }

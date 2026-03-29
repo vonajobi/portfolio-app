@@ -57,7 +57,7 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
     <animated.div 
       ref = {target}
       className="flex 
-                w-[500] 
+                min-w-[400] 
                 min-h-96
                 "
       style={{

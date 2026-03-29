@@ -18,8 +18,6 @@ const LCanvas = dynamic(() => import('./desktop/canvas/canvas'), {
 
 
 function Home() {
-  const router = usePathname()
-  const [isLoading, setIsLoading] = useState(true)
 
   const isDesktop = useIsDesktop()
   return (

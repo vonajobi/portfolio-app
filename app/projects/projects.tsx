@@ -10,7 +10,7 @@ import projects from "../../public/data/projects.json";
 const title = 'Victoria Onajobi | Creaive Developer'
 
 const Projects = () => {
-    const [products, setProducts] = useState<ProjectsProps[]>(projects)
+    // const [products, setProducts] = useState<ProjectsProps[]>(projects)
 
  
   return (
@@ -35,7 +35,7 @@ const Projects = () => {
         <Interactions  key = {item._id}>
                 <Link 
                     href = {item.link}
-                    className=' hover:shadow-2xl 
+                    className=' hover:shadow-md 
                                 hover:shadow-zinc-500 
                                 transition-shadow
                                 px-2
@@ -43,14 +43,14 @@ const Projects = () => {
                                 rounded-lg
                                '>
                                    
-                        <div className='flex flex-col gap-2 '>
+                        <div className='flex flex-col gap-2 text-black/60'>
                             <img
                                 src = {item.image_1} 
                                 alt = {item.title}
-                                className='object-cover rounded-lg '
+                                className='rounded-lg w-100 max-h-100'
                             />
-                            <h1 className='text-md uppercase'>{item.title}</h1>
-                            <p className='text-sm pb-2'>{item.description}</p>
+                            <p className='text-md font-medium'>{item.title}</p>
+                            <p className='text-xs pb-2'>{item.description}</p>
                         </div>               
                  </Link>
         </Interactions>

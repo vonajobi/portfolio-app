@@ -7,6 +7,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -18,7 +19,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  @apply  bg-[hero-pattern] bg-cover bg-center;
+
   
 }
 

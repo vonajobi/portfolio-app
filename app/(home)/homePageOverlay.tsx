@@ -1,4 +1,6 @@
 import {FaRegHandPeace} from 'react-icons/fa'
+import { RiArrowDownWideLine } from "react-icons/ri";
+
 
 export const HomePageOverlay = ()=>{
     return(
@@ -13,6 +15,7 @@ export const HomePageOverlay = ()=>{
                           mb-6                   
                           '>
             <div>
+              <span className='text-[#f2777a]'>[#</span> 
               <span className='text-[#f2777a]'>V</span> 
               <span className='text-[#ffcc66]'>I</span> 
               <span className='text-[#99cc99]'>C</span> 
@@ -32,13 +35,14 @@ export const HomePageOverlay = ()=>{
               <span className='text-[#cc99cc]'>j</span> 
               <span className='text-[#6699cc]'>O</span> 
               <span className='text-[#f2777a]'>b</span> 
-              <span className='text-[#99cc99]'>i.</span> 
+              <span className='text-[#99cc99]'>i</span> 
+              <span className='text-[#99cc99]'>.#]</span> 
             </div>    
           </div>
 
          
-          <p className='max-w-xs text-sm text-black/60 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I prototype future objects, systems, and interactions.. Checkout what I&apos;m building.
-          </p> 
+          <p className='max-w-xs text-sm text-white/60 leading-relaxed pb-2'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I prototype future objects, systems, and interactions.. Checkout what I&apos;m building.
+          </p>
         </>
     )
 }

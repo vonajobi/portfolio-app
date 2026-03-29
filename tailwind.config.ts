@@ -1,3 +1,4 @@
+import { keyframes } from "leva/dist/declarations/src/styles";
 
 module.exports = {
   content: [
@@ -7,27 +8,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens:{
-        'xs-max': {'max': '416px'},
-      },
-      backgroundImage: {
-        'hero-pattern': "url('/assets/background.svg')"
-      },
-      boxShadow: {
-        '3xl': '0 35px 100px -10px rgba(0, 0, 0, 0.4)',
-        '2xl': '0 10px 30px -5px rgba(0, 0, 0, 0.3)',
-      },
-      gridTemplateColumns: {
-      },
-      fontFamily:{
-      },
-    },
-    
   },
-  safelist: ["bg-hero-pattern"],
   plugins: [
     require('tailwindcss'),
     require('@kamona/tailwindcss-perspective'),
   ],
+  
+}
 }
 // export default config

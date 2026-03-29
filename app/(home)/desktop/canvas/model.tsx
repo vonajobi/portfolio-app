@@ -4,6 +4,7 @@ import { useGLTF, Center, Float } from '@react-three/drei';
 import { GLTF } from 'three-stdlib'
 import * as THREE from 'three'
 import { useCallback } from 'react';
+import { Lights } from './lights';
 
 
 
@@ -20,17 +21,34 @@ type GLTFResult = GLTF & {
    export const ModelLoader: React.FC<any> = (props) => {
     const group = useRef<THREE.Group>(null);
       
-     const { nodes, materials} = useGLTF('/assets/downBad.glb') as any as GLTFResult;
-    //  logging any errors
-     if (!nodes) {
-      console.error('nameofObject not exist in the model');
-      // Or handle the error in another way
-      }
+    // const gltf = useGLTF('/assets/downBad.glb') as any as GLTFResult;
+    const gltf = useGLTF("https://cdn.maximeheckel.com/models/spaceship-optimized.glb");
+
+    const {nodes, materials} = gltf
   //log nodes:
     // console.log(Object.keys(nodes))
     // console.log(materials)
     // console.log(nodes.crushies_portfolio.geometry.attributes.position.count);
-
+    // useEffect(()=>{
+    //   materials['Steel_-_Satin'].transparent =true;
+    //   materials['Steel_-_Satin'].alphaToCoverage = true;
+    //   materials['Steel_-_Satin'].depthFunc = THREE.LessEqualDepth;
+    //   materials['Steel_-_Satin'].depthTest = true;
+    //   materials['Steel_-_Satin'].depthWrite = true;
+    // },[])
+    useEffect(() => {
+    if (gltf) {
+      function alphaFix(material) {
+        material.transparent = true;
+        material.alphaToCoverage = true;
+        material.depthFunc = THREE.LessEqualDepth;
+        material.depthTest = true;
+        material.depthWrite = true;
+      }
+      alphaFix(gltf.materials.spaceship_racer);
+      alphaFix(gltf.materials.cockpit);
+    }
+  }, [gltf]);
     const [modelScale, setModelScale] = useState(3);
     // Responsive adjustment handler for model scale
     const handleResize = useCallback(() => {
@@ -46,23 +64,28 @@ type GLTFResult = GLTF & {
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }, [handleResize]);
-  
+    
+    
     return (
       <group ref={group} {...props} dispose={null}>
-          <Float>
             <Center> scale={modelScale} rotation={[Math.PI/3.5, -0.4]} position={[0, 0.8,0]}
               <mesh 
                   castShadow 
-                  geometry={nodes.crushies_portfolio.geometry}
-                  material={materials['Steel_-_Satin']}
-                  position={[-4, 6, -8]}
-                  rotation={[0,Math.PI / 2, 0]}
-                  scale={0.13} 
+                  receiveShadow
+                  // geometry={nodes.crushies_portfolio.geometry}
+                  // material={materials['Steel_-_Satin']}
+                  geometry={gltf.nodes.Cube001_spaceship_racer_0.geometry}
+                  material={gltf.materials.spaceship_racer}
+                  // position={[-4, 6, -8]}
+                  position={[-12, 10, -3.725]}
+                  rotation={[0, -Math.PI * 0.5, 0]}                  
+                  // scale={0.13}
+                  scale={0.01} 
                   >
-                    <meshStandardMaterial roughness={0.15} metalness={0.3} color='red'/>
+                    {/* <meshStandardMaterial color='red'/> */}
                 </mesh>
+                {/* <Lights/> */}
             </Center>
-          </Float>
       </group>
     );
   };

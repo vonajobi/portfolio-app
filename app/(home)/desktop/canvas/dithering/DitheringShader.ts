@@ -1,10 +1,3 @@
-/**
- * Dithering shader implementation
- * Applies a dithering effect to the rendered scene
- * 
- * Credits:
- * Original dithering pattern: https://www.shadertoy.com/view/ltSSzW
- */
 
 const ditheringShader = /*glsl*/`
 uniform float ditheringEnabled;
@@ -14,6 +7,9 @@ uniform float luminanceMethod;
 uniform float invertColor;
 uniform float pixelSizeRatio;
 uniform float grayscaleOnly;
+uniform float ditherStrength;
+uniform float colorLevels;
+uniform float halftoneMix;
 
 /**
  * Ordered dithering matrix lookup
@@ -22,80 +18,66 @@ uniform float grayscaleOnly;
  * @param pos - Pixel position in screen space
  * @return boolean - Whether the pixel should be colored or not
  */
-bool getValue(float brightness, vec2 pos) {
-  // Early return for extreme values
-  if (brightness > 16.0 / 17.0) return false;
-  if (brightness < 1.0 / 17.0) return true;
-  
-  // Calculate position in 4x4 dither matrix
-  vec2 pixel = floor(mod(pos.xy / gridSize, 4.0));
-  int x = int(pixel.x);
-  int y = int(pixel.y);
-  
-  // 4x4 Bayer matrix threshold map
-  // Efficiently determine the threshold based on x,y position
-  if (x == 0) {
-    if (y == 0) return brightness < 16.0 / 17.0;
-    if (y == 1) return brightness < 5.0 / 17.0;
-    if (y == 2) return brightness < 13.0 / 17.0;
-    return brightness < 1.0 / 17.0; // y == 3
-  } 
-  else if (x == 1) {
-    if (y == 0) return brightness < 8.0 / 17.0;
-    if (y == 1) return brightness < 12.0 / 17.0;
-    if (y == 2) return brightness < 4.0 / 17.0;
-    return brightness < 9.0 / 17.0; // y == 3
-  }
-  else if (x == 2) {
-    if (y == 0) return brightness < 14.0 / 17.0;
-    if (y == 1) return brightness < 2.0 / 17.0;
-    if (y == 2) return brightness < 15.0 / 17.0;
-    return brightness < 3.0 / 17.0; // y == 3
-  }
-  else { // x == 3
-    if (y == 0) return brightness < 6.0 / 17.0;
-    if (y == 1) return brightness < 10.0 / 17.0;
-    if (y == 2) return brightness < 7.0 / 17.0;
-    return brightness < 11.0 / 17.0; // y == 3
-  }
-}
 
+
+// 8x8 Bayer matrix threshold map
+
+const float bayerMatrix8x8[64] = float[64](
+  0.0/ 64.0, 48.0/ 64.0, 12.0/ 64.0, 60.0/ 64.0,  3.0/ 64.0, 51.0/ 64.0, 15.0/ 64.0, 63.0/ 64.0,
+  32.0/ 64.0, 16.0/ 64.0, 44.0/ 64.0, 28.0/ 64.0, 35.0/ 64.0, 19.0/ 64.0, 47.0/ 64.0, 31.0/ 64.0,
+    8.0/ 64.0, 56.0/ 64.0,  4.0/ 64.0, 52.0/ 64.0, 11.0/ 64.0, 59.0/ 64.0,  7.0/ 64.0, 55.0/ 64.0,
+  40.0/ 64.0, 24.0/ 64.0, 36.0/ 64.0, 20.0/ 64.0, 43.0/ 64.0, 27.0/ 64.0, 39.0/ 64.0, 23.0/ 64.0,
+    2.0/ 64.0, 50.0/ 64.0, 14.0/ 64.0, 62.0/ 64.0,  1.0/ 64.0, 49.0/ 64.0, 13.0/ 64.0, 61.0/ 64.0,
+  34.0/ 64.0, 18.0/ 64.0, 46.0/ 64.0, 30.0/ 64.0, 33.0/ 64.0, 17.0/ 64.0, 45.0/ 64.0, 29.0/ 64.0,
+  10.0/ 64.0, 58.0/ 64.0,  6.0/ 64.0, 54.0/ 64.0,  9.0/ 64.0, 57.0/ 64.0,  5.0/ 64.0, 53.0/ 64.0,
+  42.0/ 64.0, 26.0/ 64.0, 38.0/ 64.0, 22.0/ 64.0, 41.0/ 64.0, 25.0/ 64.0, 37.0/ 64.0, 21.0 / 64.0
+);
+
+float lookUp(vec2 uv){
+  vec2 fragCoord = uv * resolution;
+  int x = int(fragCoord.x)%8;
+  int y = int(fragCoord.y)%8;
+  float threshold = bayerMatrix8x8[y*8+x];
+
+  return threshold;
+}
+vec3 dither(vec2 uv, vec3 color){
+  float threshold = lookUp(uv);
+  color += (threshold - 0.5) * ditherStrength;
+  color.r = floor(color.r * (colorLevels-1.0)+0.5)/(colorLevels-1.0);
+  color.g = floor(color.g * (colorLevels-1.0)+0.5)/(colorLevels-1.0);
+  color.b = floor(color.b * (colorLevels-1.0)+0.5)/(colorLevels-1.0);
+
+  return color;
+}
 void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
   vec2 fragCoord = uv * resolution;
-  vec3 baseColor;
 
   // Apply pixelation effect based on grid size and ratio
   float pixelSize = gridSize * pixelSizeRatio;
   vec2 pixelatedUV = floor(fragCoord / pixelSize) * pixelSize / resolution;
-  baseColor = texture2D(inputBuffer, pixelatedUV).rgb;
+
+  vec3 color = texture2D(inputBuffer, pixelatedUV).rgb;
+  color.rgb = dither(pixelatedUV, color);
+  
   
   // Calculate luminance for each pixel (original implementation)
-  float luminance = dot(baseColor, vec3(1.,1.,1.));
+  float luminance = dot(color, vec3(0.299, 0.587, 0.114));
   
   // Apply grayscale if enabled
   if (grayscaleOnly > 0.0) {
-    baseColor = vec3(luminance);
+    color = vec3(luminance);
   }
       
   // Apply dither pattern based on pixel position and luminance
-  bool dithered = getValue(luminance, fragCoord);
+  float bayer = lookUp(pixelatedUV);
   
-  // Create dithered version of the pixel
-  vec3 ditherColor = dithered ? vec3(0.0) : baseColor;
-  
-  // Apply dither only to the specific pixelated UV coordinate
-  vec2 currentPixel = floor(fragCoord / pixelSize);
-  vec2 originalPixel = floor(uv * resolution / pixelSize);
-  
-  baseColor = (currentPixel == originalPixel) ? ditherColor : baseColor;
+  // Create dithered version of the pixel  
+  float mask = step(luminance, bayer);
+  vec3 halftoneColor = mix(color, color * mask, halftoneMix);  
 
-  // Invert color if requested
-  if (invertColor > 0.0) {
-    baseColor = 1.0 - baseColor;
-  }
-
-  // Output final color preserving alpha
-  outputColor = vec4(baseColor, inputColor.a);
+  // Output final color
+  outputColor = vec4(halftoneColor, inputColor.a);
 }`;
 
 export default ditheringShader; 
