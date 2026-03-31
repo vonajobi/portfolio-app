@@ -83,7 +83,7 @@ type Props = {
 
 export default function PixelDitherCanvas({
   fontSize = 8,
-  alpha = 0.2,
+  alpha = 0.3,
   chars = " %*>:'",
 }:Props){
   const canvasRef = useRef<HTMLCanvasElement|null>(null)
@@ -115,7 +115,8 @@ export default function PixelDitherCanvas({
     }
     const draw=(time:number)=>{
       ctx.clearRect(0,0,canvas.width,canvas.height)
-      ctx.fillStyle="blue"
+      // COLOUR CHANGE
+      ctx.fillStyle="PINK"
       ctx.globalAlpha = alpha
       ctx.globalCompositeOperation = "screen"
 

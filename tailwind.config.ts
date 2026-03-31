@@ -1,5 +1,6 @@
+import type { Config } from 'tailwindcss'
 
-module.exports = {
+const config: Config  = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -24,10 +25,10 @@ module.exports = {
     },
     
   },
-  safelist: ["bg-hero-pattern"],
   plugins: [
     require('tailwindcss'),
     require('@kamona/tailwindcss-perspective'),
   ],
 }
-// export default config
+
+export default config

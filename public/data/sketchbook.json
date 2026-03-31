@@ -1,154 +1,207 @@
 [
     {
-        "image": "/assets/sketchbook/render1.jpg",
-        "title": "Sulken Conept One"
+        "image": "/assets/sketchbook/Octopus.jpg",
+        "title": "Drawing of an octopus brushing a black girl's teeth",
+        "category": "study"
     },
     {
-        "image": "/assets/sketchbook/render2.jpg",
-        "title": "Sulken Concept Two"
+        "image": "/assets/sketchbook/Amara_space.jpg",
+        "title": "Drawing of a woman in a space suit",
+        "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/abstract_2.jpg",
-        "title": "Abstract 2"
+        "image": "/assets/sketchbook/Detty_December.gif",
+        "title": "Camera Graphic Gif",
+        "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/wendell.png",
-        "title": "abstract art with purple and green hues"
+        "image": "/assets/sketchbook/lorenz_v2.gif",
+        "title": "Lorenz music reactor",
+        "category": "engineering"
     },
     {
-        "image": "/assets/sketchbook/lil_dude_3.jpg",
-        "title": "blind box character with cardboard head"
+        "image": "/assets/sketchbook/_112025.jpg",
+        "title": "Back against the wall self portrait",
+        "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/lil_dude_4.jpg",
-        "title": "blind box character with cardboard head"
+        "image": "/assets/sketchbook/3d_render_blue_man.jpg",
+        "title": "3D render of a blue man",
+        "category": "3D"
     },
     {
-        "image": "/assets/sketchbook/bent_down.png",
-        "title": "Freddy Carrasco Study"
+        "image": "/assets/sketchbook/2025-2026_EOY_Portrait.jpg",
+        "title": "Person sitting on a cliff looking over the beach",
+        "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/dude.png",
-        "title": "Dude"
+        "image": "/assets/sketchbook/sky_value_study.jpg",
+        "title": "Black and white sky, person looking up",
+        "category": "study"
     },
     {
-        "image": "/assets/sketchbook/IMG_ldy.jpeg",
-        "title": " "
+        "image": "/assets/sketchbook/analog_test_site_value_study.jpg",
+        "title": "Analog space test site in black and white",
+        "category": "study"
     },
     {
-        "image": "/assets/sketchbook/IMG_luffy.jpeg",
-        "title": " "
+        "image": "/assets/sketchbook/blue_red_yellow_igbo_mask.jpg",
+        "title": "Blue, red, and yellow Igbo mask",
+        "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/IMG_t.jpeg",
-        "title": " "
-    },{
-        "image": "/assets/sketchbook/close_up_knukles.png",
-        "title": "Walnut Lamp Shaped Watch Box"
+        "image": "/assets/sketchbook/igbo_mask_blue.jpg",
+        "title": "Blue Igbo Mask",
+        "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/hook.png",
-        "title": "Watch Box Hook"
+        "image": "/assets/sketchbook/hippo_igbo_mask.jpg",
+        "title": "Hippo Igbo Mask",
+        "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/close_up_pin.png",
-        "title": "Watch Box Pin"
+        "image": "/assets/sketchbook/downbad_colour_study.jpg",
+        "title": "Red figurine colour study",
+        "category": "study"
     },
     {
-        "image": "/assets/sketchbook/full_body.png",
-        "title": "Watch Box Full Body"
+        "image": "/assets/sketchbook/egg_colour_study.jpg",
+        "title": "Yellow cracked egg",
+        "category": "study"
     },
     {
-        "image": "/assets/sketchbook/spider.mp4",
-        "title": "Robot Insect Walking"
+        "image": "/assets/sketchbook/orange_colour_study.jpg",
+        "title": "Orange",
+        "category": "study"
+    },
+    {
+        "image": "/assets/sketchbook/room_colour_study.jpg",
+        "title": "Dark room with dramatic purple lighting",
+        "category": "study"
+    },
+    {
+        "image": "/assets/sketchbook/abstract_wendel.jpg",
+        "title": "Abstract art",
+        "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/lil_dude-5.jpg",
+        "title": "blind box character with cardboard head",
+        "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/bent_down_study.png",
+        "title": "Freddy Carrasco Study",
+        "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/scholfield_watchbox_close_up.png",
+        "title": "Walnut Lamp Shaped Watch Box",
+        "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/scholfield_watchbox_hook.png",
+        "title": "Scholfield Watch Box Hook",
+        "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/scholfield_watchbox_closeup_pin.png",
+        "title": "Scholfield Watch Box Pin",
+        "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/scholfield_watchbox_full_body.png",
+        "title": "Scholfield Watch Box Full Body",
+        "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/spider.gif",
+        "title": "Robot Insect Walking",
+        "category": "3D"
     },
     {
         "image": "/assets/sketchbook/IMG_8173.jpg",
-        "title": "land rover prototype"
+        "title": "Land rover prototype",
+        "category": "engineering"
     },
     {
         "image": "/assets/sketchbook/IMG_8174.jpg",
-        "title": "land rover prototype front view"
+        "title": "Front view of land rover prototype",
+        "category": "engineering"
     },
     {
-        "image": "/assets/sketchbook/aftershock2.jpg",
-        "title": "Aftershock II launching"
+        "image": "/assets/sketchbook/aftershock_rocket_launch.jpg",
+        "title": "Aftershock II rocket launch",
+        "category": "engineering"
     },
     {
         "image": "/assets/sketchbook/DSC_0016.jpg",
-        "title": "USC RPL Fall 2024"
-    },
-    {
-        "image": "/assets/sketchbook/IMG_1.jpeg",
-        "title": " "
-    },
-    {
-        "image": "/assets/sketchbook/IMG_2.jpeg",
-        "title": " "
+        "title": "USC RPL Fall 2024",
+        "category": "engineering"
     },
     {
         "image": "/assets/sketchbook/IMG_5168.jpg",
-        "title": " "
+        "title": "Pipe bomb",
+        "category": "engineering"
     },
     {
         "image": "/assets/sketchbook/IMG_5264.jpg",
-        "title": "robotic hand"
+        "title": "robotic hand",
+        "category": "engineering"
     },
     {
         "image": "/assets/sketchbook/GH010090.mp4",
-        "title": " "
+        "title": "Timelapse",
+        "category": "animation"
     },
     {
         "image": "/assets/sketchbook/IMG_5281.jpg",
-        "title": " "
+        "title": "Arduino board",
+        "category": "engineering"
     },
     {
         "image": "/assets/sketchbook/IMG_5700.jpg",
-        "title": " "
+        "title": "clay mouse with sketches",
+        "category": "art & design"
     },
     {
         "image": "/assets/sketchbook/IMG_8182.jpg",
-        "title": " "
+        "title": "Man jumping sketch",
+        "category": "art & design"
     },
     {
         "image": "/assets/sketchbook/IMG_8185.jpg",
-        "title": " "
+        "title": "Charcoal sketch of a depressed woman",
+        "category": "art & design"
     },
     {
         "image": "/assets/sketchbook/IMG_8186.jpg",
-        "title": " "
+        "title": "Yoji shinakawa study",
+        "category": "art & design"
     },
-    
     {
         "image": "/assets/sketchbook/spoon_front.png",
-        "title": "Weighted Spoon Front"
+        "title": "Weighted Spoon Front",
+        "category": "art & design"
     },
     {
         "image": "/assets/sketchbook/spoon_top.png",
-        "title": "Weighted Spoon Top"
+        "title": "Weighted Spoon Top",
+        "category": "art & design"
     },
     {
         "image": "/assets/sketchbook/IMG_8188.jpg",
-        "title": " "
-    },
-    {
-        "image": "/assets/sketchbook/IMG_8189.jpg",
-        "title": " "
-    },
-    {
-        "image": "/assets/sketchbook/IMG_8191.jpg",
-        "title": " "
-    },
-    {
-        "image": "/assets/sketchbook/IMG_8192.jpg",
-        "title": " "
+        "title": "Yoji shinakawa study 2",
+        "category": "study"
     },
     {
         "image": "/assets/sketchbook/mouse_concepts_01.png",
-        "title": "mouse concepts"
+        "title": "mouse concepts 1",
+        "category": "art & design"
     },
     {
         "image": "/assets/sketchbook/mouse_concepts_02.png",
-        "title": "mouse concepts"
+        "title": "mouse concepts 2",
+        "category": "art & design"
     }
 ]

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import ImageGrid from '@/app/components/layout/imageGrid';
 import { Metadata } from 'next';
 
@@ -40,7 +40,7 @@ const IntuitivePaper = () => {
     //     <img src={`${file_path}database_flow.png`} alt="Databse Flow" className='w-2/3'/>
     //     </div>
     // </div>
-    <div className='min-h-screen  flex bg-gradient-to-br from-white via-purple-50 to-blue-50 text-gray-800'>
+    <div className='min-h-screen  flex bg-linear-to-br from-white via-purple-50 to-blue-50 text-gray-800'>
       <div className=" w-screen md:w-2/3 mx-auto bg-gray-100/30">
         {/* Introduction Section */}
         <section className=" py-12 px-8 md:px-24">

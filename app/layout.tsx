@@ -4,24 +4,16 @@ import { Inter } from 'next/font/google'
 import { Navbar } from './components/dom/navBar'
 import { Footer } from './components/dom/footer'
 import Header from './components/dom/header';
-import React from 'react';
-import { usePathname } from "next/navigation";
+import React  from 'react';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({children}: {children: React.ReactNode}) {
   
   return (
     <html lang="en">
       <body>
         <Header/>
-        {/* <div className={`fixed inset-0
-                      -z-20
-                      pointer-events-none
-                      bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] 
-                      bg-size-[10px_10px]
-                      bg-[#dedede]
-                      `}>  
-        </div> */}
+      
         <div className= {inter.className} >
           <Navbar />
           <div className=" flex 
@@ -30,7 +22,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                           
                           bg-[linear-gradient(to_right,#73737320_1px,transparent_1px),linear-gradient(to_bottom,#73737320_1px,transparent_1px)] 
                           bg-size-[10px_10px]
-                        bg-[#dedede]">
+                        bg-[#1e1e1e]">
             <main className="flex grow
                             pt-14
                             px-4

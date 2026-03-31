@@ -11,24 +11,24 @@ export const Navbar: React.FC = ({}) => {
 
   const navItems = [
     {
-      text: 'PROJECTS',
+      text: '#PROJECTS',
       path: '../projects',
     },
     {
-      text: 'SKETCHBOOK',
+      text: '#SKETCHBOOK',
       path: '../sketchbook',
     }
   ]
 
   return (
     <nav className='absolute top-0 left-0 right-0 z-20 flex items-center justify-between w-full px-5 pt-5 pb-5 border-b sm:px-10 lg:px-20 text-white/75 border-b-white/20 backdrop-blur-sm'>
-      <span className='mix-blend-difference font-bold [&>*:hover]:text-white' >
+      <span className='mix-blend-difference font-bold ease-in [&>*:hover]:text-white `*:transition-all' >
         <Link href='/'>
           HOME
         </Link>
       </span>
 
-      <ul className='flex text-sm font-light tracking-wider space-x-4  md:space-x-10 font-ubuntu [&>*]:cursor-pointer [&>*]:leading-none [&>*:hover]:text-white [&>*]:transition-all'>
+      <ul className='flex text-sm font-light tracking-wider space-x-4  md:space-x-10 font-ubuntu `*:cursor-pointer `*:leading-none [&>*:hover]:text-white `*:transition-all'>
         {navItems.map((item) => {
           const { text, path } = item
 

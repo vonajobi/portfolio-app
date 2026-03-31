@@ -7,38 +7,31 @@
         "link": "/projects/p1",
         "image_1": "/assets/projects/blind_box/packaging_2.png"
     },
-    {
-        "_id": 2,
-        "title": "Plant Grow Lamp",
-        "description": "A grow lamp for plants that uses an Arduino to control the light temperature.",
-        "link": "/projects/p2",
-        "image_1": "/assets/projects/lamp/lamp3.png"
-        }, 
-        {
-            "_id": 3,
-            "title": "Child's Play",
-            "description": "Within the inner mind of a child, there is a world of imagination and wonder. ",
-            "link": "/projects/p3",
-            "image_1": "/assets/projects/scene/scene1.png"
-            
-        },
        
-        {
-            
-            "_id": 5,
-            "title": "Intuitive Paper",
-            "description":"Succint AI Research Summaries" ,
-            "link": "/projects/p5",
-            "image_1": "/assets/projects/intuitive_paper/main.png"            
-        },
-        {
-            "_id": 6,
-            "title": "Paladone",
-            "description": "A collection of physical building blocks for digital worlds.",
-            "link": "/projects/p4",
-            "image_1": "/assets/projects/paladone/scene_1v2.png"
-        }
+    {
+        "_id": 3,
+        "title": "Child's Play",
+        "description": "Within the inner mind of a child, there is a world of imagination and wonder. ",
+        "link": "/projects/p3",
+        "image_1": "/assets/projects/scene/scene1.png"
         
+    },
+    
+    {
+        "_id": 4,
+        "title": "Paladone",
+        "description": "A collection of physical building blocks for digital worlds.",
+        "link": "/projects/p4",
+        "image_1": "/assets/projects/paladone/scene_1v2.png"
+    },
+    {
+        
+        "_id": 5,
+        "title": "Intuitive Paper",
+        "description":"Succint AI Research Summaries" ,
+        "link": "/projects/p5",
+        "image_1": "/assets/projects/intuitive_paper/main.png"            
+    }
     ]
     
     

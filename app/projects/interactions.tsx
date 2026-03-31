@@ -45,7 +45,7 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
         },
         onHover: ({ hovering}) => {
             set({rotateX:0, rotateY:0, scale: 1})
-            seHovered(hovering)
+            seHovered(hovering ?? false)
         }
     },
     { target: target, eventOptions: { passive: false } }
@@ -57,8 +57,9 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
     <animated.div 
       ref = {target}
       className="flex 
-                w-[500] 
-                min-h-96
+                max-w-[500] 
+                md:w-[500]
+               
                 "
       style={{
           transform: 'perspective(800px)',
@@ -72,7 +73,7 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
           {children}
 
           <animated.div
-          className="absolute inset-0 bg-neutral-300 -z-10 rounded-lg"
+          className="absolute inset-0 bg-black/20 -z-10 rounded-lg"
           style={{opacity: bgOpacity}}/>
     </animated.div>
   )

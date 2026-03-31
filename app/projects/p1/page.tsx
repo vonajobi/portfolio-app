@@ -60,12 +60,12 @@ export const metadata: Metadata = {
   return (
     <div className='flex justify-center w-screen border-box'>
 
-      <div className=' flex flex-col space-y-4 w-2/3'>
+      <div className=' flex flex-col space-y-4 w-full md:w-2/3'>
       {/* Intro */}
-        <img src={`${file_path}1.jpg`} alt={'Crushies a Blind Box Series'} className='w-full h-auto'/>
+        <img src={`${file_path}1.jpg`} alt={'Crushies a Blind Box Series'} className='w-full h-full'/>
         <img src={`${file_path}IMG_7344.png`}  />
       {/* Crushie */}
-        <img src={`${file_path}3.jpg`} alt={'Design Process'} className='w-full h-auto'/>          
+        <img src={`${file_path}3.jpg`} alt={'Design Process'} className='w-full h-full'/>          
         <img className='' src={`${file_path}4.jpg`}/>
         <img className='' src={`${file_path}5.jpg`} alt='Design Explorations'/>
         <img className='' src={`${file_path}8.jpg`}alt='Typography and Color Pallete' />
