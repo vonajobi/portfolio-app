@@ -43,7 +43,7 @@ const Sketchbook = () => {
                         onClick={() => setActiveFilter(cat)}
                         className={` py-2 text-left font-light transition-all ${
                             activeFilter === cat
-                                ? 'bg-white text-black rounded'
+                                ? 'bg-white/90 text-black rounded'
                                 : 'bg-transparent text-white/60 ease-in hover:text-white'
                         }`}
                     >
@@ -55,14 +55,14 @@ const Sketchbook = () => {
 
             <div className='flex-1'>
                 {/* Mobile Filter Buttons */}
-                <div className='flex md:hidden flex-wrap gap-2 mb-6 pb-4 border-b border-gray-700'>
+                <div className='flex md:hidden mt-6 flex-wrap gap-2 mb-2 pb-4 border-b border-gray-400'>
                     {categories.map(cat => (
                         <button
                             key={cat}
                             onClick={() => setActiveFilter(cat)}
                             className={`px-3 py-1 text-sm rounded font-medium transition-all ${
                                 activeFilter === cat
-                                    ? 'bg-white text-black'
+                                    ? 'bg-fuchsia-300 text-black'
                                     : 'bg-transparent text-white/60 border border-gray-600 hover:border-white'
                             }`}
                         >
@@ -72,7 +72,7 @@ const Sketchbook = () => {
                 </div>
 
                 {/* Gallery Grid */}
-                <div className='columns-1 md:columns-3 lg:columns-4 gap-2 md:gap-4'>
+                <div className='columns-1 lg:columns-3 gap-2 md:gap-4'>
                     {filteredProducts.map((item) => (
                         <div 
                             key={item.title} 

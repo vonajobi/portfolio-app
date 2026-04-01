@@ -9,28 +9,22 @@ export const DesktopHomepageOverlay = () => {
     
 
     <div className='absolute
-                    w-full
+                    w-screen
+                    right-0
 
                     z-2
-
-                    flex
-                    flex-row
+                    justify-center
                     items-center
                     
                     bg-white/5
+                    backdrop-blur-sm
                     pointer-events-none
                     
-                    h-2/5
+                    h-1/3
                     bottom-0
+                    flex
+                    flex-col
                     '>
-      <div className='flex flex-col
-                      
-                      py-8
-                      items-center
-                      w-full
-                      backdrop-blur-sm
-
-                      '>
           <div className='uppercase
                           font-bold
                           text-center
@@ -72,7 +66,7 @@ export const DesktopHomepageOverlay = () => {
           <div className="absolute start flex flex-col gap-6 bottom-0">
             <Socials />
           </div> 
-      </div>
+      
 
     </div>
     

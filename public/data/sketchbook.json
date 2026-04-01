@@ -86,9 +86,14 @@
         "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/lil_dude-5.jpg",
+        "image": "/assets/sketchbook/lil_dude_6.jpg",
         "title": "blind box character with cardboard head",
-        "category": "art & design"
+        "category": "3D"
+    },
+    {
+        "image": "/assets/sketchbook/lil_dude_9.jpg",
+        "title": "blind box character with cardboard head glowing eyes",
+        "category": "3D"
     },
     {
         "image": "/assets/sketchbook/bent_down_study.png",
@@ -96,24 +101,24 @@
         "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/scholfield_watchbox_close_up.png",
+        "image": "/assets/sketchbook/full_body_top_off.png",
         "title": "Walnut Lamp Shaped Watch Box",
-        "category": "art & design"
+        "category": "3D"
     },
     {
-        "image": "/assets/sketchbook/scholfield_watchbox_hook.png",
+        "image": "/assets/sketchbook/hook.png",
         "title": "Scholfield Watch Box Hook",
-        "category": "art & design"
+        "category": "3D"
     },
     {
-        "image": "/assets/sketchbook/scholfield_watchbox_closeup_pin.png",
+        "image": "/assets/sketchbook/pin.png",
         "title": "Scholfield Watch Box Pin",
-        "category": "art & design"
+        "category": "3D"
     },
     {
-        "image": "/assets/sketchbook/scholfield_watchbox_full_body.png",
+        "image": "/assets/sketchbook/full_body_w_watch.png",
         "title": "Scholfield Watch Box Full Body",
-        "category": "art & design"
+        "category": "3D"
     },
     {
         "image": "/assets/sketchbook/spider.gif",
