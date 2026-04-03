@@ -63,7 +63,7 @@ export const DesktopHomepageOverlay = () => {
           <p className='text-sm text-white/60 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I prototype future objects, systems, and interactions.. Checkout what I&apos;m building.
           </p> 
 
-          <div className="absolute start flex flex-col gap-6 bottom-0">
+          <div className="flex flex-col gap-6  z-20 mt-8 ">
             <Socials />
           </div> 
       

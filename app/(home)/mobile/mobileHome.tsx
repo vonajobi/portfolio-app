@@ -1,6 +1,6 @@
 import {FaRegHandPeace} from 'react-icons/fa'
 import { Socials } from '../../components/dom/socials'
-import { HomePageOverlay } from '../portableHomePageOverlay'
+import { HomePageOverlay } from '../MobileHomePageOverlay'
 import PixelDitherCanvas from './pixelAnimation'
 
 

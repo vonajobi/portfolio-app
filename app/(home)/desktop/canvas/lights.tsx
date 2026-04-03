@@ -46,17 +46,17 @@ import { useFrame } from '@react-three/fiber';
   return (
     <>
       <group ref={groupL}>
-        <pointLight position={[0, 7, -12]} distance={15} intensity={17} />
+        <pointLight position={[0, 7, -5]} distance={15} intensity={17} />
       </group>
       <group ref={groupR}>
-        <pointLight position={[0, 7, -15]} distance={15} intensity={20} />
+        <pointLight position={[0, 7, -8]} distance={15} intensity={20} />
       </group>
       <spotLight 
         ref={front}
         castShadow
         penumbra={0.75}
         angle={Math.PI / 6}
-        position={[0, 0, 2]}
+        position={[0, 0, 1]}
         distance={10}
         intensity={20}
         shadow-mapSize={[2048, 2048]}   // sets the resolution of the depth map which stores info about shadows

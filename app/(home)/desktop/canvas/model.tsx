@@ -4,32 +4,37 @@ import { useGLTF, Center, Float } from '@react-three/drei';
 import { GLTF } from 'three-stdlib'
 import * as THREE from 'three'
 import { useCallback } from 'react';
+import { useMemo } from 'react';
 
-
-
-type GLTFResult = GLTF & {
-  // these are the nodes that create the object in the modeling software
-    nodes: {
-      crushies_portfolio: THREE.Mesh;
-    };
-    materials: {
-      'Steel_-_Satin': THREE.MeshStandardMaterial;
-    };
-  };
-  
    export const ModelLoader: React.FC<any> = (props) => {
     const group = useRef<THREE.Group>(null);
       
-     const { nodes, materials} = useGLTF('/assets/downBad.glb') as any as GLTFResult;
-    //  logging any errors
-     if (!nodes) {
-      console.error('nameofObject not exist in the model');
-      // Or handle the error in another way
-      }
-  //log nodes:
-    // console.log(Object.keys(nodes))
-    // console.log(materials)
-    // console.log(nodes.crushies_portfolio.geometry.attributes.position.count);
+    const gltf = useGLTF('/assets/scene_compressed.glb') as any;
+
+    const meshNodes = useMemo(() => {
+      const meshes: THREE.Mesh[] = [];
+      gltf.scene.traverse((child: any) => {
+        if (child.isMesh) meshes.push(child);
+      });
+      return meshes;
+    }, [gltf]);
+    
+    if (!meshNodes) {
+      console.error('No mesh found in GLTF');
+      return null;
+    }
+    // console.log(gltf.material)
+    // console.log(gltf)
+//     console.log(gltf.scene)
+//     gltf.scene.traverse((child) => {
+//       if ((child as any).isMesh) {
+//         console.log(child.name, child.position)
+//       }
+//     })
+//    
+
+
+    
 
     const [modelScale, setModelScale] = useState(3);
     // Responsive adjustment handler for model scale
@@ -46,25 +51,42 @@ type GLTFResult = GLTF & {
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }, [handleResize]);
-  
+    
+  // const materials = useMemo(() => ({
+  //   legs: new THREE.MeshStandardMaterial({ color: "#70642A", metalness: 1, roughness: 0.15 }),
+  //   joints: new THREE.MeshStandardMaterial({ color: "#222222" }),
+  //   wires: new THREE.MeshStandardMaterial({ color: "#6B4949" }),
+  //   connectors: new THREE.MeshStandardMaterial({ color: "#70642A" }),
+  //   default: new THREE.MeshStandardMaterial({ color: "#EDECE4", metalness: 0.3, roughness: 0.15  })
+  // }), []);
+
+
     return (
-      <group ref={group} {...props} dispose={null}>
-          <Float>
-            <Center position={[0, 0, -5]}>
-              <mesh 
-                  castShadow 
-                  geometry={nodes.crushies_portfolio.geometry}
-                  material={materials['Steel_-_Satin']}
-                  rotation={[0, Math.PI / 3.5, 0]}
-                  scale={0.13} 
-                  >
-                    <meshStandardMaterial roughness={0.15} metalness={0.3} color='red'/>
-                </mesh>
-            </Center>
-          </Float>
-      </group>
+    <group ref={group} {...props} dispose={null}>
+      <Float>
+        <Center position={[0, 0, 2]}>
+          {/* Render all meshes */}
+          {meshNodes.map((mesh, idx) => (
+            <mesh
+              key={idx}
+              castShadow
+              geometry={mesh.geometry}
+              material={mesh.material}              
+              rotation={[.5, Math.PI / 3.5, .1]}
+              scale={7}
+            >
+              <meshStandardMaterial color="red"
+              emissive="#0e3096"
+              emissiveIntensity={.2}
+              metalness={0.13} />
+            </mesh>
+          ))}
+        </Center>
+      </Float>
+    </group>
     );
   };
   
-  useGLTF.preload('/assets/downBad.glb')
+  useGLTF.preload('/assets/scene_compressed.glb')
+  
   

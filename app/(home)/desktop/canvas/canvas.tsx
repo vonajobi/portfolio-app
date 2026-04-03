@@ -34,7 +34,7 @@ const DesktopCanvas = ({ children }: {children : ReactNode}) => {
           }
         }}
         shadows
-        camera={{ position: [0, 1.5, 14], fov: 50 }}
+        camera={{ position: [0, 0, 0], fov: 50 }}
       > 
         <Lights/>
         <OrbitControls/>

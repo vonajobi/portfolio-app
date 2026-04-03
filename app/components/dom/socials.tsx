@@ -37,7 +37,7 @@ export const Socials: React.FC = () => {
           <FiArrowUpRight/>
         </div>
         <div className='flex hover:text-white'>
-          <a href='https://issuu.com/sceneusc/docs/hollywood_s_backyard_scene_magazine_issue_no._2_/6'>FEATURED</a>
+          <a href='https://viterbischool.usc.edu/news/2024/11/usc-student-rocket-group-shatters-international-amateur-space-record/'>FEATURED</a>
           <FiArrowUpRight/>
           {/* <FiArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /> */}
         </div>
