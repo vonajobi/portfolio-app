@@ -6,6 +6,11 @@
         "category": "study"
     },
     {
+        "image": "/assets/sketchbook/stairs_colour_keys.jpg",
+        "title": "Person walking up stairs in different lighting",
+        "category": "study"
+    },
+    {
         "image": "/assets/sketchbook/Amara_space.jpg",
         "title": "Drawing of a woman in a space suit",
         "category": "art & design"
@@ -23,6 +28,11 @@
     {
         "image": "/assets/sketchbook/_112025.jpg",
         "title": "Back against the wall self portrait",
+        "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/self_portrait_drowning.jpg",
+        "title": "Child being pulled into water with hands",
         "category": "art & design"
     },
     {
@@ -76,7 +86,7 @@
         "category": "study"
     },
     {
-        "image": "/assets/sketchbook/room_colour_study.jpg",
+        "image": "/assets/sketchbook/room_colour_keys.jpg",
         "title": "Dark room with dramatic purple lighting",
         "category": "study"
     },

@@ -62,7 +62,7 @@ const Sketchbook = () => {
                             onClick={() => setActiveFilter(cat)}
                             className={`px-3 py-1 text-sm rounded font-medium transition-all ${
                                 activeFilter === cat
-                                    ? 'bg-fuchsia-300 text-black'
+                                    ?  'bg-white/90 text-black'
                                     : 'bg-transparent text-white/60 border border-gray-600 hover:border-white'
                             }`}
                         >
