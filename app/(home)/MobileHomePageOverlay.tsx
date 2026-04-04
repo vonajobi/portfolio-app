@@ -37,7 +37,7 @@ export const HomePageOverlay = ()=>{
           </div>
 
          
-          <p className='max-w-xs text-sm text-white/70 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I prototype future objects, systems, and interactions.. Checkout what I&apos;m building.
+          <p className='max-w-xs text-sm text-white/70 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I like to design, model, and code objects, concepts, and interactions. Checkout what I&apos;m building.
           </p> 
         </>
     )

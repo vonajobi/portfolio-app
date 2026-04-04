@@ -89,7 +89,7 @@ const Sketchbook = () => {
                             {isVideo(item.image) && (
                                 <video 
                                     className='w-full max-w-md max-h-96 rounded-xl object-cover' 
-                                    controls loop autoPlay playsInline
+                                    autoPlay loop playsInline
                                 >
                                     <source src={item.image} type={`video/${item.image.split('.').pop()?.toLowerCase()}`} />
                                 </video>
@@ -128,7 +128,7 @@ const Sketchbook = () => {
                         {isVideo(selectedImage.image) && (
                             <video 
                                 className=' max-h-150 object-cover rounded-lg border-4 border-white' 
-                                controls autoPlay
+                                autoPlay loop playsInline
                             >
                                 <source src={selectedImage.image} type={`video/${selectedImage.image.split('.').pop()?.toLowerCase()}`} />
                             </video>

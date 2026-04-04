@@ -21,6 +21,21 @@
         "category": "art & design"
     },
     {
+        "image": "/assets/sketchbook/simplex_noise_shader.mp4",
+        "title": "Simplex noise shader",
+        "category": "engineering"
+    },
+    {
+        "image": "/assets/sketchbook/spot_noise_shader.mp4",
+        "title": "Spot Shader",
+        "category": "engineering"
+    },
+    {
+        "image": "/assets/sketchbook/sin_shader.mp4",
+        "title": "Sin wave shader",
+        "category": "engineering"
+    },
+    {
         "image": "/assets/sketchbook/lorenz_v2.gif",
         "title": "Lorenz music reactor",
         "category": "engineering"
@@ -28,11 +43,6 @@
     {
         "image": "/assets/sketchbook/_112025.jpg",
         "title": "Back against the wall self portrait",
-        "category": "art & design"
-    },
-    {
-        "image": "/assets/sketchbook/self_portrait_drowning.jpg",
-        "title": "Child being pulled into water with hands",
         "category": "art & design"
     },
     {
