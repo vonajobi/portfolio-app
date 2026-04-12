@@ -1,4 +1,3 @@
-import React from 'react'
 
 export interface ProjectsProps {
     _id: number;

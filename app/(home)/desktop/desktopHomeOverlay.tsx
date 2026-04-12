@@ -60,7 +60,7 @@ export const DesktopHomepageOverlay = () => {
             </div>    
           </div>
 
-          <p className='text-sm text-white/60 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I like to design, model, and code objects, concepts, and interactions. Checkout what I&apos;m building.
+          <p className='text-sm text-white/60 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I like to design, code, and model objects and interactions. Checkout what I&apos;m building.
           </p> 
 
           <div className="flex flex-col gap-6  z-20 mt-8 ">

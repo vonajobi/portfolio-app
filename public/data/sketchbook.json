@@ -86,6 +86,16 @@
         "category": "study"
     },
     {
+        "image": "/assets/sketchbook/down_bad_turnaround_render.png",
+        "title": "Downbad turnaround render",
+        "category": "3D"
+    },
+    {
+        "image": "/assets/sketchbook/down_bad_render.png",
+        "title": "Downbad render",
+        "category": "3D"
+    },
+    {
         "image": "/assets/sketchbook/egg_colour_study.jpg",
         "title": "Yellow cracked egg",
         "category": "study"
