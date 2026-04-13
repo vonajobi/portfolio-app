@@ -56,11 +56,6 @@
         "category": "art & design"
     },
     {
-        "image": "/assets/sketchbook/sky_value_study.jpg",
-        "title": "Black and white sky, person looking up",
-        "category": "study"
-    },
-    {
         "image": "/assets/sketchbook/analog_test_site_value_study.jpg",
         "title": "Analog space test site in black and white",
         "category": "study"
@@ -88,11 +83,6 @@
     {
         "image": "/assets/sketchbook/down_bad_turnaround_render.png",
         "title": "Downbad turnaround render",
-        "category": "3D"
-    },
-    {
-        "image": "/assets/sketchbook/down_bad_render.png",
-        "title": "Downbad render",
         "category": "3D"
     },
     {
@@ -229,15 +219,5 @@
         "image": "/assets/sketchbook/IMG_8188.jpg",
         "title": "Yoji shinakawa study 2",
         "category": "study"
-    },
-    {
-        "image": "/assets/sketchbook/mouse_concepts_01.png",
-        "title": "mouse concepts 1",
-        "category": "art & design"
-    },
-    {
-        "image": "/assets/sketchbook/mouse_concepts_02.png",
-        "title": "mouse concepts 2",
-        "category": "art & design"
     }
 ]

@@ -13,24 +13,24 @@ const oswald = Oswald({ subsets: ['latin'], weight: '700' });
 const Paladone = () => {
   const file_path = "/assets/projects/paladone/";
   const marketingImages = [
-    `${file_path}Silver.png`,
-    `${file_path}Silver_1.png`,
-    `${file_path}Silver_2.png`,
-    `${file_path}Silver_3.png`,
-    `${file_path}Silver_4.png`,
-    `${file_path}mockup.png`,
-    `${file_path}Graphite.png`
+    {src: `${file_path}Silver.png`, type: 'image' as const},
+    { src: `${file_path}Silver_1.png`, type: 'image' as const},
+    { src: `${file_path}Silver_2.png`, type: 'image' as const},
+    { src: `${file_path}Silver_3.png`, type: 'image' as const},
+    { src: `${file_path}Silver_4.png`, type: 'image' as const},
+    { src: `${file_path}mockup.png`, type: 'image' as const},
+    { src: `${file_path}Graphite.png`, type: 'image' as const}
     ];
   const finalImages = [
-    `${file_path}final_design_2.jpg`,
-    `${file_path}final_design_3.svg`,
-    `${file_path}group_1.png`,
-    `${file_path}scene_1v2.png`,
-    `${file_path}scene_2_k.png`,
-    `${file_path}scene_2_n.png`,
-    `${file_path}scene_2_t.png`,
-    `${file_path}h_block_close_up.png`,
-    `${file_path}toy_bloom.png`
+    { src: `${file_path}final_design_2.jpg`, type: 'image' as const},
+    { src: `${file_path}final_design_3.svg`, type: 'image' as const},
+    { src: `${file_path}group_1.png`, type: 'image' as const},
+    { src: `${file_path}scene_1v2.png`, type: 'image' as const},
+    { src: `${file_path}scene_2_k.png`, type: 'image' as const},
+    { src: `${file_path}scene_2_n.png`, type: 'image' as const},
+    { src: `${file_path}scene_2_t.png`, type: 'image' as const},
+    { src: `${file_path}h_block_closeup.png`, type: 'image' as const},
+    { src: `${file_path}toy_bloom.png`, type: 'image' as const}
   ];
   return (
     // bg-[#5280FF]
@@ -110,7 +110,7 @@ const Paladone = () => {
           </div>
         </section>
           <img src={`${file_path}final_design.svg`} alt='H-Blocks Final Design' className='md:mb-10'/>
-        <ImageGrid images={finalImages} />
+        <ImageGrid media={finalImages} />
         <img src={`${file_path}marketing.svg`} alt='Marketing'className='mt-10'/>
         <section className='text-4xl m-10 '>
           <p> Web Pallette and Pantone Graphics </p>
@@ -123,7 +123,7 @@ const Paladone = () => {
             <img src={`${file_path}Frame_54.png`} alt='color pallet Pantone 4975 C and Pantone 191 C'/>
           </div>
         </section>
-        <ImageGrid images={marketingImages} />
+        <ImageGrid media={marketingImages} />
 
       </div>
     </div>
