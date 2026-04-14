@@ -1,6 +1,16 @@
 [
 
     {
+        "image": "/assets/sketchbook/head.png",
+        "title": "Clay Black person head with hat and glasses",
+        "category": "3D"
+    },
+    {
+        "image": "/assets/sketchbook/bee2.png",
+        "title": "Bee holding a chainsaw",
+        "category": "3D"
+    },
+    {
         "image": "/assets/sketchbook/Octupus.jpg",
         "title": "Drawing of an octopus brushing a black girl's teeth",
         "category": "study"
@@ -74,6 +84,11 @@
         "image": "/assets/sketchbook/hippo_igbo_mask.jpg",
         "title": "Hippo Igbo Mask",
         "category": "art & design"
+    },
+    {
+        "image": "/assets/sketchbook/toast_colour_study.jpg",
+        "title": "Drawing of egg on toast",
+        "category": "study"
     },
     {
         "image": "/assets/sketchbook/downbad_colour_study.jpg",
