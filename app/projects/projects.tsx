@@ -1,70 +1,59 @@
 "use client"
-import React, {useState} from 'react'
+import {useState} from 'react'
 import Link from 'next/link'
 import Interactions from './interactions'
 import {ProjectsProps}  from '@/app/projects/projectProps';
-
 import projects from "../../public/data/projects.json";
+import CardStack from './cardStack';
 
 
-const title = 'Victoria Onajobi | Creaive Developer'
+const title = 'Victoria Onajobi | Creative Developer'
 
 const Projects = () => {
     const [products, setProducts] = useState<ProjectsProps[]>(projects)
-
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+    const grouped = products.reduce((acc, project) => {
+        const key = project.category || "Other"
+        if (!acc[key]) acc[key] = []
+        acc[key].push(project)
+        return acc
+    }, {} as Record<string, ProjectsProps[]>)
  
   return (
-    <div className=' mt-0 md:mt-12'>
-        <div className='absolute inset-0 
+    <div className='relative h-screen bg-amber-700'>
+        <div className='absolute  inset-0 
                         bg-[url("/assets/background_black.svg")] 
                         bg-no-repeat
                         bg-cover
-                        opacity-30'></div>
+                        opacity-30'
+                        >
+        </div>
         
-        <div className='flex 
-                        flex-wrap 
-                        mb-16
-                        mt-7
-                        md:mx-4
-
+        <div className=' relative
+                        flex 
+                        flex-col
                         justify-center
-                        items-center 
-                        text-left
-
-                        gap-2
-                        sm:gap-5
+                        items-center
+                        bg-red-500
+                        w-screen
+                        h-screen
+                        overflow visible 
+                        mx-auto
 
                         text-neutral-400
                         '>
-    
-        {
-            projects.map((item) =>(
-            <Interactions  key = {item._id}>
-                    <Link 
-                        href = {item.link}
-                        className=' hover:shadow-2xl 
-                                    hover:shadow-zinc-500 
-                                    transition-shadow
-                                    px-2
-                                    py-2
-                                    rounded-lg
-                                '>
-                                    
-                            <div className='grid grid-cols gap-2  '>
-                                <img
-                                    src = {item.image_1} 
-                                    alt = {item.title}
-                                    className='object-cover rounded-lg '
-                                />
-                                <h1 className='text-md uppercase'>{item.title}</h1>
-                                <p className='text-sm pb-2'>{item.description}</p>
-                            </div>               
-                    </Link>
-            </Interactions>
-            ))
-        }
-        </div>
-    </div>
+                        {Object.entries(grouped).map(([category, items,]) => (
+                            <CardStack
+                                key={category}
+                                category={category}
+                                items={items}
+                                onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
+                                isOpen={selectedCategory === category}
+                            />
+                        ))}
+        </div>        
+     </div>
+     
 )}
 
 export default Projects

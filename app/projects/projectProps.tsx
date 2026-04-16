@@ -4,6 +4,8 @@ export interface ProjectsProps {
     title?: string;
     description: string;
     image_1: string;
+    category: string;
+    link: string;
 
 }
 

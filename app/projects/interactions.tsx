@@ -23,7 +23,7 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
       }, [])
 
     const target = useRef(null)
-    const [{x, y,rotateX, rotateY, scale, zoom}, set] = useSpring(() => ({
+    const [{x, y, rotateX, rotateY, scale, zoom}, set] = useSpring(() => ({
         x:0,
         y:0, 
         rotateX: 0, 
@@ -59,7 +59,6 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
       className="flex 
                 max-w-[500] 
                 md:w-[500]
-               
                 "
       style={{
           transform: 'perspective(800px)',

@@ -15,7 +15,7 @@ const Sketchbook = () => {
     const [activeFilter, setActiveFilter] = useState<string>('Brain Dump');
     const [selectedImage, setSelectedImage] = useState<SketchbookProps | null>(null);
 
-    const categories = ['Brain Dump', 'art & design', '3D', 'study', 'engineering'];
+    const categories = ['Brain Dump', 'Art & Design', '3D', 'Study', 'Engineering'];
 
     const filteredProducts = activeFilter === 'Brain Dump' 
         ? products 
@@ -47,7 +47,7 @@ const Sketchbook = () => {
                                 : 'bg-transparent text-white/60 ease-in hover:text-white'
                         }`}
                     >
-                        {"[" + cat.charAt(0).toUpperCase() + cat.slice(1) + "]"}
+                        {"[" + cat + "]"}
                         
                     </button>
                 ))}
