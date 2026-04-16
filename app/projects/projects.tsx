@@ -6,9 +6,6 @@ import {ProjectsProps}  from '@/app/projects/projectProps';
 
 import projects from "../../public/data/projects.json";
 
-
-const title = 'Victoria Onajobi | Creaive Developer'
-
 const Projects = () => {
     const [products, setProducts] = useState<ProjectsProps[]>(projects)
 
