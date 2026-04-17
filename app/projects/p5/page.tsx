@@ -8,14 +8,15 @@ export const metadata: Metadata = {
 }
 const IntuitivePaper = () => {
   const file_path = "/assets/projects/intuitive_paper/";
+  
   const uiImages = [
-    `${file_path}loginPage.jpg`,
-    `${file_path}registerPage.jpg`,
-    `${file_path}generalInfoPage.jpg`,  
-    `${file_path}managementPage.jpg`,  
-    `${file_path}historyPage.jpg`,  
-    `${file_path}resultsPage.jpg`,  
-    `${file_path}detailsPage.jpg`,  
+    { src: `${file_path}loginPage.jpg` , type: 'image' as const},
+    { src: `${file_path}registerPage.jpg`, type: 'image' as const},
+    { src: `${file_path}generalInfoPage.jpg`, type: 'image' as const},  
+    { src: `${file_path}managementPage.jpg`, type: 'image' as const},  
+    { src: `${file_path}historyPage.jpg`, type: 'image' as const},  
+    { src: `${file_path}resultsPage.jpg`, type: 'image' as const},  
+    { src: `${file_path}detailsPage.jpg`, type: 'image' as const}
   ];
   return (
     
@@ -37,7 +38,7 @@ const IntuitivePaper = () => {
     //     </ul>
     //     <br/>
     //     <h2>Data Structure</h2> 
-    //     <img src={`${file_path}database_flow.png`} alt="Databse Flow" className='w-2/3'/>
+    //     <img src={{ src: `${file_path}database_flow.png`} alt="Databse Flow" className='w-2/3'/>
     //     </div>
     // </div>
     <div className='min-h-screen  flex bg-linear-to-br from-white via-purple-50 to-blue-50 text-gray-800'>
@@ -90,7 +91,7 @@ const IntuitivePaper = () => {
           {/* UI Design */}
           <div className='relative'>
             <h3 className="text-2xl font-semibold">UI Design</h3>
-            <ImageGrid images={uiImages} />
+            <ImageGrid media={uiImages} />
           </div>
         </section>
 
@@ -122,13 +123,13 @@ const IntuitivePaper = () => {
             The web application successfully...
           </p> */}
           <img
-            src={`${file_path}main.png`}
+            src={ `${file_path}main.png`}
             alt="Project Outcome"
             className="mt-6"
           />
           <video
             controls
-            src={`${file_path}walkthrough.mp4`}
+            src={ `${file_path}walkthrough.mp4`}
             className="w-full h-auto border mt-6"/>
         </section>
       </div>

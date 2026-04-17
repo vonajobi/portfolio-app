@@ -5,6 +5,7 @@ export interface ProjectsProps {
     description: string;
     image_1: string;
     link: string
+    category: string
 
 }
 

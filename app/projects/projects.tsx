@@ -2,14 +2,32 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
 import Interactions from './interactions'
-import {ProjectsProps}  from '@/app/projects/projectProps';
+import Image from 'next/image'
 
 import projects from "../../public/data/projects.json";
+import { useSearchParams } from "next/navigation"
 
-const Projects = () => {
-    const [products, setProducts] = useState<ProjectsProps[]>(projects)
+export interface ProjectsProps {
+    _id: number;
+    title?: string;
+    description: string;
+    image_1?: string;
+    video?: string;
+    link: string;
+    category: string;
 
- 
+}
+type ProjectsComponentProps = {
+  category?: string;
+};
+const Projects: React.FC<ProjectsComponentProps> = () => {
+    const searchParams = useSearchParams()
+    const category = searchParams.get("category")
+    const filteredProjects = category
+    ? projects.filter(p => p.category === category)
+    : projects
+   
+
   return (
     <div className=' mt-0 md:mt-12'>
         <div className='absolute inset-0 
@@ -35,7 +53,7 @@ const Projects = () => {
                         '>
     
         {
-            projects.map((item) =>(
+            filteredProjects.map((item) =>(
             <Interactions  key = {item._id}>
                     <Link 
                         href = {item.link}
@@ -47,12 +65,25 @@ const Projects = () => {
                                     rounded-lg
                                 '>
                                     
-                            <div className='grid grid-cols gap-2  '>
+                            <div className='grid grid-cols gap-2 aspect-4/3'>
+                                {item.type === "video" ? (
+                                    <video src={item.media}
+                                        className="object-cover rounded-lg"
+                                        autoPlay
+                                        loop
+                                        playsInline
+                                        muted
+                                        preload="metadata"
+                                    />
+                                ) : 
                                 <img
-                                    src = {item.image_1} 
+                                    src = {item.media} 
                                     alt = {item.title}
+                                    loading="lazy"
+                                    decoding="async"
                                     className='object-cover rounded-lg '
                                 />
+                                }
                                 <h1 className='text-md uppercase'>{item.title}</h1>
                                 <p className='text-sm pb-2'>{item.description}</p>
                             </div>               
