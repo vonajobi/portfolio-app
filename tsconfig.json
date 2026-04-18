@@ -35,7 +35,6 @@
     ".next/types/**/*.ts",
     "app/api",
     ".next/dev/types/**/*.ts",
-    "global.d.ts", "app/archives/p2/.page.tsx",
   ],
   "exclude": [
     "node_modules"
