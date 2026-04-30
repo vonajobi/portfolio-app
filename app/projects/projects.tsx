@@ -48,13 +48,12 @@ const Projects: React.FC<ProjectsComponentProps> = () => {
 
                         gap-2
                         sm:gap-5
-
                         text-neutral-400
                         '>
     
         {
             filteredProjects.map((item) =>(
-            <Interactions  key = {item._id}>
+            <Interactions  key = {item._id} >
                     <Link 
                         href = {item.link}
                         className=' hover:shadow-2xl 
@@ -65,7 +64,7 @@ const Projects: React.FC<ProjectsComponentProps> = () => {
                                     rounded-lg
                                 '>
                                     
-                            <div className='grid grid-cols gap-2 aspect-4/3'>
+                            <div className='grid grid-cols gap-2 aspect-4/3 '>
                                 {item.type === "video" ? (
                                     <video src={item.media}
                                         className="object-cover rounded-lg"
