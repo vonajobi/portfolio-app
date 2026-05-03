@@ -13,24 +13,24 @@ const oswald = Oswald({ subsets: ['latin'], weight: '700' });
 const Paladone = () => {
   const file_path = "/assets/projects/paladone/";
   const marketingImages = [
-    {src: `${file_path}Silver.png`, type: 'image' as const},
-    { src: `${file_path}Silver_1.png`, type: 'image' as const},
-    { src: `${file_path}Silver_2.png`, type: 'image' as const},
-    { src: `${file_path}Silver_3.png`, type: 'image' as const},
-    { src: `${file_path}Silver_4.png`, type: 'image' as const},
-    { src: `${file_path}mockup.png`, type: 'image' as const},
-    { src: `${file_path}Graphite.png`, type: 'image' as const}
+    { src:`${file_path}Silver.webp`, type: 'image' as const},
+    { src: `${file_path}Silver_1.webp`, type: 'image' as const},
+    { src: `${file_path}Silver_2.webp`, type: 'image' as const},
+    { src: `${file_path}Silver_3.webp`, type: 'image' as const},
+    { src: `${file_path}Silver_4.webp`, type: 'image' as const},
+    { src: `${file_path}mockup.webp`, type: 'image' as const},
+    { src: `${file_path}Graphite.webp`, type: 'image' as const}
     ];
   const finalImages = [
-    { src: `${file_path}final_design_2.jpg`, type: 'image' as const},
+    { src: `${file_path}final_design_2.webp`, type: 'image' as const},
     { src: `${file_path}final_design_3.svg`, type: 'image' as const},
-    { src: `${file_path}group_1.png`, type: 'image' as const},
-    { src: `${file_path}scene_1v2.png`, type: 'image' as const},
-    { src: `${file_path}scene_2_k.png`, type: 'image' as const},
-    { src: `${file_path}scene_2_n.png`, type: 'image' as const},
-    { src: `${file_path}scene_2_t.png`, type: 'image' as const},
-    { src: `${file_path}h_block_closeup.png`, type: 'image' as const},
-    { src: `${file_path}toy_bloom.png`, type: 'image' as const}
+    { src: `${file_path}group_1.webp`, type: 'image' as const},
+    { src: `${file_path}scene_1v2.webp`, type: 'image' as const},
+    { src: `${file_path}scene_2_k.webp`, type: 'image' as const},
+    { src: `${file_path}scene_2_n.webp`, type: 'image' as const},
+    { src: `${file_path}scene_2_t.webp`, type: 'image' as const},
+    { src: `${file_path}h_block_closeup.webp`, type: 'image' as const},
+    { src: `${file_path}toy_bloom.webp`, type: 'image' as const}
   ];
   return (
     // bg-[#5280FF]
@@ -39,7 +39,7 @@ const Paladone = () => {
     <div className=' flex  px-2 relative z-10'>
       <div className=' mx-auto md:w-2/3 w-full'>
         <section className='py-12 h-auto'>
-          <img src={`${file_path}intro.png`}/>
+          <img src={`${file_path}intro.webp`}/>
         </section>
         {/* intro */}
           <section className= {`h-128 relative bg-[url(/assets/projects/paladone/brief.svg)] bg-size-[auto_250] md:bg-contain bg-no-repeat `}>
@@ -95,8 +95,8 @@ const Paladone = () => {
 
         <img className='mb-2 md:mb-10' src={`${file_path}mk_rs_3.svg`}/>
         <img src={`${file_path}Ideation.svg`} alt='Ideation' className='mb-2 md:mb-10'/>
-        <img src={`${file_path}ideation_2.jpg`} alt='Ideation Sketches' className='mb-2 md:mb-10'/>
-        <img src={`${file_path}ideation_3.jpg`} alt='Ideation Skethches, USB Type-C Research' className='mb-2 md:mb-10'/>
+        <img src={`${file_path}ideation_2.webp`} alt='Ideation Sketches' className='mb-2 md:mb-10'/>
+        <img src={`${file_path}ideation_3.webp`} alt='Ideation Skethches, USB Type-C Research' className='mb-2 md:mb-10'/>
 
         <section className='max-w-screen h-128 relative mb-2 md:mb-10 bg-[url(/assets/projects/paladone/ideation_4.svg)] bg-cover rdf-mrkt-section'>
           <div className= {`w-full h-full md:w-2/3 absolute top-1/4 md:left-40`}>
@@ -115,15 +115,25 @@ const Paladone = () => {
         <section className='text-4xl m-10 '>
           <p> Web Pallette and Pantone Graphics </p>
           <div className='grid grid-cols-2 md:grid-cols-4 md:gap-4 md:py-5 '>
-            <img src={`${file_path}Frame_48.png`} alt='color pallet Black'/>
-            <img src={`${file_path}Frame_50.png`} alt='color pallet CornFlower Blue and Marian Blue'/>
-            <img src={`${file_path}Frame_51.png`} alt='color pallet Dark Purple and Bright Crayola Pink'/>
-            <img src={`${file_path}Frame_52.png`} alt='color pallet Pantone 649 C and Pantone Jet Set'/>
-            <img src={`${file_path}Frame_53.png`} alt='color pallet Pantone 2718 C and Pantone 7685 C'/>
-            <img src={`${file_path}Frame_54.png`} alt='color pallet Pantone 4975 C and Pantone 191 C'/>
+            <img src={`${file_path}Frame_48.webp`} alt='color pallete Black'/>
+            <img src={`${file_path}Frame_50.webp`} alt='color pallete CornFlower Blue and Marian Blue'/>
+            <img src={`${file_path}Frame_51.webp`} alt='color pallete Dark Purple and Bright Crayola Pink'/>
+            <img src={`${file_path}Frame_52.webp`} alt='color pallete Pantone 649 C and Pantone Jet Set'/>
+            <img src={`${file_path}Frame_53.webp`} alt='color pallete Pantone 2718 C and Pantone 7685 C'/>
+            <img src={`${file_path}Frame_54.webp`} alt='color pallete Pantone 4975 C and Pantone 191 C'/>
           </div>
         </section>
-        <ImageGrid media={marketingImages} />
+         
+          <div className='columns-sm gap-2'>
+            <img src={`${file_path}Silver.webp `} className="py-1"alt='silver'/>
+            <img src={`${file_path}Silver_1.webp`} className="py-1"alt='silver_1'/>
+            <img src={`${file_path}Silver_2.webp`} className="py-1"alt='silver_2'/>
+            <img src={`${file_path}Silver_3.webp`} className="py-1"alt='silver_3'/>
+            <img src={`${file_path}Silver_4.webp`}className="py-1"alt='silver_4'/>
+            <img src={`${file_path}mockup.webp`}className="py-1"alt='mockup'/>
+            <img src={`${file_path}Graphite.webp`}className="py-1"alt='graphite'/>
+        </div>
+        {/* <ImageGrid media={marketingImages} /> */}
 
       </div>
     </div>

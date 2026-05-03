@@ -18,9 +18,9 @@ const ChildScene = () => {
         <p className='h-full text-sm text-white/60 font-light'> Inside the inner mind is a 3D rendering collection of toys you would find inside a child's play room. Tools utilized include Photoshop, Fusion 360, and Adobe Dimension. </p>
       </div>
        <div className='w-full h-full grid grid-row gap-4 place-content-center md:w-2/3'>
-        <img src={`${file_path}scene1.png`} alt="rendering of a child's play room 1" />
-        <img src={`${file_path}scene2.png`} alt="rendering of a child's play room 2" />
-        <img src={`${file_path}scene3.jpg`} alt="rendering of a child's play room 3" />
+        <img src={`${file_path}scene1.webp`} alt="rendering of a child's play room 1" />
+        <img src={`${file_path}scene2.webp`} alt="rendering of a child's play room 2" />
+        <img src={`${file_path}scene3.webp`} alt="rendering of a child's play room 3" />
       </div> 
     </div>
   )

@@ -5,7 +5,7 @@
         "title": "Crushies",
         "description": "Crushies - a limited edition Blind Box Series of 3D printed collectible toys.",
         "link": "/projects/p1",
-        "media": "/assets/projects/blind_box/packaging_2.png",
+        "media": "/assets/projects/blind_box/packaging_2.webp",
         "type": "image",
         "category": "design"
     },
@@ -15,7 +15,7 @@
         "title": "Child's Play",
         "description": "Within the inner mind of a child, there is a world of imagination and wonder. ",
         "link": "/projects/p3",
-        "media": "/assets/projects/scene/scene1.png",
+        "media": "/assets/projects/scene/scene1.webp",
         "type": "image",
         "category": "design"
         
@@ -26,7 +26,7 @@
         "title": "Paladone",
         "description": "A collection of physical building blocks for digital worlds.",
         "link": "/projects/p4",
-        "media": "/assets/projects/paladone/scene_1v2.png",
+        "media": "/assets/projects/paladone/scene_1v2.webp",
         "type": "image",
         "category": "design"
     },
