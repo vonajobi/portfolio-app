@@ -124,14 +124,14 @@ const Paladone = () => {
           </div>
         </section>
          
-          <div className='columns-sm gap-2'>
+          <div className='columns-sm gap-2 '>
             <img src={`${file_path}Silver.webp `} className="py-1"alt='silver'/>
             <img src={`${file_path}Silver_1.webp`} className="py-1"alt='silver_1'/>
             <img src={`${file_path}Silver_2.webp`} className="py-1"alt='silver_2'/>
             <img src={`${file_path}Silver_3.webp`} className="py-1"alt='silver_3'/>
             <img src={`${file_path}Silver_4.webp`}className="py-1"alt='silver_4'/>
-            <img src={`${file_path}mockup.webp`}className="py-1"alt='mockup'/>
-            <img src={`${file_path}Graphite.webp`}className="py-1"alt='graphite'/>
+            <img src={`${file_path}mockup.webp`}className="py-1 rounded-3xl h-[315] w-[415]"alt='mockup'/>
+            <img src={`${file_path}Graphite.webp`}className="py-20 h-full"alt='graphite'/>
         </div>
         {/* <ImageGrid media={marketingImages} /> */}
 

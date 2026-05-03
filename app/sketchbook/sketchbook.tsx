@@ -72,7 +72,7 @@ const Sketchbook = () => {
                 </div>
 
                 {/* Gallery Grid */}
-                <div className='columns-1 lg:columns-3 gap-2 md:gap-4'>
+                <div className='columns-1 lg:columns-3 gap-2'>
                     {filteredProducts.map((item) => (
                         <div 
                             key={item.title} 

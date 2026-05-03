@@ -11,19 +11,19 @@ type ImageGridProps = {
 
 const ImageGrid: React.FC<ImageGridProps> = ({ media }) => {
   return (
-    <div className='columns-sm gap-2'>
+    <div className='grid grid-cols-2 gap-2'>
       {media.map((item, index) => (
         item.type === 'image' ? (
           <img 
             key={index} 
-            className='py-1 h-64 w-full object-cover' 
+            className=' w-full h-full object-cover' 
             src={item.src} 
             alt={`Media ${index}`} 
           />
         ) : (
           <video 
             key={index} 
-            className='py-1 h-64 w-full object-cover' 
+            className='py-1  w-full object-cover' 
             autoPlay
             loop 
             >

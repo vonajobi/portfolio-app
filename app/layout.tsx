@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import { Navbar } from './components/dom/navBar'
 import { Footer } from './components/dom/footer'
 import Header from './components/dom/header';
-import React  from 'react';
+import React, { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -15,7 +15,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Header/>
       
         <div className= {inter.className} >
-          <Navbar />
+          <Suspense fallback={null}>
+            <Navbar />
+          </Suspense>
           <div className=" flex 
                           flex-col 
                           min-h-screen
