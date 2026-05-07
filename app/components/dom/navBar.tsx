@@ -66,7 +66,7 @@ export const Navbar: React.FC = () => {
 
           <Link
             href="/projects"
-            className={`${isProjectsPage ? "text-white" : "text-white/75"} hover:text-white transition-all `}
+            className="hover-effect"
           >
             #PROJECTS
           </Link>
@@ -91,12 +91,11 @@ export const Navbar: React.FC = () => {
 
         {/* OTHER NAV ITEMS */}
         {navItems.map((item) => {
-          const isActive = pathname === item.href
 
           return (
             <li
               key={item.text}
-              className={`${isActive ? "text-white" : "text-white/75"} hover:text-white transition-all `}
+              className="hover-effect"
             >
               <Link href={item.href}>{item.text}</Link>
             </li>
