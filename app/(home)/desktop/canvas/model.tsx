@@ -77,7 +77,7 @@ import { useMemo } from 'react';
             >
               <meshStandardMaterial color="red"
               emissive="#0e3096"
-              emissiveIntensity={.2}
+              emissiveIntensity={.1}
               metalness={0.13} />
             </mesh>
           ))}
