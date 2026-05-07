@@ -1,6 +1,16 @@
 [
     {
         
+        "_id": 9,
+        "title": "Detty December Pack",
+        "description": "Footwear and apparel capsule centrered around Detty December",
+        "link": "/projects/p5",
+        "media": "/assets/projects/detty_december/Artboard 12.webp",
+        "type": "image",
+        "category": "design"
+    },
+    {
+        
         "_id": 1,
         "title": "Crushies",
         "description": "Crushies - a limited edition Blind Box Series of 3D printed collectible toys.",
@@ -14,7 +24,7 @@
         "_id": 3,
         "title": "Child's Play",
         "description": "Within the inner mind of a child, there is a world of imagination and wonder. ",
-        "link": "/projects/p3",
+        "link": "/projects/p2",
         "media": "/assets/projects/scene/scene1.webp",
         "type": "image",
         "category": "design"
@@ -25,7 +35,7 @@
         "_id": 4,
         "title": "Paladone",
         "description": "A collection of physical building blocks for digital worlds.",
-        "link": "/projects/p4",
+        "link": "/projects/p3",
         "media": "/assets/projects/paladone/scene_1v2.webp",
         "type": "image",
         "category": "design"
@@ -45,7 +55,7 @@
         "_id": 8,
         "title": "Intuitive Paper",
         "description":"Succint AI Research Summaries" ,
-        "link": "/projects/p5",
+        "link": "/projects/p4",
         "media": "/assets/projects/intuitive_paper/main.png",
         "type": "image",           
         "category": "dev" 

@@ -33,7 +33,26 @@ export const Navbar: React.FC = () => {
   const isProjectsPage = pathname.startsWith("/projects")
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between w-full px-5 sm:px-10 lg:px-20 pt-5 pb-5 border-b text-white/75 border-b-white/20 backdrop-blur-sm">
+    <nav className="absolute 
+                    top-0 
+                    left-0 
+                    right-0 
+                    
+                    z-20 flex 
+                    items-center 
+                    justify-between 
+                    
+                    w-full 
+                    px-5 
+                    sm:px-10 
+                    lg:px-20 
+                    pt-5 pb-5 
+                    
+                    border-b 
+                    text-white/75 
+                    border-b-white/20 
+                    backdrop-blur-sm
+                    ">
 
       {/* HOME */}
       <span className="mix-blend-difference font-bold">
@@ -43,11 +62,11 @@ export const Navbar: React.FC = () => {
       <ul className="flex text-sm font-light tracking-wider space-x-4 md:space-x-10 font-ubuntu">
 
         {/* PROJECTS DROPDOWN */}
-        <li className="relative group">
+        <li className="relative group ">
 
           <Link
             href="/projects"
-            className={`${isProjectsPage ? "text-white" : "text-white/75"} hover:text-white transition-all`}
+            className={`${isProjectsPage ? "text-white" : "text-white/75"} hover:text-white transition-all `}
           >
             #PROJECTS
           </Link>
@@ -77,7 +96,7 @@ export const Navbar: React.FC = () => {
           return (
             <li
               key={item.text}
-              className={`${isActive ? "text-white" : "text-white/75"} hover:text-white transition-all`}
+              className={`${isActive ? "text-white" : "text-white/75"} hover:text-white transition-all `}
             >
               <Link href={item.href}>{item.text}</Link>
             </li>

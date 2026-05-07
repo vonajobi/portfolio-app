@@ -62,12 +62,13 @@ const Projects: React.FC<ProjectsComponentProps> = () => {
                                     px-2
                                     py-2
                                     rounded-lg
+                                    max-w-3xl
                                 '>
                                     
-                            <div className='grid grid-cols gap-2 aspect-4/3 '>
+                            <div className='grid grid-cols gap-2'>
                                 {item.type === "video" ? (
                                     <video src={item.media}
-                                        className="object-cover rounded-lg"
+                                        className="md:w-[500px] md:h-[280px] rounded-lg object-cover "
                                         autoPlay
                                         loop
                                         playsInline
@@ -80,7 +81,7 @@ const Projects: React.FC<ProjectsComponentProps> = () => {
                                     alt = {item.title}
                                     loading="lazy"
                                     decoding="async"
-                                    className='object-cover rounded-lg '
+                                    className='md:w-[500px] md:h-[280px] rounded-lg '
                                 />
                                 }
                                 <h1 className='text-md uppercase'>{item.title}</h1>
