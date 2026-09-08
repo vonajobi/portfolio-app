@@ -35,7 +35,7 @@ const Paladone = () => {
   return (
     // bg-[#5280FF]
     <>
-    <div className='fixed inset-0 bg-[#5280FF] -z-20'></div>
+    <div className='fixed inset-0 bg-[#262654] z-10 w-2/3 m-auto'></div>
     <div className=' flex  px-2 relative z-10'>
       <div className=' mx-auto md:w-2/3 w-full'>
         <section className='py-12 h-auto'>
@@ -43,8 +43,8 @@ const Paladone = () => {
         </section>
         {/* intro */}
           <section className= {`h-128 relative bg-[url(/assets/projects/paladone/brief.svg)] bg-size-[auto_250] md:bg-contain bg-no-repeat `}>
-            <div className='absolute md:left-32 w-2/3 md:w-3/4 md:top-1/3   '>
-            <p className= {`${oswald.className} text-3xl md:text-6xl text-[#262654] mb-5`}>
+            <div className='absolute md:left-40 w-2/3 md:w-3/4 md:top-1/3   '>
+            <p className= {`${oswald.className} text-3xl md:text-6xl text-[#5F8EFF] mb-5`}>
               Overview
             </p>
             <p className=' text-sm md:text-lg font-bold'> {`Paladone's`} Lighting Project</p>
@@ -58,7 +58,7 @@ const Paladone = () => {
         {/* h block overview */}
         <section className=' bg-[url(/assets/projects/paladone/final_concept.svg)] bg-contain bg-no-repeat h-auto md:h-128 mb-40 md:w-full md:mb-10 overview'>
             <div className=' w-2/3 md:w-3/4 ml-32 md:ml-40'>
-              <p className= {`${oswald.className} text-3xl md:text-6xl md:mb-0 mb-2 text-[#262654]`}>
+              <p className= {`${oswald.className} text-3xl md:text-6xl md:mb-0 mb-2 text-[#5F8EFF]`}>
                 H-Blocks
               </p>
               <p className='text-sm'> 
@@ -80,7 +80,7 @@ const Paladone = () => {
         </section>
         <section className='w-full h-auto bg-[url(/assets/projects/paladone/initial_mk_rs.svg)] mb-2 md:mb-10 mk-rs-section'>
           <div className= {` md:top-1/4 md:left-12 md:max-w-xl`}>
-            <p className= {`${oswald.className} left-10 md:left-0 text-3xl md:text-6xl max-w-xl text-[#262654]`}>
+            <p className= {`${oswald.className} left-10 md:left-0 text-3xl md:text-6xl max-w-xl text-[#5F8EFF]`}>
             The role of modularity in sustainable design  
             </p>
             <p className='text-sm left-10 md:left-0'>           
@@ -100,7 +100,7 @@ const Paladone = () => {
 
         <section className='max-w-screen h-128 relative mb-2 md:mb-10 bg-[url(/assets/projects/paladone/ideation_4.svg)] bg-cover rdf-mrkt-section'>
           <div className= {`w-full h-full md:w-2/3 absolute top-1/4 md:left-40`}>
-            <p className= {`${oswald.className} text-3xl md:text-6xl text-[#262654] mb-2 md:mb-6`}>
+            <p className= {`${oswald.className} text-3xl md:text-6xl text-[#5F8EFF] mb-2 md:mb-6`}>
               Redifining the Market
             </p>
             <p className='text-black text-sm'>
