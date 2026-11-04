@@ -1,18 +1,17 @@
 "use client"
-import React, {useState} from 'react'
+import React from 'react'
 import Link from 'next/link'
 import Interactions from './interactions'
-import Image from 'next/image'
 
 import projects from "../../public/data/projects.json";
 import { useSearchParams } from "next/navigation"
 
-export interface ProjectsProps {
+type Project = {
     _id: number;
-    title?: string;
+    title: string;
     description: string;
     image_1?: string;
-    video?: string;
+    media: string;
     link: string;
     category: string;
 

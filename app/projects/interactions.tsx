@@ -1,3 +1,4 @@
+"use client"
 import React, {useRef, useEffect, useState} from 'react'
 import {useSpring, animated, to} from '@react-spring/web'
 import { useGesture } from '@use-gesture/react'

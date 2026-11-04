@@ -25,7 +25,10 @@ export const DesktopHomepageOverlay = () => {
                     flex
                     flex-col
                     '>
-          <div className='uppercase
+          <h1 className='sr-only'>Victoria Onajobi</h1>
+          <div 
+            aria-label='Victoria Onajobi'
+            className='uppercase
                           font-bold
                           text-center
                           text-[3.8rem]
@@ -34,7 +37,7 @@ export const DesktopHomepageOverlay = () => {
                           leading-none
                                             
                           '>
-            <div>
+            <span className='block' aria-hidden='true'>
               <span className='text-[#7b7677]'>{`[#`}</span> 
               <span className='text-[#f2777a]'>V</span> 
               <span className='text-[#ffcc66]'>I</span> 
@@ -57,7 +60,7 @@ export const DesktopHomepageOverlay = () => {
               <span className='text-[#f2777a]'>b</span> 
               <span className='text-[#99cc99]'>i.</span> 
               <span className='text-[#7b7677]'>{`#]`}</span> 
-            </div>    
+            </span>    
           </div>
 
           <p className='text-sm text-white/60 leading-relaxed'> Hi, I&apos;m Victoria <FaRegHandPeace className='inline' />. I like to design, code, and model objects and interactions. Checkout what I&apos;m building.

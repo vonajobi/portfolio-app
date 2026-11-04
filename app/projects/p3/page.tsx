@@ -35,7 +35,7 @@ const Paladone = () => {
   return (
     // bg-[#5280FF]
     <>
-    <div className='fixed inset-0 bg-[#262654] z-10 w-2/3 m-auto'></div>
+    <div className='fixed inset-0 bg-[#262654] z-10 md:w-2/3 m-auto'></div>
     <div className=' flex  px-2 relative z-10'>
       <div className=' mx-auto md:w-2/3 w-full'>
         <section className='py-12 h-auto'>
@@ -98,12 +98,12 @@ const Paladone = () => {
         <img src={`${file_path}ideation_2.webp`} alt='Ideation Sketches' className='mb-2 md:mb-10'/>
         <img src={`${file_path}ideation_3.webp`} alt='Ideation Skethches, USB Type-C Research' className='mb-2 md:mb-10'/>
 
-        <section className='max-w-screen h-128 relative mb-2 md:mb-10 bg-[url(/assets/projects/paladone/ideation_4.svg)] bg-cover rdf-mrkt-section'>
-          <div className= {`w-full h-full md:w-2/3 absolute top-1/4 md:left-40`}>
+        <section className='max-w-screen h-128 relative mb-2 md:mb-10 px-2 bg-[url(/assets/projects/paladone/ideation_4.svg)] bg-cover rdf-mrkt-section'>
+          <div className= {`w-full h-full md:w-2/3 relative md:absolute top-1/4 md:left-40`}>
             <p className= {`${oswald.className} text-3xl md:text-6xl text-[#5F8EFF] mb-2 md:mb-6`}>
-              Redifining the Market
+              Redefining the Market
             </p>
-            <p className='text-black text-sm'>
+            <p className='text-black text-sm w-full'>
             Play is not limited to children. In 2022, the LEGO Play Well report found that 30,000 adults from around the globe highlighted the importance of play and its role in modern ‘adult’ life.
             This product is now more suitable for a demographic that values advanced, creative play as a form of relaxation, mental stimulation, and therapeutic activity.
             </p>

@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 const titleDefault = 'Victoria Onajobi'
-const url = 'https://onajobi.co.vercel.app'
+const url = 'https://onajobi.co'
 const description =
-  'Victoria Onajobi is a Mechanical Engineer, Designer, and Programmer. They are a creative engineer with exceptional skills for building accesible and interactive products.'
+  'Victoria Onajobi is a multidisciplinary designer. They are a creative with exceptional skills for building interactive products.'
 const author = 'Victoria Onajobi'
 
 const Header = ({ title = titleDefault }) => {
@@ -23,7 +23,7 @@ const Header = ({ title = titleDefault }) => {
         <meta name='description' content={description} />
         <meta
           name='keywords'
-          content='Software Engineer, Creative Developer, CAD Designer, 3D Designer, Programmer, Engineer, Designer, Concept Artist'
+          content='Front End Developer, Creative Developer, 3D Designer, Engineer, Designer, CMD, CMF'
         />
         <meta name='robots' content='index,follow' />
         <meta name='distribution' content='web' />

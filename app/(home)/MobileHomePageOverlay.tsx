@@ -3,6 +3,7 @@ import {FaRegHandPeace} from 'react-icons/fa'
 export const HomePageOverlay = ()=>{
     return(
         <>
+        <h1 className='sr-only'>Victoria Onajobi</h1>
         <div className='uppercase
                           font-bold
                           text-center
@@ -12,7 +13,7 @@ export const HomePageOverlay = ()=>{
                           leading-none
                           mb-6                   
                           '>
-            <div>
+            <span className='block' aria-hidden>
               <span className='text-[#f2777a]'>V</span> 
               <span className='text-[#ffcc66]'>I</span> 
               <span className='text-[#99cc99]'>C</span> 
@@ -21,7 +22,7 @@ export const HomePageOverlay = ()=>{
               <span className='text-[#cc99cc]'>R</span> 
               <span className='text-[#f2777a]'>I</span> 
               <span className='text-[#6699cc]'>A</span>
-            </div>
+            </span>
 
             <div className='text-3xl text-[#ffcc66] tracking-normal my-2'>{`>_<`}</div> 
 
