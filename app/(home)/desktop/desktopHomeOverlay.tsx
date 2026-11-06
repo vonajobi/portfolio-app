@@ -1,8 +1,6 @@
-import { FiArrowUpRight } from 'react-icons/fi'
 import {FaRegHandPeace} from 'react-icons/fa'
 import { Socials } from '../../components/dom/socials';
-import { useEffect, useState } from "react";
-
+import DitherReveal from '../ditherReveal';
 
 export const DesktopHomepageOverlay = () => {
   return (

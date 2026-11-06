@@ -9,8 +9,9 @@ const calcY = (x: number, lx: number) => (x - lx - window.innerWidth / 2) / 50
 
 type InteractionsProps = {
     children: React.ReactNode;
+    color?: string
   }
-const Interactions: React.FC<InteractionsProps> = ({ children }) => {
+const Interactions: React.FC<InteractionsProps> = ({ children, color='#fffff' }) => {
 // prevents the default browser gestures when the component mounts and cleans up when the component unmounts
     useEffect(() => {
         const preventDefault = (e: Event) => e.preventDefault()
@@ -35,14 +36,14 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
     }))
     const [hovered, seHovered] = useState(false)
     const {bgOpacity} = useSpring({
-        bgOpacity: hovered ? 0.7 : 0,
+        bgOpacity: hovered ? 0.3 : 0,
         config: { mass: 1, tension: 300, friction: 10 },
     })
 
     // binds the gesture to the target element and updates the spring values based on the mouse position
     useGesture({
         onMove: ({ xy: [px, py] }) => {
-            set({rotateX: calcX(py, y.get()), rotateY: calcY(px, y.get()), scale: 1.05})
+            set({rotateX: calcX(py, y.get()), rotateY: calcY(px, x.get()), scale: 1.05})
         },
         onHover: ({ hovering}) => {
             set({rotateX:0, rotateY:0, scale: 1})
@@ -75,7 +76,7 @@ const Interactions: React.FC<InteractionsProps> = ({ children }) => {
 
           <animated.div
           className="absolute inset-0 bg-black/20 -z-10 rounded-lg"
-          style={{opacity: bgOpacity}}/>
+          style={{opacity: bgOpacity, backgroundColor: color}}/>
     </animated.div>
   )
 }

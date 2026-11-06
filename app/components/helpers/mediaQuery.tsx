@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(false);
+const [isDesktop, setIsDesktop] = useState<boolean | null>(null)
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");

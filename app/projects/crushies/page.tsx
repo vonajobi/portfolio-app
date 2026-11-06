@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   ];
 
   return (
-    <div className='flex justify-center w-screen border-box'>
+    <div className='flex justify-center w-screen border-box animate-slidein'>
 
       <div className=' flex flex-col space-y-4 w-full md:w-2/3'>
       {/* Intro */}

@@ -30,10 +30,11 @@ const Projects: React.FC<ProjectsComponentProps> = () => {
   return (
     <div className=' mt-0 md:mt-12'>
         <div className='absolute inset-0 
-                        bg-[url("/assets/background_black.svg")] 
                         bg-no-repeat
                         bg-cover
-                        opacity-30'></div>
+                        opacity-30'>
+
+        </div>
         
         <div className='flex 
                         flex-wrap 
@@ -67,7 +68,7 @@ const Projects: React.FC<ProjectsComponentProps> = () => {
                             <div className='grid grid-cols gap-2'>
                                 {item.type === "video" ? (
                                     <video src={item.media}
-                                        className="md:w-[500px] md:h-[280px] rounded-lg object-cover "
+                                        className="md:w-125 md:h-70 rounded-lg object-cover "
                                         autoPlay
                                         loop
                                         playsInline
@@ -80,10 +81,10 @@ const Projects: React.FC<ProjectsComponentProps> = () => {
                                     alt = {item.title}
                                     loading="lazy"
                                     decoding="async"
-                                    className='md:w-[500px] md:h-[280px] rounded-lg '
+                                    className='md:w-125 md:h-70 rounded-lg '
                                 />
                                 }
-                                <h1 className='text-md uppercase'>{item.title}</h1>
+                                <h1 className='text-md '>{item.title}</h1>
                                 <p className='text-sm pb-2'>{item.description}</p>
                             </div>               
                     </Link>

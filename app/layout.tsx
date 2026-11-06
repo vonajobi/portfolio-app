@@ -1,11 +1,13 @@
 import "./globals.css";
-import { Inter } from 'next/font/google'
+import { Inter, Ubuntu_Mono } from 'next/font/google'
 import { Navbar } from './components/dom/navBar'
 import { Footer } from './components/dom/footer'
 import React, { Suspense } from 'react';
 import { Metadata, Viewport } from "next";
+import Cursor from './components/dom/cursor'
 
 const inter = Inter({ subsets: ['latin'] })
+const ubuntuMono = Ubuntu_Mono({weight:['400'], subsets: ['latin']})
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.onajobi.co"),
   title: {
@@ -33,6 +35,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <Suspense fallback={null}>
             <Navbar />
           </Suspense>
+          <Cursor/>
           <div className=" flex 
                           flex-col 
                           min-h-screen

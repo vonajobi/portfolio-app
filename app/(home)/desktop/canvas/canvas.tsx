@@ -2,12 +2,10 @@
 import { Canvas } from '@react-three/fiber'
 import { memo, FC, useEffect, useRef, useState, useCallback } from 'react';
 import { OrbitControls} from '@react-three/drei';
-import { PostProcessing } from './post-processing';
 import {ModelLoader} from './model';
 import React, {ReactNode} from 'react'
 import useStore from '../../../components/helpers/helper'
 import SceneIndex from './sceneIndex';
-import { EnvironmentWrapper } from './environment';
 import { useControls, folder, Leva } from 'leva';
 import * as THREE from 'three'
 import { Lights } from './lights';
@@ -44,9 +42,7 @@ const DesktopCanvas = ({ children }: {children : ReactNode}) => {
     );
   };
 
-  const Effects: FC = memo(() => (
-  <PostProcessing />
-  ))
+
 
   export default DesktopCanvas;
   

@@ -41,7 +41,7 @@ const IntuitivePaper = () => {
     //     <img src={{ src: `${file_path}database_flow.png`} alt="Databse Flow" className='w-2/3'/>
     //     </div>
     // </div>
-    <div className='min-h-screen  flex bg-linear-to-br from-white via-purple-50 to-blue-50 text-gray-800'>
+    <div className='min-h-screen  flex bg-linear-to-br from-white via-purple-50 to-blue-50 text-gray-800 animate-slidein'>
       <div className=" w-screen md:w-2/3 mx-auto bg-gray-100/30">
         {/* Introduction Section */}
         <section className=" py-12 px-8 md:px-24">
@@ -50,7 +50,7 @@ const IntuitivePaper = () => {
           </h1>
           <p className="text-md leading-relaxed text-center"> 
             Revolutionizing Research Efficiency for Scientists & Entrepreneurs 
-            <a className="text-white' text-blue-500/75 hover-effect" href={"https://github.com/TheTRUTHis42/IntuitivePaper"}> Github Link</a>
+            <a className="text-blue-500/75 hover-effect" href={"https://github.com/TheTRUTHis42/IntuitivePaper"}> Github Link</a>
 
           </p>
         </section>

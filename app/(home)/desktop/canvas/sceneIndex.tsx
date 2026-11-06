@@ -1,5 +1,4 @@
-import { Suspense } from 'react';
-import React, {useEffect} from 'react';
+import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { Vector3, TextureLoader} from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
@@ -56,9 +55,9 @@ const SceneIndex = (props: any) => {
         >
       {/* model is being called here */}
         <ModelLoader />;
-        <Title>{`HELLO`}</Title>;
-        <TitleL>{`HELLO`}</TitleL>;
-        <Sparkles count={60} scale={[20, 20, 10]} size={1} speed={2} />;
+        <CyclingTitle words= {['HELLO','DEVELOPER','DESIGNER', 'CREATIVE']}/>
+        {/* <TitleL>{`DEVELOPER`}</TitleL>; */}
+        <Sparkles count={60} scale={[30, 30, 10]} size={2} speed={2} />;
       </Suspense>
       <EffectComposer multisampling={0} enableNormalPass={false}>
         <Bloom
@@ -77,46 +76,104 @@ const SceneIndex = (props: any) => {
 }
 
 
-const Title = ({ children }: { children: any }) => {
-  
-  const {viewport} = useThree();
-  const { width } = viewport;
-  return (
-      <Text
-        position={[0, 0, -8]}
-        lineHeight={1.3}
-        // font={('/assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf')}
-        font={('/assets/fonts/Rubik_80s_Fade/Rubik80sFade-Regular.ttf')}
-        fontSize={width / 4}
-        material-toneMapped={false}
-        anchorX='center'
-        anchorY='middle'
-      >
-        {children}
-        <meshBasicMaterial color='#DEE7E7' />
-      </Text>
-  )
-}
+const FONT = '/assets/fonts/Rubik_80s_Fade/Rubik80sFade-Regular.ttf';
+const easeOut = (x: number) => 1 - Math.pow(1 - x, 3);
 
-const TitleL = ({ children }: { children: any }) => {
-  const { width } = useThree((state) => state.viewport)
+const CyclingTitle = ({
+  words = [''],
+  hold = 2.6, // seconds each word stays fully visible
+  fade = 0.6, // seconds to fade/float in or out
+}: {
+  words?: string[];
+  hold?: number;
+  fade?: number;
+}) => {
+  const { viewport, camera } = useThree();
+  const [index, setIndex] = useState(0);
+  const group = useRef<THREE.Group>(null);
+  const layers = useRef<any[]>([]);
+  const fit = useRef(1);
+  const clock = useRef(0);
+
+  const reduceMotion = useMemo(
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    []
+  );
+
+  const fontSize = viewport.width / 4;
+  // visible width at the title's depth (z = -8), with a little margin
+  const maxWidth = viewport.getCurrentViewport(camera, [0, 0, -8]).width * 0.9;
+
+  // shrink long words so they stay on screen
+  const measure = (t: any) => {
+    const b = t.textRenderInfo?.blockBounds; // [minX, minY, maxX, maxY]
+    if (!b) return;
+    const w = b[2] - b[0];
+    fit.current = w > maxWidth ? maxWidth / w : 1;
+  };
+
+  useFrame((_, dt) => {
+    if (reduceMotion || !group.current) return; // reduced motion: first word, no cycling
+
+    clock.current += Math.min(dt, 0.1);
+    const t = clock.current;
+
+    let alpha = 1;
+    let slide = 0; // -1 = below, 0 = in place, 1 = above
+
+    if (t < fade) {
+      const p = easeOut(t / fade);
+      alpha = p;
+      slide = 1-p;
+    } else if (t > hold + fade) {
+      const p = easeOut(Math.min(1, (t - hold - fade) / fade));
+      alpha = 1 - p;
+      slide = -p;
+    }
+
+    if (t >= hold + 2 * fade) {
+      clock.current = 0;
+      alpha = 0;
+      setIndex((i) => (i + 1) % words.length);
+    }
+
+    group.current.position.y = slide * fontSize * 0.25;
+    group.current.scale.setScalar(fit.current);
+    layers.current.forEach((l) => {
+      if (l) l.fillOpacity = alpha;
+    });
+  });
+
   return (
-    <Text
-      position={[0, 0, -8]}
-      lineHeight={1.3}
-      // font={('/assets/fonts/Rubik_Glitch/RubikGlitch-Regular.ttf')}
-      font={('/assets/fonts/Rubik_80s_Fade/Rubik80sFade-Regular.ttf')}
-      fontSize={width / 4}
-      material-toneMapped={false}
-      anchorX='center'
-      anchorY='middle'
-    >
-      
-      {children}
-      <meshStandardMaterial roughness={1} metalness={0.5} color='#860111' />
-    </Text>
-  )
-}
+    <group ref={group} position={[0, 0, -8]}>
+      <Text
+        ref={(el: any) => { layers.current[0] = el; }}
+        font={FONT}
+        fontSize={fontSize}
+        lineHeight={1.3}
+        anchorX="center"
+        anchorY="middle"
+        material-toneMapped={false}
+        onSync={measure}
+      >
+        {words[index]}
+        <meshBasicMaterial color="#DEE7E7" />
+      </Text>
+      <Text
+        ref={(el: any) => { layers.current[1] = el; }}
+        font={FONT}
+        fontSize={fontSize}
+        lineHeight={1.3}
+        anchorX="center"
+        anchorY="middle"
+        material-toneMapped={false}
+      >
+        {words[index]}
+        <meshStandardMaterial roughness={1} metalness={0.5} color="#860111" />
+      </Text>
+    </group>
+  );
+};
 
 const Rig = ({ v = new THREE.Vector3() }) => {
   return useFrame((state) => {

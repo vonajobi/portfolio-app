@@ -1,7 +1,6 @@
 import {FaRegHandPeace} from 'react-icons/fa'
 import { Socials } from '../../components/dom/socials'
 import { HomePageOverlay } from '../MobileHomePageOverlay'
-import PixelDitherCanvas from './pixelAnimation'
 
 
 
@@ -17,7 +16,6 @@ export const MobileHomepageOverlay = () => {
                     flex-col
 
                     py-10
-                    
                     ">
         {/* hero */}
         <section className="flex 
@@ -27,10 +25,6 @@ export const MobileHomepageOverlay = () => {
                             shrink-0 
                             py-10
                             ">
-          {/* bg */}
-          <div className="inset-0 pointer-events-none ">
-                    <PixelDitherCanvas  />
-          </div>
 
         {/* Role */}
         <div className='font-light
@@ -44,14 +38,14 @@ export const MobileHomepageOverlay = () => {
                         pl-4'>
               developer,<br/>
               designer,<br/>
-              genius,
+              creative,
         </div>
         {/* Name */}
           <HomePageOverlay/>
           </section>
 
       {/* SOCIAL / INFO */}
-      <section className="mt-auto py-6 text-sm space-y-2">
+      <section className="mt-auto py-6 text-sm space-y-2 text-white/60">
         <div>Connect with me</div>
         <div className="flex row gap-6">
           <Socials />

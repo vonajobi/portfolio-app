@@ -37,7 +37,64 @@
   }
   
 }
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.delay-1 {
+  --slidein-delay: 100ms;
+}
 
+.delay-2 {
+  --slidein-delay: 200ms;
+}
+
+.delay-3 {
+  --slidein-delay: 300ms;
+}
+.animate-slidein {
+  animation: slidein 1s ease var(--slidein-delay,0s) backwards;
+}
+@keyframes scalein {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleout {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.animate-scale-in {
+  animation: scalein 320ms ease forwards;
+}
+
+.animate-scale-out {
+  animation: scaleout 320ms ease forwards;
+}
+
+html.mascot-cursor:not(.mascot-native),
+html.mascot-cursor:not(.mascot-native) * {
+  cursor: none !important;
+}
 body {
   color: rgb(var(--foreground-rgb));
   @apply  bg-[hero-pattern] bg-cover bg-center;
@@ -97,4 +154,5 @@ base {
 background-color: #fdf5e6;
 border-radius: 10px;
 }
+
 

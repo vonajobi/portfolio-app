@@ -36,7 +36,7 @@ const Paladone = () => {
     // bg-[#5280FF]
     <>
     <div className='fixed inset-0 bg-[#262654] z-10 md:w-2/3 m-auto'></div>
-    <div className=' flex  px-2 relative z-10'>
+    <div className=' flex  px-2 relative z-10 animate-slidein'>
       <div className=' mx-auto md:w-2/3 w-full'>
         <section className='py-12 h-auto'>
           <img src={`${file_path}intro.webp`}/>
@@ -70,7 +70,7 @@ const Paladone = () => {
                 The H-Block Party consists of one single Bluetooth module (Head), at least three different type of adjoining blocks, and a connected app. The Bluetooth module will still serve as the communication interface between the physical blocks and the mobile app. It should support Bluetooth Low Energy (BLE) for efficient wireless communication. The power module is responsible for communication with the users mobile device.  Other blocks connect to each other via USB-C and receive power through the power module. When a block receives power it lights up blue. The power module is distinguished by a power button and three battery light indicators. Users can construct any form they like. 
               </p>
               <p className='text-sm'>
-                Games can be played in person and tracked online. Having a connected app makes scaling easier and reduces waste created with physical products. It alo provides Paladone an opportunity to strengthen customer engagement and promote products.
+                Games can be played in person and tracked online. Having a connected app makes scaling easier and reduces waste created with physical products. It also provides Paladone an opportunity to strengthen customer engagement and promote products.
               </p>
           </div>
         </section>
@@ -96,7 +96,7 @@ const Paladone = () => {
         <img className='mb-2 md:mb-10' src={`${file_path}mk_rs_3.svg`}/>
         <img src={`${file_path}Ideation.svg`} alt='Ideation' className='mb-2 md:mb-10'/>
         <img src={`${file_path}ideation_2.webp`} alt='Ideation Sketches' className='mb-2 md:mb-10'/>
-        <img src={`${file_path}ideation_3.webp`} alt='Ideation Skethches, USB Type-C Research' className='mb-2 md:mb-10'/>
+        <img src={`${file_path}ideation_3.webp`} alt='Ideation Sketches, USB Type-C Research' className='mb-2 md:mb-10'/>
 
         <section className='max-w-screen h-128 relative mb-2 md:mb-10 px-2 bg-[url(/assets/projects/paladone/ideation_4.svg)] bg-cover rdf-mrkt-section'>
           <div className= {`w-full h-full md:w-2/3 relative md:absolute top-1/4 md:left-40`}>
@@ -113,7 +113,7 @@ const Paladone = () => {
         <ImageGrid media={finalImages} />
         <img src={`${file_path}marketing.svg`} alt='Marketing'className='mt-10'/>
         <section className='text-4xl m-10 '>
-          <p> Web Pallette and Pantone Graphics </p>
+          <p> Web Palette and Pantone Graphics </p>
           <div className='grid grid-cols-2 md:grid-cols-4 md:gap-4 md:py-5 '>
             <img src={`${file_path}Frame_48.webp`} alt='color pallete Black'/>
             <img src={`${file_path}Frame_50.webp`} alt='color pallete CornFlower Blue and Marian Blue'/>
@@ -125,7 +125,7 @@ const Paladone = () => {
         </section>
          
           <div className='columns-sm gap-2 '>
-            <img src={`${file_path}Silver.webp `} className="py-1"alt='silver'/>
+            <img src={`${file_path}Silver.webp`} className="py-1"alt='silver'/>
             <img src={`${file_path}Silver_1.webp`} className="py-1"alt='silver_1'/>
             <img src={`${file_path}Silver_2.webp`} className="py-1"alt='silver_2'/>
             <img src={`${file_path}Silver_3.webp`} className="py-1"alt='silver_3'/>

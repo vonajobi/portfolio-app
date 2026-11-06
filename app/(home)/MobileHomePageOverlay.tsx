@@ -3,7 +3,6 @@ import {FaRegHandPeace} from 'react-icons/fa'
 export const HomePageOverlay = ()=>{
     return(
         <>
-        <h1 className='sr-only'>Victoria Onajobi</h1>
         <div className='uppercase
                           font-bold
                           text-center

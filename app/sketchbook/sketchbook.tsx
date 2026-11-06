@@ -14,6 +14,8 @@ const Sketchbook = () => {
     const [products, setProducts] = useState<SketchbookProps[]>(sketchbook);
     const [activeFilter, setActiveFilter] = useState<string>('Brain Dump');
     const [selectedImage, setSelectedImage] = useState<SketchbookProps | null>(null);
+    const [isClosing, setIsClosing] = useState(false);
+    const [filterVersion, setFilterVersion] = useState(0);
 
     const categories = ['Brain Dump', 'art & design', '3D', 'study', 'engineering'];
 
@@ -31,16 +33,30 @@ const Sketchbook = () => {
         const extension = file.split('.').pop()?.toLowerCase();
         return vidExtensions.includes(extension || '');
     }
+
+    const closeImage = () => {
+        setIsClosing(true);
+
+        setTimeout(() => {
+            setSelectedImage(null);
+            setIsClosing(false);
+        }, 320);
+    };
+
+    const handleFilterChange = (cat: string) => {
+        setActiveFilter(cat);
+        setFilterVersion((prev) => prev + 1);
+    };
     
     return (
         <div className='w-full flex gap-6'>
             {/* Sidebar Filters */}
-            <div className='hidden md:flex flex-col gap-3 w-sm top-20 h-fit'>
+            <div className='hidden md:flex flex-col gap-3 w-sm top-20 h-fit animate-slidein delay-1'>
                 <p className={` font-bold text-6xl text-white `}>FILTERS</p>
                 {categories.map(cat => (
                     <button
                         key={cat}
-                        onClick={() => setActiveFilter(cat)}
+                        onClick={() => handleFilterChange(cat)}
                         className={` py-2 text-left font-light transition-all ${
                             activeFilter === cat
                                 ? 'bg-white/90 text-black rounded'
@@ -55,24 +71,25 @@ const Sketchbook = () => {
 
             <div className='flex-1'>
                 {/* Mobile Filter Buttons */}
-                <div className='flex md:hidden mt-6 flex-wrap gap-2 mb-2 pb-4 border-b border-gray-400'>
+                <div className='flex md:hidden mt-6 flex-wrap gap-2 mb-2 pb-4 border-b border-gray-400 animate-slidein delay-2'>
                     {categories.map(cat => (
                         <button
                             key={cat}
-                            onClick={() => setActiveFilter(cat)}
+                            onClick={() => handleFilterChange(cat)}
                             className={`px-3 py-1 text-sm rounded font-medium transition-all ${
                                 activeFilter === cat
                                     ?  'bg-white/90 text-black'
                                     : 'bg-transparent text-white/60 border border-gray-600 hover:border-white'
                             }`}
                         >
-                            {cat.charAt(0).toUpperCase() + cat.slice(1)}
                         </button>
                     ))}
                 </div>
 
                 {/* Gallery Grid */}
-                <div className='columns-1 lg:columns-3 gap-2'>
+                <div 
+                key={filterVersion}
+                className='columns-1 lg:columns-3 gap-2 animate-slidein delay-3'>
                     {filteredProducts.map((item) => (
                         <div 
                             key={item.title} 
@@ -102,39 +119,28 @@ const Sketchbook = () => {
             {/* Lightbox Modal */}
             {selectedImage && (
                 <div 
-                    className='fixed inset-0 bg-black/60 backdrop-blur-sm  flex items-center justify-center z-50 p-4'
-                    onClick={() => setSelectedImage(null)}
+                    className='fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4'
+                    onClick={closeImage}
                 >
-                    {/* Close Button */}
                     <button
-                        className='absolute top-6 right-6 text-white text-4xl font-light hover:text-gray-300 transition z-51'
-                        onClick={() => setSelectedImage(null)}
-                        title="Close (ESC)"
+                        className='absolute top-10 right-10 text-white text-4xl font-light hover:text-gray-300 transition z-51'
+                        onClick={closeImage}
                     >
                         ✕
                     </button>
-                   
-                    <div 
+
+                    <div
                         className='flex flex-col items-center justify-center'
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {isImage(selectedImage.image) && (
-                            <img 
-                                src={selectedImage.image} 
-                                alt={selectedImage.title}
-                                className='max-h-150 object-cover rounded-lg border-4 border-white'
-                            />
-                        )}
-                        {isVideo(selectedImage.image) && (
-                            <video 
-                                className=' max-h-150 object-cover rounded-lg border-4 border-white' 
-                                autoPlay loop playsInline
-                            >
-                                <source src={selectedImage.image} type={`video/${selectedImage.image.split('.').pop()?.toLowerCase()}`} />
-                            </video>
-                        )}
+                        <img
+                            src={selectedImage.image}
+                            alt={selectedImage.title}
+                            className={`max-h-150 object-cover rounded-lg border-4 border-white ${
+                                isClosing ? 'animate-scale-out' : 'animate-scale-in'
+                            }`}
+                        />
                     </div>
-                    
                 </div>
             )}
         </div>

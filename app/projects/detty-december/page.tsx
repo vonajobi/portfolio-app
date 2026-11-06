@@ -14,6 +14,7 @@ const DettyDecember = () => {
                         gap-4 
                         m-auto 
                         place-content-center 
+                        animate-slidein
                         '>
             <img src={`${file_path}Artboard 1.webp`}/> 
             <img src={`${file_path}Artboard 2.webp`}/>

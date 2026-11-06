@@ -17,7 +17,8 @@ export default async function Page({
                       bg-[url('/assets/background_black.svg')] 
                       bg-no-repeat 
                       bg-cover 
-                      opacity-30" />
+                      opacity-30 
+                      " />
       <h1 className="sr-only">Projects</h1>
       <div className="flex 
                       flex-wrap 
@@ -29,7 +30,8 @@ export default async function Page({
                       text-left 
                       gap-2 
                       sm:gap-5 
-                      text-neutral-400">
+                      text-neutral-400
+                      animate-slidein">
         {list.map((project) => (
           <ProjectsCard key={project._id} project={project} />
         ))}
