@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { Suspense } from "react";
 import ProjectsMenu from "./projectMenu";
+import SoundToggle from "./soundToggler";
 
   export const Navbar = () => {
     return (
@@ -48,6 +49,9 @@ import ProjectsMenu from "./projectMenu";
 
         <li className="hover-effect">
           <Link href="/sketchbook">#SKETCHBOOK</Link>
+        </li>
+        <li>
+          <SoundToggle/>
         </li>
       </ul>
     </nav>
