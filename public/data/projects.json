@@ -4,8 +4,8 @@
         "_id": 9,
         "title": "Detty December Pack",
         "role": "CMD Designer",
-        "tags": ["Product", "Apparel", "Brand"],
-        "description": "A footwear and apparel capsule centrered around Detty December",
+        "tags": ["Product", "Brand"],
+        "description": "A footwear and apparel capsule centrered around Detty December.",
         "link": "/projects/detty-december",
         "media": "/assets/projects/detty_december/Artboard 12.webp",
         "type": "image",
@@ -19,8 +19,8 @@
         "tags": ["Product"," 3D Modeling", "Packaging"],
         "description": "A limited edition Blind Box Series of 3D printed collectible toys.",
         "link": "/projects/crushies",
-        "media": "/assets/projects/blind_box/packaging_2.webp",
-        "type": "image",
+        "media": "/assets/projects/blind_box/animation.mp4",
+        "type": "video",
         "category": "design"
     },
        
