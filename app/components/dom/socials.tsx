@@ -25,7 +25,7 @@ export const Socials: React.FC = () => {
                       md:justify-start
                       md-flex-col
 
-                      transition-all 
+                      transition-all  
                       cursor-pointer 
                       pointer-events-auto'>
         <div className=' flex hover:text-white'>

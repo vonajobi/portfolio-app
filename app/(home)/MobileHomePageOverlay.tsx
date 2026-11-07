@@ -13,7 +13,7 @@ export const HomePageOverlay = ()=>{
                           mb-6                   
                           '>
             <span className='block' aria-hidden>
-              <span className='text-white/75'>{`[`}</span>
+              {/* <span className='text-white/75'>{`[`}</span> */}
               <span className='text-[#f2777a]'>V</span> 
               <span className='text-[#ffcc66]'>I</span> 
               <span className='text-[#99cc99]'>C</span> 
@@ -34,7 +34,7 @@ export const HomePageOverlay = ()=>{
               <span className='text-[#6699cc]'>O</span> 
               <span className='text-[#f2777a]'>b</span> 
               <span className='text-[#99cc99]'>i.</span> 
-              <span className='text-white/75'>{`]`}</span>
+              {/* <span className='text-white/75'>{`]`}</span> */}
             </div>    
           </div>
 

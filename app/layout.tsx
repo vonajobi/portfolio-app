@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter, Ubuntu_Mono } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Navbar } from './components/dom/navBar'
 import { Footer } from './components/dom/footer'
 import React, { Suspense } from 'react';
@@ -8,13 +8,9 @@ import Cursor from './components/dom/cursor'
 import TapSounds from "./components/dom/tapSounds";
 
 const inter = Inter({ subsets: ['latin'] })
-const ubuntuMono = Ubuntu_Mono({weight:['400'], subsets: ['latin']})
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.onajobi.co"),
-  title: {
-    default: "Victoria Onajobi | Creative",
-    template: "%s | Victoria Onajobi",
-  },
+  title: "Victoria Onajobi | Creative",
   description:
     "Victoria Onajobi is a multidisciplinary designer. They are a creative with exceptional skills for building interactive products.",
   openGraph: {
