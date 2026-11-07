@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Suspense } from "react";
 import ProjectsMenu from "./projectMenu";
 import SoundToggle from "./soundToggler";
+import MobileMenu from "./mobileMenu";
 
   export const Navbar = () => {
     return (
@@ -34,13 +35,13 @@ import SoundToggle from "./soundToggler";
         <Link href="/">HOME</Link>
       </span>
 
-      <ul className="flex text-sm font-light tracking-wider space-x-4 md:space-x-10 font-ubuntu">
+      <ul className="hidden md:flex text-sm font-light tracking-wider space-x-4 md:space-x-10 font-ubuntu">
 
         {/* PROJECTS DROPDOWN */}
         <Suspense
           fallback={
             <li className="hover-effect">
-              <Link href="/projects">#PROJECTS</Link>
+              <Link href="/projects">{`[PROJECTS]`}</Link>
             </li>
           }
         >
@@ -48,12 +49,15 @@ import SoundToggle from "./soundToggler";
         </Suspense>
 
         <li className="hover-effect">
-          <Link href="/sketchbook">#SKETCHBOOK</Link>
+          <Link href="/sketchbook">{`[SKETCHBOOK]`}</Link>
         </li>
         <li>
           <SoundToggle/>
         </li>
       </ul>
+      <Suspense fallback={null}>
+        <MobileMenu />
+      </Suspense>
     </nav>
     )
   }

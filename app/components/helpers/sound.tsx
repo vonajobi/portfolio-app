@@ -18,11 +18,11 @@ const getCtx = () => {
     if (!AC) return null;
     ctx = new AC();
   }
-  if (ctx.state === "suspended") ctx.resume();
+  if (ctx.state !== "running") ctx.resume().catch(() => {});
   return ctx;
 };
 
-// browsers only allow audio after a click or key press, so unlock on the first one
+// browsers only allow audio after a tap or key press, so unlock on the first one
 export function initSound() {
   if (typeof window === "undefined") return;
   try {
@@ -30,16 +30,24 @@ export function initSound() {
   } catch {}
   if (wired) return;
   wired = true;
+
+  const events = ["pointerdown", "pointerup", "touchend", "click", "keydown"];
   const unlock = () => {
     if (!on) return;
-    getCtx();
-    if (ctx?.state === "running") {
-      window.removeEventListener("pointerdown", unlock);
-      window.removeEventListener("keydown", unlock);
+    const c = getCtx();
+    if (!c) return;
+    // iOS wants a real (silent) sound started inside the gesture
+    try {
+      const src = c.createBufferSource();
+      src.buffer = c.createBuffer(1, 1, 22050);
+      src.connect(c.destination);
+      src.start(0);
+    } catch {}
+    if (c.state === "running") {
+      events.forEach((e) => window.removeEventListener(e, unlock));
     }
   };
-  window.addEventListener("pointerdown", unlock);
-  window.addEventListener("keydown", unlock);
+  events.forEach((e) => window.addEventListener(e, unlock));
 }
 
 export function setSoundOn(v: boolean) {
@@ -47,10 +55,7 @@ export function setSoundOn(v: boolean) {
   try {
     localStorage.setItem(KEY, v ? "on" : "off");
   } catch {}
-  if (v) {
-    getCtx(); // called from a click, so the browser allows it
-    play("pop");
-  }
+  if (v) play("pop"); // called from a tap, so the browser allows the audio engine to start
 }
 
 type ToneOpts = { type?: OscillatorType; gain?: number; slideTo?: number; delay?: number };
@@ -74,8 +79,16 @@ function tone(freq: number, dur: number, o: ToneOpts = {}) {
 
 export type SoundName = "tick" | "squish" | "pop" | "blink" | "sleep" | "wake";
 
-export function play(name: SoundName) {
-  if (!on || !ctx || ctx.state !== "running") return;
+export function play(name: SoundName, retried = false) {
+  if (!on) return;
+  const c = getCtx();
+  if (!c) return;
+
+  // phones start "suspended": wake the engine, then try once more
+  if (c.state !== "running") {
+    if (!retried) c.resume().then(() => play(name, true)).catch(() => {});
+    return;
+  }
 
   // don't let the same sound machine-gun
   const now = performance.now();
@@ -83,13 +96,13 @@ export function play(name: SoundName) {
   lastPlayed[name] = now;
 
   switch (name) {
-    case "tick": // hover: a soft random note from the scale
+    case "tick": // a soft random note from the scale
       tone(SCALE[Math.floor(Math.random() * SCALE.length)], 0.09, { type: "triangle", gain: 0.05 });
       break;
-    case "squish": // mouse down: short, low, dropping
+    case "squish": // short, low, dropping
       tone(240, 0.1, { type: "square", gain: 0.03, slideTo: 110 });
       break;
-    case "pop": // mouse up: quick bubbly drop
+    case "pop": // quick bubbly drop
       tone(750, 0.1, { gain: 0.1, slideTo: 260 });
       break;
     case "blink": // tiny click

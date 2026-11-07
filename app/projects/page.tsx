@@ -9,6 +9,7 @@ export default async function Page({
 }) {
   const { category } = await searchParams;
   const list = category ? projects.filter((p) => p.category === category) : projects;
+  const categoryKey = category ?? "all";
 
   return (
     <div className="mt-0 md:mt-12">
@@ -20,7 +21,7 @@ export default async function Page({
                       opacity-30 
                       " />
       <h1 className="sr-only">Projects</h1>
-      <div className="flex 
+      <div key={categoryKey} className="flex 
                       flex-wrap 
                       mb-16 
                       mt-7 

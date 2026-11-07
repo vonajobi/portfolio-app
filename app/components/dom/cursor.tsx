@@ -146,7 +146,7 @@ export default function MascotCursor({ hideNative = true }: { hideNative?: boole
     <div
       ref={ref}
       aria-hidden="true"
-      className="pointer-events-none fixed left-0 top-0 z-[9999] select-none font-mono text-2xl font-bold text-white mix-blend-difference"
+      className="pointer-events-none fixed left-0 top-0 z-9999 select-none font-mono text-2xl font-bold text-white mix-blend-difference"
       style={{ opacity: 0, willChange: "transform" }}
     >
       {">_<"}

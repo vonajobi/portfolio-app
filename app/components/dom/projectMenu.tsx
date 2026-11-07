@@ -43,7 +43,7 @@ export default function ProjectsMenu() {
         onClick={handleClick}
         className={`hover-effect ${pathname.startsWith("/projects") ? "" : ""}`}
       >
-        #PROJECTS
+        {`[PROJECTS]`}
       </Link>
 
       <div

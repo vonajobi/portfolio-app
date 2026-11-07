@@ -5,6 +5,7 @@ import { Footer } from './components/dom/footer'
 import React, { Suspense } from 'react';
 import { Metadata, Viewport } from "next";
 import Cursor from './components/dom/cursor'
+import TapSounds from "./components/dom/tapSounds";
 
 const inter = Inter({ subsets: ['latin'] })
 const ubuntuMono = Ubuntu_Mono({weight:['400'], subsets: ['latin']})
@@ -36,6 +37,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <Navbar />
           </Suspense>
           <Cursor/>
+          <TapSounds/>
           <div className=" flex 
                           flex-col 
                           min-h-screen

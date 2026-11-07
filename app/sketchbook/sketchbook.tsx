@@ -1,5 +1,4 @@
 "use client"
-import React from 'react'
 import sketchbook from '../../public/data/sketchbook.json'
 import { useState } from 'react'
 
@@ -71,7 +70,7 @@ const Sketchbook = () => {
 
             <div className='flex-1'>
                 {/* Mobile Filter Buttons */}
-                <div className='flex md:hidden mt-6 flex-wrap gap-2 mb-2 pb-4 border-b border-gray-400 animate-slidein delay-2'>
+                <div className='flex md:hidden mt-10 flex-wrap gap-2 mb-2 pb-4 border-b border-gray-400 animate-slidein delay-2'>
                     {categories.map(cat => (
                         <button
                             key={cat}
@@ -79,7 +78,7 @@ const Sketchbook = () => {
                             className={`px-3 py-1 text-sm rounded font-medium transition-all ${
                                 activeFilter === cat
                                     ?  'bg-white/90 text-black'
-                                    : 'bg-transparent text-white/60 border border-gray-600 hover:border-white'
+                                    : 'bg-transparent text-white/60 border border-gray-600'
                             }`}
                         >
                         </button>
