@@ -43,8 +43,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                         bg-[#1e1e1e]">
             <main className="flex grow
                             pt-14
-                            px-4
-
                             lg:pt-20
                             lg:px-10">
               {children}
