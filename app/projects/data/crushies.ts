@@ -46,7 +46,7 @@ const crushies: Project = {
     { src: `${dir}team.svg`, alt: "Team List"}
     
   ],
-  caseStudy: true
+  caseStudy: false
 };
 
 export default crushies;

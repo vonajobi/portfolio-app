@@ -48,7 +48,7 @@ export default function Gallery({ items }: { items: Media[] }) {
 
       {/* the rest: click one to make it the big image */}
       {others.length > 0 && (
-        <section aria-label="More from this project" className="mt-16 columns-1 gap-4 md:columns-2 lg:columns-3">
+        <section aria-label="More from this project" className="mt-16 columns-1 gap-4 md:columns-2">
           {others.map(({ m, i }) => (
             <button
               key={m.src}

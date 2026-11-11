@@ -18,6 +18,7 @@ const dettyDecember: Project = {
   },
   gallery: [
     { src: `${dir}Artboard 1.webp`, alt: "Detty December Intro" },
+    { src: `${dir}Artboard 2.webp`, alt: "Table of contents" },
     { src: `${dir}Artboard 5.webp`, alt: "Consumer Intro" },
     { src: `${dir}Artboard 7.webp`, alt: "Colour story 1" },
     { src: "/assets/sketchbook/lorenz_video.mp4", alt: "Lorenz music reactor" },
@@ -41,7 +42,7 @@ const dettyDecember: Project = {
    
     
   ],
-  caseStudy: true
+  caseStudy: false
 };
 
 export default dettyDecember;
