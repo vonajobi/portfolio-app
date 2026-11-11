@@ -47,7 +47,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                             lg:px-10">
               {children}
             </main>
-            <Footer />
           </div>
         </div>
       </body>

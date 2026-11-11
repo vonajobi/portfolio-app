@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 
 type Item = { id: string; label: string };
@@ -16,8 +17,14 @@ export function CaseStudyFrame({
   nav?: boolean; // set false for simple pages with no side nav
   children: ReactNode;
 }) {
+  const pathname = usePathname();
   const [items, setItems] = useState<Item[]>([]);
   const [active, setActive] = useState("");
+
+  useEffect(() => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }, [pathname]);
 
   // the side nav is built from every <section data-title="..."> on the page
   useEffect(() => {

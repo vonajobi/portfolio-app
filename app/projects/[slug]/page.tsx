@@ -5,6 +5,7 @@ import { CaseStudyFrame } from "@/app/components/layout/caseStudyFrame";
 import { getProject, nextProject, projects } from "@/app/projects/data";
 import type { Media } from "@/app/projects/types";
 import { FiArrowUpRight } from 'react-icons/fi'
+import Gallery from "@/app/components/layout/gallery";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -28,7 +29,17 @@ function Figure({ m, centered = false }: { m: Media; centered?: boolean }) {
   return (
     <figure>
       {m.type === "video" ? (
-        <video src={m.src} aria-label={m.alt} controls playsInline preload="metadata" className="w-full rounded-xl" />
+        <video
+          src={m.src}
+          aria-label={m.alt}
+          autoPlay={m.autoPlay}
+          muted={m.autoPlay}
+          loop={m.autoPlay}
+          controls={!m.autoPlay}
+          playsInline
+          preload="metadata"
+          className="w-full rounded-xl"
+        />
       ) : (
         <img src={m.src} alt={m.alt} loading="lazy" className="w-full rounded-md" />
       )}
@@ -79,22 +90,27 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   href={p.demo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="no-underline hover:opacity-80"
+                  className="inline-flex items-center gap-1 text-white/50 no-underline transition-colors hover:text-white"
                 >
-                  {p.demo.label ?? "Live demo"} ↗
+                  {p.demo.label ?? "Live demo"}
+                  <FiArrowUpRight/>
                 </a>
               )}
               {p.caseStudy && (
-                <Link href={`/projects/${p.slug}/case-study`} className={linkStyle}>
+                <Link href={`/projects/${p.slug}/case-study`} className="text-white/50 no-underline transition-colors hover:text-white">
                   View case study
                 </Link>
               )}
               {p.links?.map((l) => (
-                <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className={linkStyle}>
+                <a key={l.href} 
+                  href={l.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-1 text-white/50 no-underline transition-colors hover:text-white">
                   {l.label} 
+                  <FiArrowUpRight/>
                 </a>
               ))}
-              <FiArrowUpRight/>
             </div>
           </div>
         </div>
@@ -112,23 +128,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       <hr className="mx-auto my-12 max-w-5xl border-white/15" />
 
-      {/* HERO: first gallery image, large, with a centered caption */}
-      {hero && (
-        <div className="mx-auto max-w-5xl">
-          <Figure m={hero} centered />
-        </div>
-      )}
-
-      {/* THE REST OF THE GALLERY: a masonry grid */}
-      {rest.length > 0 && (
-        <section aria-label="More from this project" className=" mt-4 md:mt-10 columns-1 gap-4 md:columns-2">
-          {rest.map((m) => (
-            <div key={m.src} className="mb-4 md:mb-6 break-inside-avoid">
-              <Figure m={m} />
-            </div>
-          ))}
-        </section>
-      )}
+     <Gallery items={p.gallery} />
 
       {p.details?.map((d) => (
         <section key={d.heading} className="mx-auto mt-16 max-w-5xl">

@@ -3,6 +3,7 @@ export type Media = {
   alt: string;
   caption?: string;           // one sentence that describes what you're looking at
   type?: "image" | "video";
+  autoPlay?: boolean;
 };
 
 export type Project = {

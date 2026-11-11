@@ -39,11 +39,11 @@
     
     {
         "_id": 4,
-        "title": "Paladone",
+        "title": "H-Blocks",
         "role": "Product designer",
         "tags": ["Product"," Industrial", "Research"],
         "description": "A modular set of physical building blocks that connect to digital worlds.",
-        "link": "/projects/paladone",
+        "link": "/projects/h-blocks",
         "media": "/assets/projects/paladone/scene_1v2.webp",
         "type": "image",
         "category": "design"
@@ -55,7 +55,7 @@
         "role": "Creative Developer",
         "tags": ["Interaction"," Creative Code"],
         "description":"A Lorenz-attractor music visualizer built for Detty December." ,
-        "link": "https://jazz-synth.vercel.app/",
+        "link": "/projects/lorenz",
         "media": "/assets/sketchbook/lorenz_video.mp4",
         "type": "video",            
         "category": "dev"

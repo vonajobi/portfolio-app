@@ -1,18 +1,22 @@
 import {FaRegHandPeace} from 'react-icons/fa'
+import { Handjet } from 'next/font/google'
+
+const handjet = Handjet({subsets:['latin'], weight:['900']})
 
 export const HomePageOverlay = ()=>{
     return(
         <>
-        <div className='uppercase
+        <div className={` ${handjet.className} 
+                          uppercase
                           font-bold
                           text-center
-                          text-[3.8rem]
+                          text-[5.8rem]
                           font-mono
                           tracking-widest
                           leading-none
-                          mb-6                   
-                          '>
-            <span className='block' aria-hidden>
+                          mb-6 `}                  
+                          >
+            <span className={`block`} aria-hidden>
               {/* <span className='text-white/75'>{`[`}</span> */}
               <span className='text-[#f2777a]'>V</span> 
               <span className='text-[#ffcc66]'>I</span> 

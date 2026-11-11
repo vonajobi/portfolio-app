@@ -1,8 +1,20 @@
 import type { Project } from "@/app/projects/types";
+import childsPlay from "./child's-play";
 import intuitivePaper from "./intuitive-paper";
+import crushies from "./crushies"
 import lorenz from "./lorenz";
+import dettyDecember from "./detty-december";
+import hBlocks from "./h_blocks";
 
-export const projects: Project[] = [intuitivePaper, lorenz];
+export const projects: Project[] = [
+  intuitivePaper, 
+  lorenz, 
+  childsPlay,
+  crushies,
+  hBlocks,
+  dettyDecember
+
+];
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
 

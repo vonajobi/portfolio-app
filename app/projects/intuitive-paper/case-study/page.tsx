@@ -19,7 +19,6 @@ export default function CaseStudy() {
 
   const dir = "/assets/projects/intuitive_paper/";
   const sectionStyle = "mx-auto mt-16 max-w-2xl scroll-mt-24 md:mt-24";
-  // TODO: replace width/height on each image with its real pixel size
   const img = "h-full w-full rounded-md";
 
   return (
@@ -41,6 +40,8 @@ export default function CaseStudy() {
             alt="The finished Intuitive Paper site"
             width={1600}
             height={900}
+            fetchPriority="high"
+            decoding="async"
             className={img}
           />
         </div>
@@ -81,9 +82,9 @@ export default function CaseStudy() {
           I worked on connecting the application to its underlying data and supporting the functionality needed to retrieve and display research papers.
         </p>
         <div className="mt-8 grid grid-cols-1 gap-2">
-          <img src={`${dir}site_map.png`} alt="Process site map" width={1302} height={597} className={img} />
-          <img src={`${dir}site_map_2.png`} alt="Process site map two" width={5197} height={2314} className={img} />
-          <img src={`${dir}site_map_3.png`} alt="Process site map three" width={5197} height={1943} className={img} />
+          <img src={`${dir}site_map.png`} alt="Process site map" width={1302} height={597} loading="lazy" decoding="async" className={img} />
+          <img src={`${dir}site_map_2.png`} alt="Process site map two" width={5197} height={2314} loading="lazy" decoding="async" className={img} />
+          <img src={`${dir}site_map_3.png`} alt="Process site map three" width={5197} height={1943} loading="lazy" decoding="async" className={img} />
         </div>
       </section>
 
@@ -93,7 +94,7 @@ export default function CaseStudy() {
           The application was built using <span className="font-bold text-[#6699cc]">PHP</span> for server-side scripting, <span className="font-bold text-[#6699cc]">SQL</span> database querying, and <span className="font-bold text-[#6699cc]">Tailwind CSS</span> for rapid, responsive design.
           Google Analytics APIs were integrated to track user engagement. The arXiv API was used to fetch research papers and extract relevant data for analysis.
         </p>
-        <img src={`${dir}database_flow.png`} alt="Database flow" width={1468} height={1384} className={`${img} mt-6`} />
+        <img src={`${dir}database_flow.png`} alt="Database flow" width={1468} height={1384} loading="lazy" decoding="async" className={`${img} mt-6`} />
       </section>
 
       <section id="outcome" data-title="[04] Outcome" className={sectionStyle}>

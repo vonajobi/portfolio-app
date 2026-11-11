@@ -33,7 +33,6 @@ const Projects: React.FC<ProjectsComponentProps> = () => {
                         bg-no-repeat
                         bg-cover
                         opacity-30'>
-
         </div>
         
         <div className='flex 

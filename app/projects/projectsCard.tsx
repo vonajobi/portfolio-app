@@ -34,7 +34,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.type === "video" ? (
             <video
               src={project.media}
-              className="md:w-125 md:h-70 rounded-lg object-cover"
+              className="md:w-125 md:h-70 rounded-lg object-cover pointer-events-none"
               autoPlay
               loop
               playsInline
